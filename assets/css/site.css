@@ -160,6 +160,8 @@ figcaption { color: var(--muted); font-size: 11px; line-height: 1.45; margin-top
 .use-grid p, .foundation-grid p { margin: 0; font-size: 14px; color: var(--muted); }
 
 .book-layout { display: grid; grid-template-columns: minmax(250px, .76fr) 1.5fr; gap: 54px; margin-top: 52px; align-items: start; }
+.book-layout.no-image { grid-template-columns: 1fr; }
+.book-layout.no-image > div { max-width: 680px; }
 .book-layout figure { margin: 0; position: sticky; top: 110px; }
 .book-layout figure img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; filter: grayscale(.15) sepia(.08); box-shadow: var(--shadow); }
 .book-section h3 { font-size: 55px; margin-bottom: 2px; }

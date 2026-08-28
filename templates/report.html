@@ -152,8 +152,10 @@
           <header class="section-heading">
             <p>03 / Reading</p><h2>Book radar</h2><div class="rule"></div>
           </header>
-          <div class="book-layout">
+          <div class="book-layout{% if not report.book.image %} no-image{% endif %}">
+            {% if report.book.image %}
             <figure><img src="{{ base }}{{ report.book.image }}" alt="{{ report.book.image_alt }}" loading="lazy"><figcaption>{{ report.book.image_caption }}</figcaption></figure>
+            {% endif %}
             <div>
               <p class="eyebrow">{{ report.book.context }}</p>
               <h3><em>{{ report.book.title }}</em></h3>
