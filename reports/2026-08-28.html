@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Five developments across agent distribution, vertical adoption, product analytics, provenance, and portfolio discipline—examined for what is genuinely new and what changes a senior PM decision.">
+  <meta property="og:title" content="Product judgment in the age of cheap AI capability — Product Fieldnotes">
+  <meta property="og:description" content="Five developments across agent distribution, vertical adoption, product analytics, provenance, and portfolio discipline—examined for what is genuinely new and what changes a senior PM decision.">
+  <meta property="og:image" content="../assets/images/agent-analytics.png">
+  <meta name="theme-color" content="#f3f0e8">
+  <title>Product judgment in the age of cheap AI capability — Product Fieldnotes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/site.css">
+  <script defer src="../assets/js/site.js"></script>
+</head>
+<body>
+  <div class="reading-progress" aria-hidden="true"><span></span></div>
+  <a class="skip-link" href="#report">Skip to report</a>
+
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="../index.html" aria-label="Product Fieldnotes home">
+        <span class="brand-mark">PF</span>
+        <span>Product Fieldnotes</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a class="active" href="../index.html">Latest</a>
+        <a href="../archive.html">Archive</a>
+        <a href="#about">About</a>
+      </nav>
+      <button class="theme-toggle" type="button" aria-label="Toggle color theme"><span aria-hidden="true">◐</span></button>
+    </div>
+  </header>
+
+  <main id="report">
+    <section class="cover shell">
+      <div class="cover-copy">
+        <p class="eyebrow">Senior Product Management Intelligence</p>
+        <h1>Product judgment in the age of cheap AI capability</h1>
+        <p class="dek">Five developments across agent distribution, vertical adoption, product analytics, provenance, and portfolio discipline—examined for what is genuinely new and what changes a senior PM decision.</p>
+        <div class="edition-meta">
+          <span>August 28, 2026</span><span>14 min read</span><span>Friday edition</span>
+        </div>
+        <div class="topic-row" aria-label="Topics">
+<span>AI products</span><span>Strategy</span><span>Measurement</span><span>Governance</span>        </div>
+      </div>
+      <figure class="cover-media">
+        <img src="../assets/images/agent-analytics.png" alt="Amplitude Agent Analytics product interface" width="1440" height="1080">
+        <figcaption>Production agent evaluation is beginning to connect model behavior with product outcomes. Image: Amplitude. <a href="https://amplitude.com/blog/connecting-agent-performance-to-product-outcomes" target="_blank" rel="noopener">Source ↗</a></figcaption>
+      </figure>
+    </section>
+
+    <section class="signal-strip" aria-label="Edition contents">
+      <div class="shell signal-grid">
+        <a href="#signal-01">
+          <span>01</span>
+          <strong>Competitive rollout</strong>
+          <small>Medium</small>
+        </a>
+        <a href="#signal-02">
+          <span>02</span>
+          <strong>Vertical distribution</strong>
+          <small>Early signal</small>
+        </a>
+        <a href="#signal-03">
+          <span>03</span>
+          <strong>Product measurement</strong>
+          <small>Medium</small>
+        </a>
+        <a href="#signal-04">
+          <span>04</span>
+          <strong>Research operations</strong>
+          <small>Medium</small>
+        </a>
+        <a href="#signal-05">
+          <span>05</span>
+          <strong>Portfolio discipline</strong>
+          <small>Early signal</small>
+        </a>
+      </div>
+    </section>
+
+    <div class="report-layout shell">
+      <aside class="toc" aria-label="On this page">
+        <p>In this edition</p>
+        <a href="#frontier">Frontier developments</a>
+        <a href="#technique">Technique deep dive</a>
+        <a href="#book">Book radar</a>
+        <a href="#foundation">Foundations refresher</a>
+        <a href="#implications">Cross-cutting implications</a>
+        <a href="#sources">Sources</a>
+      </aside>
+
+      <article class="article-body">
+        <aside class="editor-note">
+          <span>Editorial correction</span>
+          <p>The original briefing overstated Claude in Chrome as a new browser-agent category. It is not. The product was piloted in 2025 and overlaps substantially with Copilot and other browser assistants. The material update is broader paid distribution and less confirmation friction—not the invention of browser agents.</p>
+        </aside>
+
+        <section id="frontier" class="report-section">
+          <header class="section-heading">
+            <p>01 / Current landscape</p>
+            <h2>Frontier developments</h2>
+            <div class="rule"></div>
+          </header>
+
+          <section id="signal-01" class="development">
+            <div class="development-index">
+              <span>01</span>
+              <p>Competitive rollout</p>
+              <em>Medium</em>
+            </div>
+            <div class="development-content">
+              <h3>Browser agents reduce confirmation friction, but the category is not new</h3>
+              <figure class="inline-media">
+                <img src="../assets/images/claude-chrome.jpg" alt="Claude in Chrome product announcement artwork" loading="lazy">
+                <figcaption>Anthropic’s general-availability announcement. The novelty is narrower than the launch framing suggests.</figcaption>
+              </figure>
+              <div class="analysis-block"><h4>What it is</h4><p>Anthropic made Claude in Chrome generally available across paid plans. It can operate through a user’s existing browser session—reading pages, moving between tabs, clicking, typing, and filling forms—and can now continue through actions it judges safe while a separate classifier checks each action.</p></div>
+              <div class="novelty-pair">
+                <div><h4>What is actually new</h4><p>The meaningful delta is broader distribution and autonomous progression through lower-risk steps. Earlier versions required more frequent approval, and the 2026 release packages prompt-injection defenses as part of a generally available product.</p></div>
+                <div><h4>What is not new</h4><p>Browser-side assistance, tab summarization, form completion, and transaction help already exist in Copilot in Edge and adjacent products. This is a competitive rollout and interaction-design change, not a new product category.</p></div>
+              </div>
+              <div class="analysis-block why"><h4>Why it matters</h4><p>Reducing confirmations may make multi-site workflows substantially more usable, but it transfers product risk from explicit user review to permission design, action classification, observability, and recovery. Products also need to assume that some customers will experience their UI through a third-party agent rather than directly.</p></div>
+              <div class="analysis-block"><h4>How to apply it</h4>
+                <ul><li>Map one high-frequency workflow that crosses your product and another site; test where automation fails or becomes ambiguous.</li><li>Separate reversible, low-risk actions from consequential actions that still require explicit confirmation.</li><li>Add agent access to enterprise threat models: domain allowlists, least privilege, audit logs, and rollback ownership.</li></ul>
+              </div>
+              <div class="caveat"><strong>Evidence & caveat</strong><p>Anthropic’s safety evidence is vendor-produced, and prompt injection remains an adversarial problem. Treat the release as evidence of product maturation, not proof that browser autonomy is solved.</p></div>
+              <p class="source-pointers">Sources <a href="#source-1">[1]</a><a href="#source-2">[2]</a></p>
+            </div>
+          </section>
+          <section id="signal-02" class="development">
+            <div class="development-index">
+              <span>02</span>
+              <p>Vertical distribution</p>
+              <em>Early signal</em>
+            </div>
+            <div class="development-content">
+              <h3>Domain programs are replacing generic AI-seat strategies</h3>
+              <div class="analysis-block"><h4>What it is</h4><p>Anthropic opened a one-year program offering free or discounted seats to verified academic and nonprofit science labs. It sits alongside Claude Science, research-tool integrations, auditable artifacts, and project credits of up to $50,000.</p></div>
+              <div class="novelty-pair">
+                <div><h4>What is actually new</h4><p>The notable move is the combination of strict segment eligibility, a domain workflow, subsidized adoption, and capacity-based expansion—not merely a discounted seat.</p></div>
+                <div><h4>What is not new</h4><p>Vertical packaging and land-and-expand subsidies are established go-to-market techniques. AI vendors are adapting them to expert workflows where credibility and usage depth matter more than broad reach.</p></div>
+              </div>
+              <div class="analysis-block why"><h4>Why it matters</h4><p>This is a useful pattern for entering professional markets with high switching costs and specialized evidence requirements. The product must prove completed domain work, not just activation or seat consumption.</p></div>
+              <div class="analysis-block"><h4>How to apply it</h4>
+                <ul><li>Define the eligible segment and one complete domain job before creating an industry edition.</li><li>Measure completed work and repeat workflow depth rather than provisioned seats.</li><li>Specify the expansion trigger before subsidizing adoption so the program produces learning rather than vanity uptake.</li></ul>
+              </div>
+              <div class="caveat"><strong>Evidence & caveat</strong><p>No retention, research-output, or paid-conversion results are available yet. Access restrictions also show that vertical segmentation can encode safety constraints, not only willingness to pay.</p></div>
+              <p class="source-pointers">Sources <a href="#source-3">[3]</a></p>
+            </div>
+          </section>
+          <section id="signal-03" class="development">
+            <div class="development-index">
+              <span>03</span>
+              <p>Product measurement</p>
+              <em>Medium</em>
+            </div>
+            <div class="development-content">
+              <h3>Agent analytics is connecting model quality to product economics</h3>
+              <figure class="inline-media">
+                <img src="../assets/images/agent-analytics.png" alt="Agent Analytics product dashboard" loading="lazy">
+                <figcaption>A useful analytics layer only if the team knows which decision changes when a quality signal moves.</figcaption>
+              </figure>
+              <div class="analysis-block"><h4>What it is</h4><p>Amplitude’s Agent Analytics scores production sessions for task completion, response quality, friction, and safety, then joins those signals to ordinary product events and cohorts. This allows teams to inspect not only whether an answer looked good, but whether the interaction changed conversion, retention, support escalation, or another business outcome.</p></div>
+              <div class="novelty-pair">
+                <div><h4>What is actually new</h4><p>The useful development is the integration of conversation-level evaluation with mainstream product analytics and behavioral cohorts.</p></div>
+                <div><h4>What is not new</h4><p>LLM evaluation, session replay, cohort analysis, and guardrail metrics already exist independently. The value comes from joining them around a product decision.</p></div>
+              </div>
+              <div class="analysis-block why"><h4>Why it matters</h4><p>Offline benchmarks cannot reveal which live failures are economically expensive. A product may improve a model score while increasing latency, cost, user correction, or abandonment. Connecting traces to outcomes lets PMs prioritize failures by customer and business consequence.</p></div>
+              <div class="analysis-block"><h4>How to apply it</h4>
+                <ul><li>Instrument intent, agent version, tool calls, outcome, latency, cost, recovery, and escalation.</li><li>Calibrate automated graders against human review by intent and risk tier—not one global agreement score.</li><li>Gate releases on both task-success quality and a downstream product guardrail.</li></ul>
+              </div>
+              <div class="caveat"><strong>Evidence & caveat</strong><p>The strongest examples are vendor-selected. LLM-as-judge scores can reproduce grader bias and need continual calibration against representative human review.</p></div>
+              <div class="video-card" data-video-id="p5h-U9yEMh8">
+                <button type="button" class="video-poster" aria-label="Play Meet Agent Analytics: Connect AI Quality to Conversion and Retention">
+                  <img src="https://i.ytimg.com/vi/p5h-U9yEMh8/hq720.jpg" alt="Video thumbnail for Meet Agent Analytics: Connect AI Quality to Conversion and Retention" loading="lazy">
+                  <span class="play"><span>▶</span></span>
+                </button>
+                <div class="video-copy"><strong>Meet Agent Analytics: Connect AI Quality to Conversion and Retention</strong><span>Amplitude · 2:09</span><p>A concise vendor demonstration; useful for understanding the workflow, not independent proof of impact.</p></div>
+              </div>
+              <p class="source-pointers">Sources <a href="#source-4">[4]</a></p>
+            </div>
+          </section>
+          <section id="signal-04" class="development">
+            <div class="development-index">
+              <span>04</span>
+              <p>Research operations</p>
+              <em>Medium</em>
+            </div>
+            <div class="development-content">
+              <h3>Provenance is becoming part of the PM workflow, not a compliance appendix</h3>
+              <div class="analysis-block"><h4>What it is</h4><p>A practical trust pattern is emerging around source visibility, company context, human review, correction workflows, and permissions. Productboard’s guidance distinguishes trusting an AI tool in general from trusting a specific output, then recommends stronger review as decisions become harder to reverse.</p></div>
+              <div class="novelty-pair">
+                <div><h4>What is actually new</h4><p>The shift is operational: provenance and correction are being designed into everyday product-research workflows rather than added only during governance review.</p></div>
+                <div><h4>What is not new</h4><p>Research traceability and evidence-backed decisions are foundational PM practices. AI increases the speed and scale at which weak evidence can propagate; it does not invent the need for provenance.</p></div>
+              </div>
+              <div class="analysis-block why"><h4>Why it matters</h4><p>A polished synthesis can turn a false customer theme into a roadmap bet faster than a team can notice. The defensible unit is a claim linked to raw evidence, with an owner and correction path.</p></div>
+              <div class="analysis-block"><h4>How to apply it</h4>
+                <ul><li>Require AI-generated research themes to link back to interviews, tickets, or usage evidence.</li><li>Label uncited claims as hypotheses rather than presenting them as findings.</li><li>When an output is wrong, repair the underlying context or retrieval process—not only the final document.</li></ul>
+              </div>
+              <div class="caveat"><strong>Evidence & caveat</strong><p>Traceability explains origin; it does not prove that the sample is representative or that the interpretation is causal. Productboard is also promoting its own AI product.</p></div>
+              <p class="source-pointers">Sources <a href="#source-5">[5]</a></p>
+            </div>
+          </section>
+          <section id="signal-05" class="development">
+            <div class="development-index">
+              <span>05</span>
+              <p>Portfolio discipline</p>
+              <em>Early signal</em>
+            </div>
+            <div class="development-content">
+              <h3>Cheap prototypes require stronger stop rules</h3>
+              <div class="analysis-block"><h4>What it is</h4><p>A Govern–Prototype–Measure approach funds a thin slice, makes the workflow tangible, defines evidence in advance, and then continues, redirects, or stops. The important distinction is between adoption and absorption: whether the work itself actually changes, not whether someone logged in.</p></div>
+              <div class="novelty-pair">
+                <div><h4>What is actually new</h4><p>The underlying governance pattern is established; its renewed relevance comes from AI making plausible prototypes extremely cheap and portfolio sprawl correspondingly easy.</p></div>
+                <div><h4>What is not new</h4><p>Stage gates, evidence-based funding, and pivot-or-persevere decisions predate generative AI. The discipline is not new—the cost of ignoring it has changed.</p></div>
+              </div>
+              <div class="analysis-block why"><h4>Why it matters</h4><p>When creating a demo becomes inexpensive, the scarce resources become evaluation attention, integration capacity, change management, and executive willingness to stop. Without explicit continuation thresholds, organizations accumulate pilots instead of resolving customer or operational constraints.</p></div>
+              <div class="analysis-block"><h4>How to apply it</h4>
+                <ul><li>Give every AI initiative a unit of value, baseline, next-stage threshold, owner, and stop date.</li><li>Lead reviews with value, quality, cost, and learning—not activity or feature completion.</li><li>Name which commitment loses resources when a new AI bet gains them.</li></ul>
+              </div>
+              <div class="caveat"><strong>Evidence & caveat</strong><p>Outcome thresholds need longer leading indicators for network, regulatory, or migration-heavy work. Do not disguise proxy movement as proven financial impact.</p></div>
+              <p class="source-pointers">Sources <a href="#source-6">[6]</a></p>
+            </div>
+          </section>
+        </section>
+
+        <section id="technique" class="report-section technique-section">
+          <header class="section-heading">
+            <p>02 / Practice</p><h2>Technique deep dive</h2><div class="rule"></div>
+          </header>
+          <h3>Outcome-linked agent evaluation</h3>
+          <p class="lead"><strong>Problem it solves.</strong> Traditional analytics measures behavior; model evaluation measures answer quality. Neither alone tells a PM which agent failures damage the product outcome or whether a more capable model simply costs more.</p>
+          <ol class="steps">
+            <li><span>01</span><div><h4>Write the causal bet</h4><p>State how successful task completion should change a user or business outcome. Example: resolving a billing question correctly on the first attempt should reduce support escalation and improve 30-day retention.</p></div></li>
+            <li><span>02</span><div><h4>Create a human-reviewed evaluation set</h4><p>Include common, rare, adversarial, and high-cost intents. Define success and unacceptable failure before selecting an automated grader.</p></div></li>
+            <li><span>03</span><div><h4>Instrument production traces</h4><p>Log intent, version, tools, retries, latency, cost, result, escalation, and feedback—with privacy minimization.</p></div></li>
+            <li><span>04</span><div><h4>Calibrate automated scoring</h4><p>Compare the LLM judge with human ratings by intent and risk tier. Avoid one global score that hides weak segments.</p></div></li>
+            <li><span>05</span><div><h4>Join quality to outcomes</h4><p>Build cohorts around specific interaction outcomes, then compare escalation, repeat use, conversion, retention, or another relevant measure.</p></div></li>
+            <li><span>06</span><div><h4>Release through two gates</h4><p>Require both a quality floor and a business guardrail. Monitor topic-level regressions after launch because live traffic will exceed the offline test set.</p></div></li>
+          </ol>
+          <div class="worked-example"><span>Worked example</span><p>A reconciliation agent reaches 91% offline task success. Production analysis shows most failures are harmless formatting errors, but duplicate-invoice failures strongly predict manual escalation. The PM prioritizes duplicate detection over a general model upgrade and ships only if task success rises without increasing false blocks, latency, or cost per successful reconciliation.</p></div>
+          <div class="use-grid">
+            <div><h4>Use when</h4><p>Agents perform repeated tasks, outcomes are observable, traffic supports useful cohorts, and failures have meaningful downside.</p></div>
+            <div><h4>Avoid when</h4><p>For low-volume, high-stakes decisions, expert review, scenario testing, and strict approval matter more than conversion analysis.</p></div>
+          </div>
+          <p><strong>Common failure modes.</strong> Optimizing the grader; hiding critical intents behind averages; logging sensitive content; changing model and prompt simultaneously; and mistaking stuck users for engaged users.</p>
+        </section>
+
+        <section id="book" class="report-section book-section">
+          <header class="section-heading">
+            <p>03 / Reading</p><h2>Book radar</h2><div class="rule"></div>
+          </header>
+          <div class="book-layout">
+            <figure><img src="../assets/images/auditing-ai.jpg" alt="Historical computing image accompanying an authorized Auditing AI excerpt" loading="lazy"><figcaption>Editorial image from the authorized excerpt in Pittsburgh Review of Books.</figcaption></figure>
+            <div>
+              <p class="eyebrow">MIT Press, April 2026</p>
+              <h3><em>Auditing AI</em></h3>
+              <p class="byline">The Marquand House Collective</p>
+              <p class="lead">AI audits should produce structured evidence about whether an opaque system works, whom it harms, and how product or policy decisions should change. Evaluation must examine real-world outcomes and institutional incentives—not stop at model accuracy.</p>
+              <h4>Ideas worth carrying forward</h4>
+              <ul><li>Audit outcomes, not only internals: inspect how system effects vary across groups and contexts.</li><li>Bias can be strategic: platform owners may benefit from rankings or defaults that disadvantage others.</li><li>External scrutiny is a discovery channel when internal assurances fail to expose harmful behavior.</li><li>An audit earns its cost only when evidence changes rules, interfaces, monitoring, or the decision to deploy.</li></ul>
+              <p><strong>Who benefits.</strong> PMs responsible for ranking, recommendations, agents, eligibility, pricing, or systems whose errors are unevenly distributed.</p>
+              <p><strong>Limit.</strong> This assessment uses publisher material and an authorized excerpt, not the complete book. The excerpt does not establish the full book’s operational or statistical depth.</p>
+              <div class="verdict"><span>Read</span><p>The institutional cases broaden product judgment beyond benchmark performance; pair it with domain-specific evaluation and legal expertise for high-stakes systems.</p></div>
+            </div>
+          </div>
+        </section>
+
+        <section id="foundation" class="report-section foundation-section">
+          <header class="section-heading">
+            <p>04 / Foundations</p><h2>Lean Startup—without MVP theater</h2><div class="rule"></div>
+          </header>
+          <div class="foundation-grid">
+            <div><h4>Original idea</h4><p>Build–Measure–Learn, validated learning, actionable metrics, and pivot-or-persevere decisions were intended to prevent teams from polishing an untested idea for months.</p></div>
+            <div><h4>What still holds</h4><p>The core question remains whether the problem is worth solving and whether the proposed solution can support a sustainable model. Small tests are useful when they accelerate credible learning about demand, feasibility, or economics.</p></div>
+            <div><h4>Common misuse</h4><p>MVP often becomes permission to ship a weak first version, while ‘move fast’ replaces a falsifiable hypothesis. AI makes this worse because a compelling demo can conceal variable quality, safety failures, and per-use economics.</p></div>
+            <div><h4>Modern update</h4><p>&lt;built-in method update of dict object at 0xf1d075ec7300&gt;</p></div>
+          </div>
+          <blockquote>What is the cheapest credible evidence that would make us stop—not merely continue?</blockquote>
+          <div class="video-card wide" data-video-id="fEvKo90qBns">
+            <button type="button" class="video-poster" aria-label="Play The Lean Startup — Eric Ries">
+              <img src="https://i.ytimg.com/vi/fEvKo90qBns/hq720.jpg" alt="Video thumbnail for The Lean Startup — Eric Ries" loading="lazy">
+              <span class="play"><span>▶</span></span>
+            </button>
+            <div class="video-copy"><strong>The Lean Startup — Eric Ries</strong><span>Talks at Google · 58:09</span><p>A foundational long-form talk; watch when revisiting the original logic rather than the diluted shorthand.</p></div>
+          </div>
+        </section>
+
+        <section id="implications" class="report-section implication-section">
+          <header class="section-heading">
+            <p>05 / Synthesis</p><h2>Cross-cutting implications</h2><div class="rule"></div>
+          </header>
+          <div class="pattern-list">
+<div><span>01</span><h3>The product surface is expanding</h3><p>Permissions, orchestration, and recoverability shape the experience even when a third-party agent operates your interface.</p></div><div><span>02</span><h3>Measurement must move in two directions</h3><p>Teams need interaction-level diagnosis and a credible line from quality to retention, cost, revenue, risk, or changed work.</p></div><div><span>03</span><h3>Trust is operational</h3><p>Provenance, calibrated evaluation, correction, and auditability must live inside workflows; policy documents cannot supply them afterward.</p></div><div><span>04</span><h3>Cheap building raises the value of stopping</h3><p>More prototypes require stronger continuation criteria and clearer resource subtraction—not larger roadmaps.</p></div>          </div>
+          <div class="questions">
+            <p>Questions for the next product review</p>
+            <ol><li>Which agent failure is most expensive, and do we know from observed behavior or assumption?</li><li>Can every roadmap-changing AI claim be traced to representative evidence?</li><li>What threshold earns the next funding slice—and who has authority to stop the work?</li></ol>
+          </div>
+        </section>
+
+        <section class="report-section week-section">
+          <header class="section-heading"><p>Friday edition</p><h2>Week in review</h2><div class="rule"></div></header>
+          <dl>
+            <div><dt>What changed</dt><dd>Browser-agent confirmation friction fell as an existing capability moved into broader paid distribution; scientific AI also gained a concrete segment-acquisition program.</dd></div>
+            <div><dt>What gained evidence</dt><dd>Production-agent evaluation is becoming a practical analytics category that can join interaction quality to customer and business outcomes.</dd></div>
+            <div><dt>What remains hype</dt><dd>Autonomy remains overstated. Vendor safeguards are improving, but prompt injection, grader validity, permissions, reversibility, and ownership remain active constraints.</dd></div>
+            <div><dt>What to watch</dt><dd>Independent browser-agent reliability data; evidence that subsidized seats create durable scientific workflows; and cases where outcome-linked evaluation changes a roadmap rather than adding dashboards.</dd></div>
+          </dl>
+        </section>
+
+        <section id="sources" class="report-section sources-section">
+          <header class="section-heading"><p>Research ledger</p><h2>Sources</h2><div class="rule"></div></header>
+          <ol>
+<li id="source-1"><a href="https://claude.com/blog/claude-in-chrome-generally-available" target="_blank" rel="noopener">Anthropic — Claude in Chrome is generally available <span>↗</span></a></li><li id="source-2"><a href="https://explore.microsoft.com/en-us/edge/copilot" target="_blank" rel="noopener">Microsoft — Copilot in Edge <span>↗</span></a></li><li id="source-3"><a href="https://www.anthropic.com/news/expanding-support-for-scientists" target="_blank" rel="noopener">Anthropic — Expanding support for scientists <span>↗</span></a></li><li id="source-4"><a href="https://amplitude.com/blog/connecting-agent-performance-to-product-outcomes" target="_blank" rel="noopener">Amplitude — Connecting agent performance to product outcomes <span>↗</span></a></li><li id="source-5"><a href="https://www.productboard.com/blog/how-to-trust-ai-outputs" target="_blank" rel="noopener">Productboard — How to trust AI outputs in product management <span>↗</span></a></li><li id="source-6"><a href="https://www.metisstrategy.com/product-management-ai-value-measurement" target="_blank" rel="noopener">Metis Strategy — Product management AI value measurement <span>↗</span></a></li><li id="source-7"><a href="https://mitpress.mit.edu/9780262051729/auditing-ai" target="_blank" rel="noopener">MIT Press — Auditing AI <span>↗</span></a></li><li id="source-8"><a href="https://pghrev.com/auditing-artificial-intelligence" target="_blank" rel="noopener">Pittsburgh Review of Books — authorized Auditing AI excerpt <span>↗</span></a></li><li id="source-9"><a href="https://theleanstartup.com/principles" target="_blank" rel="noopener">The Lean Startup methodology <span>↗</span></a></li>          </ol>
+        </section>
+      </article>
+    </div>
+  </main>
+
+  <footer id="about">
+    <div class="shell footer-grid">
+      <div><span class="brand-mark">PF</span><h2>Product Fieldnotes</h2><p>A weekday intelligence publication for senior product judgment—new techniques, durable foundations, evidence, and honest caveats.</p></div>
+      <div><p>Next edition</p><strong>Weekdays · 7:00 AM PST</strong><a href="../archive.html">Browse the archive →</a></div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Archive of Product Fieldnotes senior product management intelligence reports.">
+  <meta name="theme-color" content="#f3f0e8">
+  <title>Archive — Product Fieldnotes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css"><script defer src="assets/js/site.js"></script>
+</head>
+<body>
+  <header class="site-header"><div class="shell header-inner">
+    <a class="brand" href="index.html"><span class="brand-mark">PF</span><span>Product Fieldnotes</span></a>
+    <nav aria-label="Primary navigation"><a href="index.html">Latest</a><a class="active" href="archive.html">Archive</a><a href="index.html#about">About</a></nav>
+    <button class="theme-toggle" type="button" aria-label="Toggle color theme"><span aria-hidden="true">◐</span></button>
+  </div></header>
+  <main class="archive-main shell">
+    <div class="archive-head"><h1>Edition archive</h1><p>A dated record of frontier techniques, books, foundational ideas, evidence, and corrections.</p></div>
+    <div class="archive-list">
+      {% for item in reports %}
+      <a class="archive-entry" href="reports/{{ item.slug }}.html">
+        <time datetime="{{ item.slug }}">{{ item.date }}</time>
+        <div><h2>{{ item.title }}</h2><p>{{ item.dek }}</p></div>
+        <span>{{ item.reading_time }} →</span>
+      </a>
+      {% endfor %}
+    </div>
+  </main>
+  <footer><div class="shell footer-grid"><div><span class="brand-mark">PF</span><h2>Product Fieldnotes</h2><p>Comprehensive product-management intelligence with explicit novelty checks and source-backed analysis.</p></div><div><p>Publishing schedule</p><strong>Weekdays · 7:00 AM PST</strong><a href="index.html">Read the latest edition →</a></div></div></footer>
+</body></html>

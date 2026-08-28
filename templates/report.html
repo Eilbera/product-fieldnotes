@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{ report.dek }}">
+  <meta property="og:title" content="{{ report.title }} — Product Fieldnotes">
+  <meta property="og:description" content="{{ report.dek }}">
+  <meta property="og:image" content="{{ base }}{{ report.cover_image }}">
+  <meta name="theme-color" content="#f3f0e8">
+  <title>{{ report.title }} — Product Fieldnotes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ base }}assets/css/site.css">
+  <script defer src="{{ base }}assets/js/site.js"></script>
+</head>
+<body>
+  <div class="reading-progress" aria-hidden="true"><span></span></div>
+  <a class="skip-link" href="#report">Skip to report</a>
+
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="{{ base }}index.html" aria-label="Product Fieldnotes home">
+        <span class="brand-mark">PF</span>
+        <span>Product Fieldnotes</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a class="active" href="{{ base }}index.html">Latest</a>
+        <a href="{{ base }}archive.html">Archive</a>
+        <a href="#about">About</a>
+      </nav>
+      <button class="theme-toggle" type="button" aria-label="Toggle color theme"><span aria-hidden="true">◐</span></button>
+    </div>
+  </header>
+
+  <main id="report">
+    <section class="cover shell">
+      <div class="cover-copy">
+        <p class="eyebrow">{{ report.eyebrow }}</p>
+        <h1>{{ report.title }}</h1>
+        <p class="dek">{{ report.dek }}</p>
+        <div class="edition-meta">
+          <span>{{ report.date }}</span><span>{{ report.reading_time }}</span><span>{{ report.edition }}</span>
+        </div>
+        <div class="topic-row" aria-label="Topics">
+          {% for topic in report.topics %}<span>{{ topic }}</span>{% endfor %}
+        </div>
+      </div>
+      <figure class="cover-media">
+        <img src="{{ base }}{{ report.cover_image }}" alt="{{ report.cover_alt }}" width="1440" height="1080">
+        <figcaption>{{ report.cover_caption }} <a href="{{ report.cover_source }}" target="_blank" rel="noopener">Source ↗</a></figcaption>
+      </figure>
+    </section>
+
+    <section class="signal-strip" aria-label="Edition contents">
+      <div class="shell signal-grid">
+        {% for item in report.developments %}
+        <a href="#signal-{{ item.number }}">
+          <span>{{ item.number }}</span>
+          <strong>{{ item.label }}</strong>
+          <small>{{ item.confidence }}</small>
+        </a>
+        {% endfor %}
+      </div>
+    </section>
+
+    <div class="report-layout shell">
+      <aside class="toc" aria-label="On this page">
+        <p>In this edition</p>
+        <a href="#frontier">Frontier developments</a>
+        <a href="#technique">Technique deep dive</a>
+        <a href="#book">Book radar</a>
+        <a href="#foundation">Foundations refresher</a>
+        <a href="#implications">Cross-cutting implications</a>
+        <a href="#sources">Sources</a>
+      </aside>
+
+      <article class="article-body">
+        <aside class="editor-note">
+          <span>Editorial correction</span>
+          <p>{{ report.editor_note }}</p>
+        </aside>
+
+        <section id="frontier" class="report-section">
+          <header class="section-heading">
+            <p>01 / Current landscape</p>
+            <h2>Frontier developments</h2>
+            <div class="rule"></div>
+          </header>
+
+          {% for item in report.developments %}
+          <section id="signal-{{ item.number }}" class="development">
+            <div class="development-index">
+              <span>{{ item.number }}</span>
+              <p>{{ item.label }}</p>
+              <em>{{ item.confidence }}</em>
+            </div>
+            <div class="development-content">
+              <h3>{{ item.title }}</h3>
+              {% if item.image %}
+              <figure class="inline-media">
+                <img src="{{ base }}{{ item.image }}" alt="{{ item.image_alt }}" loading="lazy">
+                <figcaption>{{ item.image_caption }}</figcaption>
+              </figure>
+              {% endif %}
+              <div class="analysis-block"><h4>What it is</h4><p>{{ item.what }}</p></div>
+              <div class="novelty-pair">
+                <div><h4>What is actually new</h4><p>{{ item.new }}</p></div>
+                <div><h4>What is not new</h4><p>{{ item.not_new }}</p></div>
+              </div>
+              <div class="analysis-block why"><h4>Why it matters</h4><p>{{ item.why }}</p></div>
+              <div class="analysis-block"><h4>How to apply it</h4>
+                <ul>{% for point in item.apply %}<li>{{ point }}</li>{% endfor %}</ul>
+              </div>
+              <div class="caveat"><strong>Evidence & caveat</strong><p>{{ item.caveat }}</p></div>
+              {% if item.video %}
+              <div class="video-card" data-video-id="{{ item.video.id }}">
+                <button type="button" class="video-poster" aria-label="Play {{ item.video.title }}">
+                  <img src="https://i.ytimg.com/vi/{{ item.video.id }}/hq720.jpg" alt="Video thumbnail for {{ item.video.title }}" loading="lazy">
+                  <span class="play"><span>▶</span></span>
+                </button>
+                <div class="video-copy"><strong>{{ item.video.title }}</strong><span>{{ item.video.channel }} · {{ item.video.duration }}</span><p>{{ item.video.note }}</p></div>
+              </div>
+              {% endif %}
+              <p class="source-pointers">Sources {% for id in item.source_ids %}<a href="#source-{{ id }}">[{{ id }}]</a>{% endfor %}</p>
+            </div>
+          </section>
+          {% endfor %}
+        </section>
+
+        <section id="technique" class="report-section technique-section">
+          <header class="section-heading">
+            <p>02 / Practice</p><h2>Technique deep dive</h2><div class="rule"></div>
+          </header>
+          <h3>{{ report.technique.title }}</h3>
+          <p class="lead"><strong>Problem it solves.</strong> {{ report.technique.problem }}</p>
+          <ol class="steps">
+            {% for step in report.technique.steps %}
+            <li><span>{{ "%02d"|format(loop.index) }}</span><div><h4>{{ step.title }}</h4><p>{{ step.body }}</p></div></li>
+            {% endfor %}
+          </ol>
+          <div class="worked-example"><span>Worked example</span><p>{{ report.technique.example }}</p></div>
+          <div class="use-grid">
+            <div><h4>Use when</h4><p>{{ report.technique.use_when }}</p></div>
+            <div><h4>Avoid when</h4><p>{{ report.technique.avoid_when }}</p></div>
+          </div>
+          <p><strong>Common failure modes.</strong> {{ report.technique.failure_modes }}</p>
+        </section>
+
+        <section id="book" class="report-section book-section">
+          <header class="section-heading">
+            <p>03 / Reading</p><h2>Book radar</h2><div class="rule"></div>
+          </header>
+          <div class="book-layout">
+            <figure><img src="{{ base }}{{ report.book.image }}" alt="{{ report.book.image_alt }}" loading="lazy"><figcaption>{{ report.book.image_caption }}</figcaption></figure>
+            <div>
+              <p class="eyebrow">{{ report.book.context }}</p>
+              <h3><em>{{ report.book.title }}</em></h3>
+              <p class="byline">{{ report.book.author }}</p>
+              <p class="lead">{{ report.book.thesis }}</p>
+              <h4>Ideas worth carrying forward</h4>
+              <ul>{% for idea in report.book.ideas %}<li>{{ idea }}</li>{% endfor %}</ul>
+              <p><strong>Who benefits.</strong> {{ report.book.audience }}</p>
+              <p><strong>Limit.</strong> {{ report.book.limitation }}</p>
+              <div class="verdict"><span>{{ report.book.verdict }}</span><p>{{ report.book.verdict_reason }}</p></div>
+            </div>
+          </div>
+        </section>
+
+        <section id="foundation" class="report-section foundation-section">
+          <header class="section-heading">
+            <p>04 / Foundations</p><h2>{{ report.foundation.title }}</h2><div class="rule"></div>
+          </header>
+          <div class="foundation-grid">
+            <div><h4>Original idea</h4><p>{{ report.foundation.original }}</p></div>
+            <div><h4>What still holds</h4><p>{{ report.foundation.holds }}</p></div>
+            <div><h4>Common misuse</h4><p>{{ report.foundation.misapplied }}</p></div>
+            <div><h4>Modern update</h4><p>{{ report.foundation.update }}</p></div>
+          </div>
+          <blockquote>{{ report.foundation.question }}</blockquote>
+          <div class="video-card wide" data-video-id="{{ report.foundation.video.id }}">
+            <button type="button" class="video-poster" aria-label="Play {{ report.foundation.video.title }}">
+              <img src="https://i.ytimg.com/vi/{{ report.foundation.video.id }}/hq720.jpg" alt="Video thumbnail for {{ report.foundation.video.title }}" loading="lazy">
+              <span class="play"><span>▶</span></span>
+            </button>
+            <div class="video-copy"><strong>{{ report.foundation.video.title }}</strong><span>{{ report.foundation.video.channel }} · {{ report.foundation.video.duration }}</span><p>{{ report.foundation.video.note }}</p></div>
+          </div>
+        </section>
+
+        <section id="implications" class="report-section implication-section">
+          <header class="section-heading">
+            <p>05 / Synthesis</p><h2>Cross-cutting implications</h2><div class="rule"></div>
+          </header>
+          <div class="pattern-list">
+            {% for pattern in report.patterns %}<div><span>{{ "%02d"|format(loop.index) }}</span><h3>{{ pattern.title }}</h3><p>{{ pattern.body }}</p></div>{% endfor %}
+          </div>
+          <div class="questions">
+            <p>Questions for the next product review</p>
+            <ol>{% for q in report.questions %}<li>{{ q }}</li>{% endfor %}</ol>
+          </div>
+        </section>
+
+        <section class="report-section week-section">
+          <header class="section-heading"><p>Friday edition</p><h2>Week in review</h2><div class="rule"></div></header>
+          <dl>
+            <div><dt>What changed</dt><dd>{{ report.week_review.changed }}</dd></div>
+            <div><dt>What gained evidence</dt><dd>{{ report.week_review.evidence }}</dd></div>
+            <div><dt>What remains hype</dt><dd>{{ report.week_review.hype }}</dd></div>
+            <div><dt>What to watch</dt><dd>{{ report.week_review.watch }}</dd></div>
+          </dl>
+        </section>
+
+        <section id="sources" class="report-section sources-section">
+          <header class="section-heading"><p>Research ledger</p><h2>Sources</h2><div class="rule"></div></header>
+          <ol>
+            {% for source in report.sources %}<li id="source-{{ source.id }}"><a href="{{ source.url }}" target="_blank" rel="noopener">{{ source.title }} <span>↗</span></a></li>{% endfor %}
+          </ol>
+        </section>
+      </article>
+    </div>
+  </main>
+
+  <footer id="about">
+    <div class="shell footer-grid">
+      <div><span class="brand-mark">PF</span><h2>Product Fieldnotes</h2><p>A weekday intelligence publication for senior product judgment—new techniques, durable foundations, evidence, and honest caveats.</p></div>
+      <div><p>Next edition</p><strong>Weekdays · 7:00 AM PST</strong><a href="{{ base }}archive.html">Browse the archive →</a></div>
+    </div>
+  </footer>
+</body>
+</html>
