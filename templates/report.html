@@ -70,8 +70,8 @@
         <p>In this edition</p>
         <a href="#frontier">Frontier developments</a>
         <a href="#technique">Technique deep dive</a>
-        <a href="#book">Book radar</a>
-        <a href="#foundation">Foundations refresher</a>
+        {% if report.book %}<a href="#book">Book radar</a>{% endif %}
+        {% if report.foundation %}<a href="#foundation">Foundations refresher</a>{% endif %}
         <a href="#implications">Cross-cutting implications</a>
         <a href="#sources">Sources</a>
       </aside>
@@ -155,6 +155,7 @@
           <p><strong>Common failure modes.</strong> {{ report.technique.failure_modes }}</p>
         </section>
 
+        {% if report.book %}
         <section id="book" class="report-section book-section">
           <header class="section-heading">
             <p>03 / Reading</p><h2>Book radar</h2><div class="rule"></div>
@@ -176,7 +177,9 @@
             </div>
           </div>
         </section>
+        {% endif %}
 
+        {% if report.foundation %}
         <section id="foundation" class="report-section foundation-section">
           <header class="section-heading">
             <p>04 / Foundations</p><h2>{{ report.foundation.title }}</h2><div class="rule"></div>
@@ -198,6 +201,7 @@
           </div>
           {% endif %}
         </section>
+        {% endif %}
 
         <section id="implications" class="report-section implication-section">
           <header class="section-heading">

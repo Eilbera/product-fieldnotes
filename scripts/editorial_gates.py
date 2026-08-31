@@ -83,13 +83,20 @@ def validate_weekly_report(report: dict[str, Any], recent: dict[str, set[str]]) 
     for item in developments:
         validate_candidate(item)
 
-    checks = (("technique", "techniques"), ("book", "books"), ("foundation", "foundations"))
-    for section, bucket in checks:
-        title = report.get(section, {}).get("title")
-        if not title:
-            raise GateError(f"{section} title is required")
-        if _norm(title) in recent.get(bucket, set()):
-            raise GateError(f"{section} repeated within the rotation window")
+    technique_title = (report.get("technique") or {}).get("title")
+    if not technique_title:
+        raise GateError("technique title is required")
+    if _norm(technique_title) in recent.get("techniques", set()):
+        raise GateError("technique repeated within the rotation window")
+
+    book_title = (report.get("book") or {}).get("title")
+    foundation_title = (report.get("foundation") or {}).get("title")
+    if bool(book_title) == bool(foundation_title):
+        raise GateError("weekly dossier must include either one book or one foundation, not both")
+    if book_title and _norm(book_title) in recent.get("books", set()):
+        raise GateError("book repeated within the rotation window")
+    if foundation_title and _norm(foundation_title) in recent.get("foundations", set()):
+        raise GateError("foundation repeated within the rotation window")
     title = report.get("title")
     if title and _norm(title) in recent.get("framings", set()):
         raise GateError("central framing repeated within the rotation window")

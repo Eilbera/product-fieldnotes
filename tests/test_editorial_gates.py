@@ -64,7 +64,7 @@ def test_weekly_report_has_two_to_four_items_and_no_quota_filler():
         "developments": [strong_candidate(), strong_candidate(title="Second item")],
         "technique": {"title": "A technique"},
         "book": {"title": "A book"},
-        "foundation": {"title": "A foundation"}
+        "foundation": None
     }
     validate_weekly_report(report, recent={"techniques": set(), "books": set(), "foundations": set(), "framings": set()})
     report["developments"] *= 3
@@ -79,7 +79,7 @@ def test_weekly_report_rejects_recent_book_or_foundation():
         "developments": [strong_candidate(), strong_candidate(title="Second item")],
         "technique": {"title": "New technique"},
         "book": {"title": "Crossing the Chasm"},
-        "foundation": {"title": "One-way and two-way doors"}
+        "foundation": None
     }
     recent = {
         "techniques": set(),
@@ -89,6 +89,22 @@ def test_weekly_report_rejects_recent_book_or_foundation():
     }
     with pytest.raises(GateError, match="book repeated"):
         validate_weekly_report(report, recent=recent)
+
+
+def test_weekly_report_requires_exactly_one_book_or_foundation():
+    report = {
+        "edition_type": "weekly_dossier",
+        "title": "Distinct framing",
+        "developments": [strong_candidate(), strong_candidate(title="Second item")],
+        "technique": {"title": "New technique"},
+        "book": {"title": "New book"},
+        "foundation": {"title": "New foundation"}
+    }
+    recent = {"techniques": set(), "books": set(), "foundations": set(), "framings": set()}
+    with pytest.raises(GateError, match="either one book or one foundation"):
+        validate_weekly_report(report, recent=recent)
+    report["foundation"] = None
+    validate_weekly_report(report, recent=recent)
 
 
 def test_rotation_values_read_last_thirty_editions(tmp_path: Path):
@@ -150,6 +166,8 @@ def test_report_template_renders_decision_trigger_labels():
     assert "Act when" in template
     assert "Monitor when" in template
     assert "Ignore when" in template
+    assert "{% if report.book %}" in template
+    assert "{% if report.foundation %}" in template
     assert "Mondays · 7:00 AM PST" in template
     archive = (root / "templates" / "archive.html").read_text()
     assert "Mondays · 7:00 AM PST" in archive

@@ -41,7 +41,7 @@ def load_reports(content_dir: Path | None = None) -> list[dict]:
         for item in report.get("developments", []):
             used_ids.update(map(int, item.get("source_ids", [])))
         for section in ("technique", "book", "foundation"):
-            used_ids.update(map(int, report.get(section, {}).get("source_ids", [])))
+            used_ids.update(map(int, (report.get(section) or {}).get("source_ids", [])))
         if not used_ids.issubset(source_ids):
             raise ValueError(f"{path.name} cites missing sources: {sorted(used_ids - source_ids)}")
         if report.get("edition_type") == "weekly_dossier":
