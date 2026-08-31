@@ -7,14 +7,29 @@ import json
 from pathlib import Path
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
+try:
+    from scripts.editorial_gates import (
+        assert_no_private_leak,
+        recent_rotation_values,
+        validate_weekly_report,
+    )
+except ModuleNotFoundError:  # Direct execution: python scripts/build.py
+    from editorial_gates import (
+        assert_no_private_leak,
+        recent_rotation_values,
+        validate_weekly_report,
+    )
+
 ROOT = Path(__file__).resolve().parents[1]
 CONTENT = ROOT / "content"
 TEMPLATES = ROOT / "templates"
 REPORTS = ROOT / "reports"
+PRIVATE_PROFILE = ROOT / "private" / "ellie-profile.json"
 
-def load_reports() -> list[dict]:
+def load_reports(content_dir: Path | None = None) -> list[dict]:
+    content_dir = content_dir or CONTENT
     reports = []
-    for path in sorted(CONTENT.glob("*.json"), reverse=True):
+    for path in sorted(content_dir.glob("*.json"), reverse=True):
         with path.open(encoding="utf-8") as handle:
             report = json.load(handle)
         required = {"slug", "date", "title", "dek", "developments", "sources"}
@@ -29,6 +44,9 @@ def load_reports() -> list[dict]:
             used_ids.update(map(int, report.get(section, {}).get("source_ids", [])))
         if not used_ids.issubset(source_ids):
             raise ValueError(f"{path.name} cites missing sources: {sorted(used_ids - source_ids)}")
+        if report.get("edition_type") == "weekly_dossier":
+            recent = recent_rotation_values(content_dir, limit=30, exclude_slug=report.get("slug"))
+            validate_weekly_report(report, recent=recent)
         reports.append(report)
     if not reports:
         raise ValueError("No report JSON files found")
@@ -52,6 +70,9 @@ def build() -> None:
         {key: report[key] for key in ("slug", "date", "title", "dek", "reading_time", "topics")}
         for report in reports
     ], indent=2), encoding="utf-8")
+    if PRIVATE_PROFILE.exists():
+        with PRIVATE_PROFILE.open(encoding="utf-8") as handle:
+            assert_no_private_leak(ROOT, json.load(handle))
     print(f"Built {len(reports)} edition(s); latest={latest['slug']}")
 
 if __name__ == "__main__":

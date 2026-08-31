@@ -128,6 +128,10 @@ figcaption { color: var(--muted); font-size: 11px; line-height: 1.45; margin-top
 .novelty-pair > div + div { border-left: 1px solid var(--line); padding-left: 24px; padding-right: 0; }
 .novelty-pair h4 { color: var(--accent); }
 .novelty-pair p { font-size: 14px; margin-bottom: 0; }
+.decision-trigger { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); margin: 34px 0; }
+.decision-trigger > div { background: var(--paper); padding: 20px; }
+.decision-trigger h4 { margin: 0 0 7px; color: var(--accent); font-size: 10px; text-transform: uppercase; letter-spacing: .11em; }
+.decision-trigger p { margin: 0; font-size: 13px; line-height: 1.5; color: var(--muted); }
 .caveat { background: var(--olive-soft); padding: 21px 24px; margin-top: 34px; }
 .caveat strong { font-size: 10px; letter-spacing: .11em; text-transform: uppercase; color: var(--olive); }
 .caveat p { margin: 6px 0 0; font-size: 13px; line-height: 1.55; }
@@ -241,7 +245,7 @@ footer { background: var(--ink); color: var(--paper); padding: 80px 0; }
   .development-index > span { font-size: 34px; }
   .development-index p { margin: 0; }
   .development-index em { margin-left: auto; }
-  .novelty-pair, .use-grid, .foundation-grid { grid-template-columns: 1fr; }
+  .novelty-pair, .decision-trigger, .use-grid, .foundation-grid { grid-template-columns: 1fr; }
   .novelty-pair > div + div { border-left: 0; border-top: 1px solid var(--line); padding-left: 0; }
   .video-card, .video-card.wide { grid-template-columns: 1fr; }
   .book-layout { grid-template-columns: 1fr; }
