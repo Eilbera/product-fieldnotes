@@ -1,176 +1,203 @@
 {
   "slug": "2026-08-31",
   "date": "August 31, 2026",
+  "edition_type": "weekly_dossier",
   "eyebrow": "Senior Product Management Intelligence",
-  "title": "Control moves closer to execution",
-  "dek": "Five developments across organization-managed coding agents, supplier concentration, governed web retrieval, stateful streaming, and production-agent measurement—each tested for novelty and practical consequence.",
-  "reading_time": "16 min read",
-  "edition": "Monday edition",
-  "topics": ["AI products", "Platforms", "Resilience", "Measurement"],
-  "cover_image": "assets/images/2026-08-31-agentic-enterprise-index.jpg",
-  "cover_alt": "Salesforce Agentic Enterprise Index editorial illustration",
-  "cover_caption": "Production-agent telemetry is beginning to reveal distinct deployment shapes rather than one universal maturity path. Image: Salesforce.",
-  "cover_source": "https://www.salesforce.com/news/stories/agentic-enterprise-index-insights-2026",
-  "editor_note": "Novelty gate: this edition excludes category-level launch claims. Bedrock Web Search is labeled a material GA distribution update; organization-managed Copilot agents, stateful BigQuery continuous queries, and longitudinal agent telemetry are meaningful extensions; Cursor’s cutoff is treated as a supplier-risk event, not a new technical category.",
+  "title": "Two control surfaces mature: experiment safety and physical-agent interfaces",
+  "dek": "Two narrow but decision-relevant extensions: one brings targeting and early-harm intervention closer to creator experiments; the other proposes an agent-facing abstraction for heterogeneous physical equipment.",
+  "reading_time": "12 min read",
+  "edition": "Weekly dossier",
+  "topics": [
+    "Experimentation",
+    "Live operations",
+    "Platforms",
+    "Physical AI",
+    "Product risk"
+  ],
+  "cover_image": "assets/images/2026-08-31-roblox-experimentation.png",
+  "cover_alt": "Roblox experimentation platform artwork showing analytics and configuration controls",
+  "cover_caption": "Roblox is bringing targeting, segmented analysis, configuration, and early-harm alerts into one creator workflow. Official image: Roblox.",
+  "cover_source": "https://about.roblox.com/newsroom/2026/08/optimize-testing-live-updates-roblox-analytics-experimentation-platform",
+  "editor_note": "This dossier deliberately selects two developments rather than filling a quota. Both pass the novelty, evidence, senior-PM relevance, and applicability gates, but both are vendor-led previews or releases whose operational promise is ahead of independent outcome evidence.",
   "developments": [
     {
       "number": "01",
-      "label": "Organization control",
+      "label": "Experiment safety",
       "confidence": "Medium",
-      "title": "Shared coding agents become an organization-managed product surface",
-      "what": "GitHub’s August 28 Visual Studio update lets organization and enterprise owners publish custom agents across repositories. Developers can see each agent’s description and organizational source in the picker; the release also adds low, medium, and high reasoning effort, clearer model capability and cost information, and review of commits or uncommitted changes through the Git agent before a pull request.",
-      "new": "The meaningful extension is centralized distribution of specialized agents plus explicit reasoning-cost controls inside the IDE. The capabilities reach every Copilot plan, although sharing requires a GitHub organization.",
-      "not_new": "Repository instructions, assistants, model selectors, and automated review already exist in Copilot and Cursor. This packages familiar capabilities into a governable Visual Studio workflow; it does not invent coding agents.",
-      "why": "An agent can embody team policy but can also spread stale or unsafe instructions at organization scale. Reasoning effort turns quality, latency, and token consumption into explicit product and economic controls rather than hidden implementation details.",
+      "title": "Roblox packages segmented experimentation with early-harm controls",
+      "novelty_class": "meaningful_extension",
+      "novelty_score": 2,
+      "evidence_score": 2,
+      "senior_pm_relevance_score": 2,
+      "applicability_score": 3,
+      "what": "Roblox announced more granular analytics segments, experiment targeting, conditional configuration, real-time performance alerts, and early warnings for experiments that damage key metrics. Its developer documentation says early-harm monitoring covers the first 24 hours and watches for catastrophic deterioration in playtime, average revenue per user, or payer conversion. Result segmentation and early-harm detection are rolling out or marked as coming soon rather than uniformly mature capabilities. A named Uplift Games case describes a social-currency mechanic that induced friend-request spam and pushed players toward private servers, plus a misclassified fish asset that increased crashes and damaged frame rate.",
+      "new": "The material extension is the combination of eligibility targeting, post-test segment cuts, conditional delivery, and a near-real-time harm tripwire inside the same creator workflow. This changes the operating decision from “did the average treatment win?” to “who was eligible, which populations moved differently, and what damage is serious enough to interrupt the test?”",
+      "not_new": "A/B tests, feature configuration, segmentation, telemetry, and automated alerts are established capabilities, and Roblox already had Experiments, Analytics, Configs, and performance monitoring. The closest analogue is Roblox’s own existing experimentation stack and the broader controlled-experiment category—not a new method of causal inference. This is a meaningful workflow integration, not a new experimentation category.",
+      "why": "The senior decision is not whether to add another dashboard. It is whether the organization has explicitly separated three authorities: the metric that determines benefit, the guardrail that can stop exposure, and the owner who may intervene. Segment targeting also creates policy choices because eligibility can improve relevance while quietly changing who receives an opportunity, price, difficulty level, or risk.",
       "apply": [
-        "Pilot one agent on a bounded job such as migration checks before organization-wide publication.",
-        "Assign an owner, version its instructions, and log acceptance, edit, and reversal rates.",
-        "Compare low and high effort on defect escape, latency, and cost per accepted change."
+        "Name one primary outcome and no more than three catastrophic guardrails before exposure begins.",
+        "Define eligibility independently of the hoped-for result and record why each excluded segment is excluded.",
+        "Pre-register a stopping rule, alert recipient, response time, and rollback mechanism.",
+        "Keep assignment and exposure logs after a stop; a safety interruption is operational evidence, not a clean estimate of product lift.",
+        "Treat unplanned segment cuts as follow-up hypotheses unless the analysis plan and statistical power supported them in advance."
       ],
-      "caveat": "Medium confidence; meaningful extension. GitHub provides no comparative quality, productivity, or cost results, so broader deployment should follow a measured pilot.",
-      "source_ids": [1]
+      "usefulness": "Improves the decision about which metrics may stop a production experiment, which users should be eligible, and who owns intervention; the concrete practice change is a kill-switch table in every high-blast-radius experiment brief.",
+      "decision_trigger": {
+        "act_when": "A production experiment can materially damage revenue, retention, trust, or service health before the planned fixed-horizon readout.",
+        "monitor_when": "The announced controls do not support a critical metric or segment, or the sequential decision logic behind the alert remains unclear.",
+        "ignore_when": "Exposure is tiny, the change is offline, harm is readily reversible, and an ordinary pre-committed fixed-horizon readout is sufficient."
+      },
+      "closest_analogue": "Roblox’s existing experimentation stack and established controlled-experiment platforms with segmentation and alerts.",
+      "evidence_basis": "Roblox’s product announcement, detailed developer documentation, and a named first-party creator case; no independent outcome study.",
+      "caveat": "Medium confidence on availability and workflow direction; low-to-medium confidence on outcome impact. More segmentation can increase false discoveries when teams inspect many cuts after seeing the aggregate result. Roblox does not publish the alerting method, false-alarm rate, adoption, or causal impact, and several elements remain forthcoming or in early access.",
+      "source_ids": [1, 2]
     },
     {
       "number": "02",
-      "label": "Supplier risk",
-      "confidence": "High / impact uncertain",
-      "title": "Cursor’s model cutoff makes supplier concentration visible",
-      "what": "Cursor announced on August 14 that SpaceX had completed its acquisition, promising access to more compute and lower-cost in-house models. On August 28, OpenAI said it intended to wind down model supply to Cursor with a proposed November 12 cutoff; CNBC independently reported the planned termination.",
-      "new": "The new event is a concrete withdrawal date for a major upstream capability after a change of control. It converts a theoretical dependency into a timed migration, customer-communication, and continuity problem.",
-      "not_new": "Deplatforming, supplier concentration, and multi-model routing are established concerns. The novelty is the commercial trigger and compressed transition window—not model portability as a concept.",
-      "why": "Supplier incentives can change after acquisitions or competitive moves. A model-neutral interface is not genuine portability when prompts, evaluations, latency targets, economics, and customer expectations are tuned to one provider.",
-      "apply": [
-        "Route representative common, high-value, and worst-case tasks to the replacement stack; compare success, latency, refusals, and margin.",
-        "Inventory customer promises and contract terms that change with the provider.",
-        "Add change-of-control rights and transition assistance to critical-supplier reviews."
-      ],
-      "caveat": "High confidence for the announced cutoff; customer impact remains uncertain. Cursor can substitute models, change its product mix, or negotiate supply, so the event proves exposure rather than a predetermined outcome.",
-      "source_ids": [2, 3, 10]
-    },
-    {
-      "number": "03",
-      "label": "GA distribution update",
-      "confidence": "High",
-      "title": "Managed web grounding creates a separately governable retrieval boundary",
-      "what": "Amazon Bedrock Web Search is a built-in tool through which supported models can search an AWS-maintained index, optionally fetch pages, and return citations. IAM permissions can separately govern search, fetch, and external-web access; AWS also documents regional processing and CloudTrail monitoring.",
-      "new": "Bedrock now makes search grounding a managed primitive rather than a bespoke tool loop, with distinct controls for index search, cached fetch, and live external access. The important delta is operational packaging and governance within Bedrock.",
-      "not_new": "OpenAI web search, Gemini grounding, and third-party search APIs already provide current retrieval. This is a material GA and distribution update, not a new category.",
-      "why": "Teams can expose current information without allowing unconstrained browsing, but a displayed citation does not necessarily mean the full page was fetched: AWS says annotations may remain when fetch authorization fails. Retrieval state therefore belongs in telemetry and user-facing evidence design.",
-      "apply": [
-        "Test index-only, cached-page, and live-web policies against the same evaluation set.",
-        "Distinguish snippet-level from page-level evidence in the interface and logs.",
-        "Measure unsupported claims, source quality, latency, and cost—not citation count alone."
-      ],
-      "caveat": "High confidence for documented operation; material GA rollout. Model and region support are constrained, and independent retrieval-quality comparisons are not available.",
-      "source_ids": [4]
-    },
-    {
-      "number": "04",
-      "label": "Data infrastructure",
+      "label": "Physical AI",
       "confidence": "Medium",
-      "title": "BigQuery adds state to continuous queries",
-      "what": "Google’s August 24–28 release roundup places stateful processing for BigQuery continuous queries in preview. Joins, aggregations, and window functions can now operate directly on streaming queries—for example, computing a rolling 30-minute metric for a downstream application or agent.",
-      "new": "BigQuery continuous queries move from simpler event-by-event processing toward maintaining context across time and streams. For existing BigQuery teams, that can reduce the number of separate systems required for some near-real-time features.",
-      "not_new": "Flink, Kafka Streams, Materialize, and other cloud services already process stateful streams. This is a BigQuery extension, not a new data architecture.",
-      "why": "Fraud detection, onboarding, usage limits, and retention outreach can react to sequences rather than isolated events. Faster execution also makes product decisions about lateness, window definitions, correction logic, and acceptable automated action more consequential.",
+      "title": "Anthropic previews an agent-facing hardware abstraction layer",
+      "novelty_class": "meaningful_extension",
+      "novelty_score": 3,
+      "evidence_score": 2,
+      "senior_pm_relevance_score": 3,
+      "applicability_score": 2,
+      "what": "Anthropic opened a research preview of the Model Hardware Standard, a model-agnostic specification intended to let agents discover and operate programmable laboratory and manufacturing devices through standardized drivers. A proposed driver exposes simple read/write primitives, device capabilities, natural-language metadata, and enforced safety limits; control can occur through MCP, a command-line interface, or code files. Anthropic reports named proofs of concept spanning liquid handlers, robotic arms, microscopes, qPCR equipment, and quantum-laser systems, including a Carnegie Mellon workflow that ran about three times faster and a QuEra controller that recovered laser lock 99.3% of the time. Those figures are vendor-reported partner examples, not independent benchmarks or evidence of safe generalization.",
+      "new": "The delta is not standardized device control by itself. It is an agent-oriented layer that pairs discoverable commands with natural-language physical context and declared safety limits, then lets an agent move between online reasoning and deterministic scripts across multiple devices. The preview also defines a candidate product boundary: device vendors own drivers and limits; agent builders own planning and permission behavior; operators retain responsibility for physical oversight.",
+      "not_new": "SiLA’s laboratory-automation lineage dates to the 2009 release of SiLA 1.x; SiLA 2 already defines discoverable features, commands, properties, error handling, authentication, and interoperable client/server device control. MCP, introduced in 2024, already standardized connections between AI applications and software tools or data sources. The closest analogue is therefore a bridge between mature hardware-interoperability standards and agent tool-use protocols—not the invention of device drivers, lab orchestration, or open protocols.",
+      "why": "A standard can move differentiation upward. If drivers and device discovery become interchangeable, advantage shifts toward workflow design, safety cases, proprietary process knowledge, recovery behavior, and validated outcomes. It also changes partnership strategy by allowing hardware makers to become ecosystem contributors rather than one-off integration projects. The harder product problem is authority, not connectivity: a driver may state what a machine can do, but the product must still decide what the agent may do now, under which conditions, with whose approval, and how people regain control after an unexpected physical state.",
       "apply": [
-        "Prototype one reversible intervention rather than migrating a full pipeline.",
-        "Measure freshness and false-positive cost alongside infrastructure performance.",
-        "Retain a holdout so faster intervention is tested against customer outcomes."
+        "Map the current integration burden by device, protocol, validation work, and specialist time.",
+        "Separate capability metadata from runtime authorization; “the arm can move here” must not imply “this agent may move it now.”",
+        "Prototype one reversible, observable workflow with a deterministic fallback before attempting multi-device autonomy.",
+        "Require simulation or dry-run mode, bounded commands, interlocks, human stop authority, state reconciliation, and incident replay.",
+        "Test portability by replacing the model, agent harness, and one device independently; a nominally open interface is not portable if behavior collapses after substitution."
       ],
-      "caveat": "Medium confidence; meaningful extension. Preview reliability, sustained-load cost, and migration economics versus established stream processors remain unproven.",
-      "source_ids": [5]
-    },
-    {
-      "number": "05",
-      "label": "Production telemetry",
-      "confidence": "Medium",
-      "title": "Agent telemetry points to two deployment shapes—not one maturity ladder",
-      "what": "Salesforce’s August 7 Agentic Enterprise Index studies an aggregated cohort with agents active in production every month from February 2025 through April 2026. It distinguishes high-volume, narrow consumer workflows from lower-volume, multi-step deployments in operationally complex sectors, while reporting growth in agents per organization and completed ‘Agentic Work Units.’",
-      "new": "The useful empirical extension is longitudinal production telemetry suggesting that skill breadth and work volume may represent different deployment strategies rather than sequential rungs on one maturity model.",
-      "not_new": "Vendor usage indexes and ‘work completed’ metrics are established. Salesforce defines the unit on its own platform, and the study does not show that agents caused the commercial outcomes discussed around the data.",
-      "why": "A narrow, high-volume agent needs strong unit economics and exception handling; a multi-step regulated agent needs permissions, auditability, and recovery before scale. Comparing both on one adoption score hides the product decision.",
-      "apply": [
-        "Segment the portfolio by task diversity, volume, reversibility, and exception cost.",
-        "Use cost per successful work unit for narrow flows and human-reviewed completion plus incident severity for complex ones.",
-        "Treat vendor-defined work units as hypotheses until they correlate with retained customer value and margin."
-      ],
-      "caveat": "Medium confidence; meaningful empirical extension. The cohort includes persistent Agentforce users, Salesforce controls the definitions, and survivorship and selection limit causal interpretation.",
-      "image": "assets/images/2026-08-31-agent-escalation-chart.png",
-      "image_alt": "Salesforce chart showing agent conversation volume and escalation rate over time",
-      "image_caption": "Salesforce reports steady escalation rates as conversation volume rises. This is vendor telemetry from a selected platform cohort, not independent causal evidence. Source: Salesforce Agentic Enterprise Index.",
-      "source_ids": [6]
+      "usefulness": "Improves the build-versus-standardize decision for physical-agent products and forces explicit ownership of device capabilities, safety limits, permissions, recovery, and vendor relationships; the immediate artifact is an authority matrix rather than a broad autonomy roadmap.",
+      "decision_trigger": {
+        "act_when": "A roadmap depends on several programmable instruments or robots and bespoke integrations dominate delivery time, validation effort, or safety review.",
+        "monitor_when": "Physical automation is strategic but required devices are outside the preview, lack programmable interfaces, or need independent safety evidence.",
+        "ignore_when": "The product has no physical actuation, uses one stable device, or deterministic orchestration already meets the need at lower risk."
+      },
+      "closest_analogue": "SiLA 2 device interoperability combined with MCP-style agent tool discovery and invocation.",
+      "evidence_basis": "Anthropic’s vendor-produced research preview and named partner proofs of concept, compared against official SiLA and MCP descriptions.",
+      "caveat": "Medium confidence that the abstraction is strategically meaningful; low-to-medium confidence that it will become broadly adopted. Existing laboratory and industrial standards may be extended rather than displaced, and vendors may resist another driver layer. MHS is not yet open source, excludes equipment without programmable interfaces, and still requires expert oversight while safety evaluations remain preview work.",
+      "image": "assets/images/2026-08-31-model-hardware-standard.jpg",
+      "image_alt": "Anthropic Model Hardware Standard research preview artwork depicting connected laboratory equipment",
+      "image_caption": "The proposed standard places an agent-facing layer over heterogeneous programmable equipment. Official research-preview image: Anthropic.",
+      "source_ids": [3, 4, 5]
     }
   ],
   "technique": {
-    "title": "The supplier-exit drill",
-    "problem": "An abstraction layer may technically support several vendors while prompts, evaluations, contracts, operational procedures, and customer promises remain provider-specific. The drill turns claimed optionality into observed switching time and customer impact.",
+    "title": "The pre-registered experiment kill switch",
+    "problem": "Teams often monitor a fixed-horizon A/B test continuously and stop when a graph looks alarming or favorable. Repeated peeking can invalidate ordinary fixed-horizon inference; a credible kill switch must be both an operational control and a pre-specified decision rule.",
+    "lineage": "This technique combines established controlled-experiment practice with sequential monitoring. Its present relevance is operational: early-harm alerts are moving into creator experimentation workflows while experimentation platforms document sequential methods for valid early regression detection.",
     "steps": [
-      {"title": "Choose the exit event", "body": "Test an immediate outage, a 30-day termination, or a 50% price increase. The scenario determines what continuity actually requires."},
-      {"title": "Map dependencies", "body": "Inventory models, APIs, embeddings, fine-tunes, safety filters, data residency, rate limits, contractual rights, and customer-facing claims."},
-      {"title": "Select representative jobs", "body": "Include the most common task, the highest-value task, and the worst credible failure. Average traffic alone will conceal the hard parts."},
-      {"title": "Run the substitute", "body": "Freeze the product version and measure task success, latency, cost, refusals, rework, and segment-specific regressions."},
-      {"title": "Rehearse operations", "body": "Revoke credentials, switch routing, validate logs, notify support and customers, and confirm rollback rather than stopping at an offline comparison."},
-      {"title": "Make the concentration decision", "body": "Fund portability gaps, accept concentration explicitly because the advantage exceeds exit cost, or renegotiate transition terms."}
+      {
+        "title": "Write the decision before the test",
+        "body": "State the primary outcome, minimum useful effect, planned horizon, assignment unit, eligibility criteria, and decision owner."
+      },
+      {
+        "title": "Choose catastrophic guardrails",
+        "body": "Use only harms that justify interruption—such as crash rate, payment failure, severe complaint rate, or material revenue loss. Do not turn every dashboard metric into a veto."
+      },
+      {
+        "title": "Define the tripwire",
+        "body": "Record the harmful direction, practical threshold, minimum exposure, monitoring cadence, and sequentially valid boundary. If the platform supplies only raw fixed-horizon p-values, alerts may trigger investigation but not an automatic statistical conclusion."
+      },
+      {
+        "title": "Design and rehearse the response",
+        "body": "Name the alert owner, response-time objective, rollback path, evidence-preservation steps, and communications owner. Inject a test signal or use a sandbox to verify detection, paging, diagnosis, rollback, and audit logging end to end."
+      },
+      {
+        "title": "Classify the stop",
+        "body": "Distinguish instrumentation failure, implementation defect, genuine customer harm, and statistical noise. Preserve original assignment and exposure data, and document why intervention occurred."
+      },
+      {
+        "title": "Protect the interpretation",
+        "body": "Do not promote a stopped test into a winner. Early evidence can support a safety decision while remaining too weak or biased to estimate durable lift precisely."
+      },
+      {
+        "title": "Retrospect the control",
+        "body": "Review misses, false alarms, time to intervention, affected exposure, and whether the threshold represented customer harm rather than executive discomfort."
+      }
     ],
-    "example": "A research product’s backup model matches aggregate answer scores but changes URL formatting, doubles p95 latency, and cannot meet the same regional-processing promise. The team must normalize citation objects, set provider-specific latency budgets, and revise contracts before it can honestly claim failover.",
-    "use_when": "Use when supplier loss would breach a customer promise, erase margin, or stop critical work; repeat after acquisitions, architectural changes, or contract renewals.",
-    "avoid_when": "Do not fund expensive portability for low-impact components with easy manual replacement. Concentration can be rational when its measured advantage exceeds the exit cost.",
-    "failure_modes": "Testing only output quality; ignoring legal and data terms; using nonrepresentative traffic; never exercising credential revocation; and describing materially degraded service as equivalent.",
-    "source_ids": [2, 3, 10]
+    "example": "A team tests a faster checkout flow. Completed purchase is the primary metric; payment-error rate and duplicate-charge incidence are catastrophic guardrails. Before launch, the team sets a minimum sample, a sequentially adjusted payment-error boundary, immediate shutdown for any confirmed duplicate-charge defect, a 15-minute response target, and feature-flag rollback. Completion rises, but payment errors cross the pre-registered boundary. The owner stops exposure, retains assignment logs, rolls back, and labels the result “safety stop—benefit estimate not decision-grade.” The team repairs and reruns rather than shipping because the objective metric briefly looked positive.",
+    "use_when": "Use when exposure is live, harm can accumulate before the normal readout, rollback is available, instrumentation is trustworthy, and intervention authority can be defined before results appear.",
+    "avoid_when": "Avoid automatic statistical stopping for tiny samples, rare severe events with weak telemetry, treatments that cannot be withdrawn, or high-stakes domains where expert or regulatory review must supersede a platform alert. Stop immediately for a known critical defect rather than waiting for significance.",
+    "failure_modes": "Treating repeated fixed-horizon p-value checks as sequential analysis; selecting thresholds after a graph moves; giving dozens of metrics equal stop authority; stopping on a noisy proxy disconnected from customer harm; losing assignment data during rollback; reading a safety stop as a precise lift estimate; and creating an alert without a named responder or tested rollback.",
+    "mini_template": "Experiment; primary outcome and horizon; assignment unit and eligibility; catastrophic guardrail; customer harm represented; practical threshold; minimum exposure; sequential method and boundary; alert owner; response-time objective; rollback mechanism; evidence to preserve; communication owner; stop classification; rerun conditions.",
+    "source_ids": [2, 6]
   },
-  "book": {
-    "title": "The Probabilistic Product",
-    "author": "Christie Mealo",
-    "context": "O’Reilly Early Release, 2026 · partial-contents assessment",
-    "image": "",
-    "image_alt": "",
-    "image_caption": "",
-    "thesis": "AI-native products require strategy designed for variable outputs, natural-language intent, and changing model supply; adding an AI feature to a deterministic product is not enough. Available chapters cover AI-native products, how AI works, and an ‘intent interface,’ while later strategy and data-moat chapters remain unavailable.",
-    "ideas": [
-      "Probabilistic quality is a product property: teams need distributions, failure classes, and recovery paths rather than a binary acceptance test.",
-      "Intent changes the interface: users specify outcomes while the system chooses steps, making permissions and visible plans part of interaction design.",
-      "AI-native is architectural, not cosmetic: if removing the model leaves the value proposition intact, the product may be AI-assisted rather than AI-native—a useful distinction for cost and defensibility.",
-      "A data moat matters only when rights and feedback convert data into better outcomes. This is a hypothesis inferred from the planned chapter, not a summary of unavailable text."
-    ],
-    "audience": "Product leaders separating an AI-native strategy from feature opportunism and designing around variable output quality.",
-    "limitation": "This is based on publisher material and available early-release contents, not a full-book read. Unavailable strategy, economics, and moat sections make any verdict provisional.",
-    "verdict": "Selective read",
-    "verdict_reason": "Read the available chapters if defining an AI-native thesis now; defer a definitive judgment until the later strategic and economic sections are complete.",
-    "source_ids": [7, 8]
-  },
+  "book": null,
   "foundation": {
-    "title": "One-way and two-way doors",
-    "original": "Amazon’s 2015 shareholder letter distinguishes hard-to-reverse Type 1 decisions from reversible Type 2 decisions and warns against applying slow Type 1 processes to both.",
-    "holds": "Bounded experiments can move quickly. Irreversible data use, contracts, or autonomous financial actions require stronger evidence, authority, and recovery planning.",
-    "misapplied": "Teams often call code ‘reversible’ while ignoring migration cost, customer trust, data persistence, contractual lock-in, or regulatory exposure. Technical rollback is only one dimension of reversibility.",
-    "update": "Score reversibility across technical rollback, data deletion, economic loss, customer remedy, and reputational recovery. Pair door type with observability: an action that is theoretically reversible but cannot be detected promptly still deserves caution.",
-    "question": "Which part of this decision is genuinely reversible, within what time, and for whom?",
+    "title": "Guardrails are constraints, not objectives",
+    "original": "A primary metric answers whether a treatment advances the intended outcome. A guardrail answers whether the path to that outcome creates unacceptable damage. The Roblox case makes the distinction concrete: a mechanism intended to increase social play also produced spam and migration to private servers.",
+    "holds": "Passing guardrails does not prove value: no detected harm is not the same as a useful treatment effect. A guardrail should encode a real boundary tied to customer or system harm, not become a second objective by default.",
+    "misapplied": "If every small fluctuation can block shipment, the metric is functioning as a political veto. Conversely, watching an ordinary fixed-horizon p-value continuously and stopping when it crosses a familiar threshold confuses operational concern with statistically valid early inference.",
+    "update": "Separate interruption from estimation. Use pre-specified thresholds and sequentially valid monitoring when an early statistical decision is needed, preserve assignment data after any intervention, and report a safety stop separately from the estimate of durable benefit.",
+    "question": "Which metric earns the decision, which metric can veto it, and what customer harm authorizes that veto?",
     "video": null,
-    "source_ids": [9]
+    "source_ids": [1, 2, 6]
   },
   "patterns": [
-    {"title": "Control is moving closer to execution", "body": "Organization-distributed agents, reasoning-effort settings, retrieval permissions, and stateful signals make governance part of the operating product rather than a policy applied afterward."},
-    {"title": "Portability must be demonstrated", "body": "A multi-model menu means little without measured substitution quality, economics, contractual continuity, and a customer-safe migration procedure."},
-    {"title": "Real-time capability requires decision design", "body": "Faster signals improve adaptation only when false-positive costs, holdouts, correction rules, and reversibility are explicit."},
-    {"title": "Agent measurement is specializing", "body": "Narrow high-volume work and complex multi-step work need different success, pricing, and risk metrics. More evidence is needed that vendor-defined work units correlate with retained value and margin outside selected cohorts."}
+    {
+      "title": "Control is becoming executable",
+      "body": "Experiment thresholds and hardware limits are moving from policy prose into runtime systems; PMs must specify behavior, ownership, and recovery rather than merely endorse safety."
+    },
+    {
+      "title": "Segmentation and interoperability relocate power",
+      "body": "Segmentation determines who is eligible for a treatment; a standard determines which vendors and components are substitutable. Both are product-strategy decisions disguised as infrastructure."
+    },
+    {
+      "title": "Observability is not authority",
+      "body": "Detecting a harmful metric or discovering a device capability does not answer who may act, how quickly, or under what approval."
+    },
+    {
+      "title": "Vendor evidence explains mechanisms, not generalization",
+      "body": "Both developments show credible product shapes, but neither provides independent portfolio-level evidence of customer or economic impact."
+    },
+    {
+      "title": "Decision tables are the durable artifact",
+      "body": "For experiments, define outcome, veto, and stop owner. For physical agents, define capability, permission, interlock, and recovery owner."
+    }
   ],
   "questions": [
-    "If our primary model or data service disappeared in 30 days, which customer promise would fail first?",
-    "Where are we using one dashboard to compare fundamentally different automation jobs?",
-    "Which real-time intervention lacks a holdout, reversal path, or named owner?"
+    "Which live experiment could accumulate meaningful harm before its planned readout, and is its stop rule statistically and operationally valid?",
+    "Where does our platform confuse technical capability with current authorization—especially for pricing, payments, data changes, or physical action?",
+    "If a new standard commoditized today’s integration layer, which workflow knowledge, safety evidence, or customer outcome would remain defensible?"
   ],
   "week_review": null,
   "sources": [
-    {"id": 1, "title": "GitHub — Copilot in Visual Studio, August update", "url": "https://github.blog/changelog/2026-08-28-github-copilot-in-visual-studio-august-update-2"},
-    {"id": 2, "title": "OpenAI — Decision on Cursor following its acquisition by SpaceX", "url": "https://openai.com/index/our-decision-on-cursor-following-its-acquisition-by-spacex"},
-    {"id": 3, "title": "Cursor — Cursor is now part of SpaceX", "url": "https://cursor.com/blog/joining-spacex"},
-    {"id": 4, "title": "AWS — Web Search for Amazon Bedrock", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/web-search.html"},
-    {"id": 5, "title": "Google Cloud — What’s new with Google Cloud", "url": "https://cloud.google.com/blog/topics/inside-google-cloud/whats-new-google-cloud"},
-    {"id": 6, "title": "Salesforce — Agentic Enterprise Index 2025–2026", "url": "https://www.salesforce.com/news/stories/agentic-enterprise-index-insights-2026"},
-    {"id": 7, "title": "O’Reilly — The Probabilistic Product", "url": "https://www.oreilly.com/library/view/the-probabilistic-product/0642572313111"},
-    {"id": 8, "title": "O’Reilly — The Probabilistic Product table of contents", "url": "https://www.oreilly.com/library/view/the-probabilistic-product/0642572313111/preface01.html"},
-    {"id": 9, "title": "Amazon — 2015 Letter to Shareholders", "url": "https://s2.q4cdn.com/299287126/files/doc_financials/annual/2015-Letter-to-Shareholders.PDF"},
-    {"id": 10, "title": "CNBC — OpenAI to end model access to Cursor", "url": "https://www.cnbc.com/2026/08/29/openai-cursor-spacex-model-access.html"}
+    {
+      "id": 1,
+      "title": "Roblox — Optimize Testing and Live Updates with Analytics and Experimentation",
+      "url": "https://about.roblox.com/newsroom/2026/08/optimize-testing-live-updates-roblox-analytics-experimentation-platform"
+    },
+    {
+      "id": 2,
+      "title": "Roblox Developer Forum — Evolving Experiments and Analytics",
+      "url": "https://devforum.roblox.com/t/evolving-experiments-and-analytics-segmentation-experiment-targeting-early-access-program/4828462"
+    },
+    {
+      "id": 3,
+      "title": "Anthropic — Previewing the Model Hardware Standard",
+      "url": "https://www.anthropic.com/news/model-hardware-standard-research-preview"
+    },
+    {
+      "id": 4,
+      "title": "SiLA — Standards to Power the Lab",
+      "url": "https://sila-standard.com/standards"
+    },
+    {
+      "id": 5,
+      "title": "Anthropic — Introducing the Model Context Protocol",
+      "url": "https://www.anthropic.com/news/model-context-protocol"
+    },
+    {
+      "id": 6,
+      "title": "Statsig Docs — Frequentist Sequential Testing",
+      "url": "https://docs.statsig.com/experiments-plus/sequential-testing"
+    }
   ]
 }

@@ -2,14 +2,15 @@
   {
     "slug": "2026-08-31",
     "date": "August 31, 2026",
-    "title": "Control moves closer to execution",
-    "dek": "Five developments across organization-managed coding agents, supplier concentration, governed web retrieval, stateful streaming, and production-agent measurement\u2014each tested for novelty and practical consequence.",
-    "reading_time": "16 min read",
+    "title": "Two control surfaces mature: experiment safety and physical-agent interfaces",
+    "dek": "Two narrow but decision-relevant extensions: one brings targeting and early-harm intervention closer to creator experiments; the other proposes an agent-facing abstraction for heterogeneous physical equipment.",
+    "reading_time": "12 min read",
     "topics": [
-      "AI products",
+      "Experimentation",
+      "Live operations",
       "Platforms",
-      "Resilience",
-      "Measurement"
+      "Physical AI",
+      "Product risk"
     ]
   },
   {
