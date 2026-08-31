@@ -181,6 +181,7 @@
             <div><h4>Modern update</h4><p>{{ report.foundation["update"] }}</p></div>
           </div>
           <blockquote>{{ report.foundation.question }}</blockquote>
+          {% if report.foundation.video %}
           <div class="video-card wide" data-video-id="{{ report.foundation.video.id }}">
             <button type="button" class="video-poster" aria-label="Play {{ report.foundation.video.title }}">
               <img src="https://i.ytimg.com/vi/{{ report.foundation.video.id }}/hq720.jpg" alt="Video thumbnail for {{ report.foundation.video.title }}" loading="lazy">
@@ -188,6 +189,7 @@
             </button>
             <div class="video-copy"><strong>{{ report.foundation.video.title }}</strong><span>{{ report.foundation.video.channel }} · {{ report.foundation.video.duration }}</span><p>{{ report.foundation.video.note }}</p></div>
           </div>
+          {% endif %}
         </section>
 
         <section id="implications" class="report-section implication-section">
@@ -203,6 +205,7 @@
           </div>
         </section>
 
+        {% if report.week_review %}
         <section class="report-section week-section">
           <header class="section-heading"><p>Friday edition</p><h2>Week in review</h2><div class="rule"></div></header>
           <dl>
@@ -212,6 +215,7 @@
             <div><dt>What to watch</dt><dd>{{ report.week_review.watch }}</dd></div>
           </dl>
         </section>
+        {% endif %}
 
         <section id="sources" class="report-section sources-section">
           <header class="section-heading"><p>Research ledger</p><h2>Sources</h2><div class="rule"></div></header>
