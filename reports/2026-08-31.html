@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Two narrow but decision-relevant extensions: one brings targeting and early-harm intervention closer to creator experiments; the other proposes an agent-facing abstraction for heterogeneous physical equipment.">
-  <meta property="og:title" content="Two control surfaces mature: experiment safety and physical-agent interfaces — Product Fieldnotes">
-  <meta property="og:description" content="Two narrow but decision-relevant extensions: one brings targeting and early-harm intervention closer to creator experiments; the other proposes an agent-facing abstraction for heterogeneous physical equipment.">
+  <meta name="description" content="Roblox is adding earlier safety checks to live experiments. Anthropic is testing a common interface for lab and manufacturing equipment.">
+  <meta property="og:title" content="Safer experiments and shared hardware controls — Product Fieldnotes">
+  <meta property="og:description" content="Roblox is adding earlier safety checks to live experiments. Anthropic is testing a common interface for lab and manufacturing equipment.">
   <meta property="og:image" content="../assets/images/2026-08-31-roblox-experimentation.png">
   <meta name="theme-color" content="#f3f0e8">
-  <title>Two control surfaces mature: experiment safety and physical-agent interfaces — Product Fieldnotes</title>
+  <title>Safer experiments and shared hardware controls — Product Fieldnotes</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
@@ -38,8 +38,8 @@
     <section class="cover shell">
       <div class="cover-copy">
         <p class="eyebrow">Senior Product Management Intelligence</p>
-        <h1>Two control surfaces mature: experiment safety and physical-agent interfaces</h1>
-        <p class="dek">Two narrow but decision-relevant extensions: one brings targeting and early-harm intervention closer to creator experiments; the other proposes an agent-facing abstraction for heterogeneous physical equipment.</p>
+        <h1>Safer experiments and shared hardware controls</h1>
+        <p class="dek">Roblox is adding earlier safety checks to live experiments. Anthropic is testing a common interface for lab and manufacturing equipment.</p>
         <div class="edition-meta">
           <span>August 31, 2026</span><span>12 min read</span><span>Weekly dossier</span>
         </div>
@@ -79,7 +79,7 @@
       <article class="article-body">
         <aside class="editor-note">
           <span>Editorial standard</span>
-          <p>This dossier deliberately selects two developments rather than filling a quota. Both pass the novelty, evidence, senior-PM relevance, and applicability gates, but both are vendor-led previews or releases whose operational promise is ahead of independent outcome evidence.</p>
+          <p>Only two developments cleared this week&#39;s bar. Both come from vendors, so treat the product details as credible and the promised impact as unproven.</p>
         </aside>
 
         <section id="frontier" class="report-section">
@@ -97,21 +97,21 @@
             </div>
             <div class="development-content">
               <h3>Roblox packages segmented experimentation with early-harm controls</h3>
-              <div class="analysis-block"><h4>What it is</h4><p>Roblox announced more granular analytics segments, experiment targeting, conditional configuration, real-time performance alerts, and early warnings for experiments that damage key metrics. Its developer documentation says early-harm monitoring covers the first 24 hours and watches for catastrophic deterioration in playtime, average revenue per user, or payer conversion. Result segmentation and early-harm detection are rolling out or marked as coming soon rather than uniformly mature capabilities. A named Uplift Games case describes a social-currency mechanic that induced friend-request spam and pushed players toward private servers, plus a misclassified fish asset that increased crashes and damaged frame rate.</p></div>
+              <div class="analysis-block"><h4>What it is</h4><p>Roblox is adding audience targeting, segmented results, and early warnings to its experiment tools. The warnings watch the first 24 hours for sharp drops in playtime, revenue, or payer conversion. Some controls are still rolling out, and Roblox shared examples where tests caused spam, crashes, and poor frame rates.</p></div>
               <div class="novelty-pair">
-                <div><h4>What is actually new</h4><p>The material extension is the combination of eligibility targeting, post-test segment cuts, conditional delivery, and a near-real-time harm tripwire inside the same creator workflow. This changes the operating decision from “did the average treatment win?” to “who was eligible, which populations moved differently, and what damage is serious enough to interrupt the test?”</p></div>
-                <div><h4>What is not new</h4><p>A/B tests, feature configuration, segmentation, telemetry, and automated alerts are established capabilities, and Roblox already had Experiments, Analytics, Configs, and performance monitoring. The closest analogue is Roblox’s own existing experimentation stack and the broader controlled-experiment category—not a new method of causal inference. This is a meaningful workflow integration, not a new experimentation category.</p></div>
+                <div><h4>What is actually new</h4><p>The tools now connect audience selection, feature delivery, analysis, and early warnings in one workflow. Teams can ask who was exposed and whether harm warrants an early stop.</p></div>
+                <div><h4>What is not new</h4><p>A/B tests, segmentation, feature flags, and alerts are established tools. Roblox already offered most of them separately. The update joins them; it does not create a new experiment method.</p></div>
               </div>
-              <div class="analysis-block why"><h4>Why it matters</h4><p>The senior decision is not whether to add another dashboard. It is whether the organization has explicitly separated three authorities: the metric that determines benefit, the guardrail that can stop exposure, and the owner who may intervene. Segment targeting also creates policy choices because eligibility can improve relevance while quietly changing who receives an opportunity, price, difficulty level, or risk.</p></div>
+              <div class="analysis-block why"><h4>Why it matters</h4><p>Teams need three clear roles: one metric measures value, a guardrail stops exposure, and a named owner decides when to intervene. Audience targeting also needs review. Eligibility rules can change who receives an offer, price, or risk.</p></div>
               <div class="analysis-block"><h4>How to apply it</h4>
-                <ul><li>Name one primary outcome and no more than three catastrophic guardrails before exposure begins.</li><li>Define eligibility independently of the hoped-for result and record why each excluded segment is excluded.</li><li>Pre-register a stopping rule, alert recipient, response time, and rollback mechanism.</li><li>Keep assignment and exposure logs after a stop; a safety interruption is operational evidence, not a clean estimate of product lift.</li><li>Treat unplanned segment cuts as follow-up hypotheses unless the analysis plan and statistical power supported them in advance.</li></ul>
+                <ul><li>Name one primary outcome and no more than three catastrophic guardrails before exposure begins.</li><li>Define eligibility independently of the hoped-for result and record why each excluded segment is excluded.</li><li>Pre-register a stopping rule, alert recipient, response time, and rollback mechanism.</li><li>Keep assignment and exposure logs after a stop. A safety interruption does not provide a clean estimate of product lift.</li><li>Treat unplanned segment cuts as follow-up hypotheses unless the analysis plan and statistical power supported them in advance.</li></ul>
               </div>
               <div class="decision-trigger" aria-label="Decision trigger">
                 <div><h4>Act when</h4><p>A production experiment can materially damage revenue, retention, trust, or service health before the planned fixed-horizon readout.</p></div>
                 <div><h4>Monitor when</h4><p>The announced controls do not support a critical metric or segment, or the sequential decision logic behind the alert remains unclear.</p></div>
                 <div><h4>Ignore when</h4><p>Exposure is tiny, the change is offline, harm is readily reversible, and an ordinary pre-committed fixed-horizon readout is sufficient.</p></div>
               </div>
-              <div class="caveat"><strong>Evidence & caveat</strong><p>Medium confidence on availability and workflow direction; low-to-medium confidence on outcome impact. More segmentation can increase false discoveries when teams inspect many cuts after seeing the aggregate result. Roblox does not publish the alerting method, false-alarm rate, adoption, or causal impact, and several elements remain forthcoming or in early access.</p></div>
+              <div class="caveat"><strong>Evidence & caveat</strong><p>The workflow is credible, but its impact is unclear. Extra segment cuts can produce false discoveries. Roblox has not published its alerting method, false-alarm rate, adoption, or causal impact.</p></div>
               <p class="source-pointers">Sources <a href="#source-1">[1]</a><a href="#source-2">[2]</a></p>
             </div>
           </section>
@@ -127,21 +127,21 @@
                 <img src="../assets/images/2026-08-31-model-hardware-standard.jpg" alt="Anthropic Model Hardware Standard research preview artwork depicting connected laboratory equipment" loading="lazy">
                 <figcaption>The proposed standard places an agent-facing layer over heterogeneous programmable equipment. Official research-preview image: Anthropic.</figcaption>
               </figure>
-              <div class="analysis-block"><h4>What it is</h4><p>Anthropic opened a research preview of the Model Hardware Standard, a model-agnostic specification intended to let agents discover and operate programmable laboratory and manufacturing devices through standardized drivers. A proposed driver exposes simple read/write primitives, device capabilities, natural-language metadata, and enforced safety limits; control can occur through MCP, a command-line interface, or code files. Anthropic reports named proofs of concept spanning liquid handlers, robotic arms, microscopes, qPCR equipment, and quantum-laser systems, including a Carnegie Mellon workflow that ran about three times faster and a QuEra controller that recovered laser lock 99.3% of the time. Those figures are vendor-reported partner examples, not independent benchmarks or evidence of safe generalization.</p></div>
+              <div class="analysis-block"><h4>What it is</h4><p>Anthropic previewed the Model Hardware Standard, or MHS. It gives agents a common way to discover and control programmable lab or manufacturing equipment. Drivers expose commands and safety limits, and Anthropic has tested the idea with robotic arms, microscopes, liquid handlers, and other equipment.</p></div>
               <div class="novelty-pair">
-                <div><h4>What is actually new</h4><p>The delta is not standardized device control by itself. It is an agent-oriented layer that pairs discoverable commands with natural-language physical context and declared safety limits, then lets an agent move between online reasoning and deterministic scripts across multiple devices. The preview also defines a candidate product boundary: device vendors own drivers and limits; agent builders own planning and permission behavior; operators retain responsibility for physical oversight.</p></div>
-                <div><h4>What is not new</h4><p>SiLA’s laboratory-automation lineage dates to the 2009 release of SiLA 1.x; SiLA 2 already defines discoverable features, commands, properties, error handling, authentication, and interoperable client/server device control. MCP, introduced in 2024, already standardized connections between AI applications and software tools or data sources. The closest analogue is therefore a bridge between mature hardware-interoperability standards and agent tool-use protocols—not the invention of device drivers, lab orchestration, or open protocols.</p></div>
+                <div><h4>What is actually new</h4><p>MHS adds an agent-friendly layer above device drivers. It combines simple commands with plain-language context and declared limits. Agents can reason about a task, then hand precise steps to deterministic code.</p></div>
+                <div><h4>What is not new</h4><p>Device standards already exist. SiLA has supported discoverable lab equipment for years, and MCP already connects agents to software tools. MHS tries to join those two ideas for physical equipment.</p></div>
               </div>
-              <div class="analysis-block why"><h4>Why it matters</h4><p>A standard can move differentiation upward. If drivers and device discovery become interchangeable, advantage shifts toward workflow design, safety cases, proprietary process knowledge, recovery behavior, and validated outcomes. It also changes partnership strategy by allowing hardware makers to become ecosystem contributors rather than one-off integration projects. The harder product problem is authority, not connectivity: a driver may state what a machine can do, but the product must still decide what the agent may do now, under which conditions, with whose approval, and how people regain control after an unexpected physical state.</p></div>
+              <div class="analysis-block why"><h4>Why it matters</h4><p>A common interface could reduce custom integration work. Product advantage would then depend more on workflow design, safety evidence, recovery, and domain knowledge. Teams must still decide what the agent may do and who can stop it.</p></div>
               <div class="analysis-block"><h4>How to apply it</h4>
-                <ul><li>Map the current integration burden by device, protocol, validation work, and specialist time.</li><li>Separate capability metadata from runtime authorization; “the arm can move here” must not imply “this agent may move it now.”</li><li>Prototype one reversible, observable workflow with a deterministic fallback before attempting multi-device autonomy.</li><li>Require simulation or dry-run mode, bounded commands, interlocks, human stop authority, state reconciliation, and incident replay.</li><li>Test portability by replacing the model, agent harness, and one device independently; a nominally open interface is not portable if behavior collapses after substitution.</li></ul>
+                <ul><li>Map the current integration burden by device, protocol, validation work, and specialist time.</li><li>Separate capability from permission. Knowing that an arm can move does not mean an agent may move it now.</li><li>Prototype one reversible, observable workflow with a deterministic fallback before attempting multi-device autonomy.</li><li>Require simulation or dry-run mode, bounded commands, interlocks, human stop authority, state reconciliation, and incident replay.</li><li>Test portability by replacing the model, agent harness, and one device separately. An open interface is useless if substitution breaks the workflow.</li></ul>
               </div>
               <div class="decision-trigger" aria-label="Decision trigger">
                 <div><h4>Act when</h4><p>A roadmap depends on several programmable instruments or robots and bespoke integrations dominate delivery time, validation effort, or safety review.</p></div>
                 <div><h4>Monitor when</h4><p>Physical automation is strategic but required devices are outside the preview, lack programmable interfaces, or need independent safety evidence.</p></div>
                 <div><h4>Ignore when</h4><p>The product has no physical actuation, uses one stable device, or deterministic orchestration already meets the need at lower risk.</p></div>
               </div>
-              <div class="caveat"><strong>Evidence & caveat</strong><p>Medium confidence that the abstraction is strategically meaningful; low-to-medium confidence that it will become broadly adopted. Existing laboratory and industrial standards may be extended rather than displaced, and vendors may resist another driver layer. MHS is not yet open source, excludes equipment without programmable interfaces, and still requires expert oversight while safety evaluations remain preview work.</p></div>
+              <div class="caveat"><strong>Evidence & caveat</strong><p>MHS may matter, but broad adoption is far from certain. Existing standards could absorb the same ideas. MHS is not open source yet, and experts must still supervise physical work.</p></div>
               <p class="source-pointers">Sources <a href="#source-3">[3]</a><a href="#source-4">[4]</a><a href="#source-5">[5]</a></p>
             </div>
           </section>
@@ -152,22 +152,22 @@
             <p>02 / Practice</p><h2>Technique deep dive</h2><div class="rule"></div>
           </header>
           <h3>The pre-registered experiment kill switch</h3>
-          <p class="lead"><strong>Problem it solves.</strong> Teams often monitor a fixed-horizon A/B test continuously and stop when a graph looks alarming or favorable. Repeated peeking can invalidate ordinary fixed-horizon inference; a credible kill switch must be both an operational control and a pre-specified decision rule.</p>
+          <p class="lead"><strong>Problem it solves.</strong> Teams often watch an A/B test and stop when a graph looks good or bad. Repeated peeking can invalidate the result. A credible kill switch needs an operating plan and a pre-set decision rule.</p>
           <ol class="steps">
             <li><span>01</span><div><h4>Write the decision before the test</h4><p>State the primary outcome, minimum useful effect, planned horizon, assignment unit, eligibility criteria, and decision owner.</p></div></li>
-            <li><span>02</span><div><h4>Choose catastrophic guardrails</h4><p>Use only harms that justify interruption—such as crash rate, payment failure, severe complaint rate, or material revenue loss. Do not turn every dashboard metric into a veto.</p></div></li>
-            <li><span>03</span><div><h4>Define the tripwire</h4><p>Record the harmful direction, practical threshold, minimum exposure, monitoring cadence, and sequentially valid boundary. If the platform supplies only raw fixed-horizon p-values, alerts may trigger investigation but not an automatic statistical conclusion.</p></div></li>
-            <li><span>04</span><div><h4>Design and rehearse the response</h4><p>Name the alert owner, response-time objective, rollback path, evidence-preservation steps, and communications owner. Inject a test signal or use a sandbox to verify detection, paging, diagnosis, rollback, and audit logging end to end.</p></div></li>
+            <li><span>02</span><div><h4>Choose catastrophic guardrails</h4><p>Choose only harms that justify interruption, such as crashes, failed payments, severe complaints, or material revenue loss. Do not make every dashboard metric a veto.</p></div></li>
+            <li><span>03</span><div><h4>Define the tripwire</h4><p>Set the harmful direction, threshold, minimum exposure, and monitoring cadence. Use a valid sequential boundary for automatic stops. Otherwise, treat the alert as a reason to investigate.</p></div></li>
+            <li><span>04</span><div><h4>Design and rehearse the response</h4><p>Name the alert owner, response target, rollback path, and communication owner. Test the full response in a sandbox before launch.</p></div></li>
             <li><span>05</span><div><h4>Classify the stop</h4><p>Distinguish instrumentation failure, implementation defect, genuine customer harm, and statistical noise. Preserve original assignment and exposure data, and document why intervention occurred.</p></div></li>
             <li><span>06</span><div><h4>Protect the interpretation</h4><p>Do not promote a stopped test into a winner. Early evidence can support a safety decision while remaining too weak or biased to estimate durable lift precisely.</p></div></li>
             <li><span>07</span><div><h4>Retrospect the control</h4><p>Review misses, false alarms, time to intervention, affected exposure, and whether the threshold represented customer harm rather than executive discomfort.</p></div></li>
           </ol>
-          <div class="worked-example"><span>Worked example</span><p>A team tests a faster checkout flow. Completed purchase is the primary metric; payment-error rate and duplicate-charge incidence are catastrophic guardrails. Before launch, the team sets a minimum sample, a sequentially adjusted payment-error boundary, immediate shutdown for any confirmed duplicate-charge defect, a 15-minute response target, and feature-flag rollback. Completion rises, but payment errors cross the pre-registered boundary. The owner stops exposure, retains assignment logs, rolls back, and labels the result “safety stop—benefit estimate not decision-grade.” The team repairs and reruns rather than shipping because the objective metric briefly looked positive.</p></div>
+          <div class="worked-example"><span>Worked example</span><p>A team tests a faster checkout, using purchases as the main metric and payment errors as a stop condition. Purchases rise, but payment errors cross the pre-set limit. The owner stops the test, saves the logs, rolls back, and fixes the payment path before testing again.</p></div>
           <div class="use-grid">
             <div><h4>Use when</h4><p>Use when exposure is live, harm can accumulate before the normal readout, rollback is available, instrumentation is trustworthy, and intervention authority can be defined before results appear.</p></div>
             <div><h4>Avoid when</h4><p>Avoid automatic statistical stopping for tiny samples, rare severe events with weak telemetry, treatments that cannot be withdrawn, or high-stakes domains where expert or regulatory review must supersede a platform alert. Stop immediately for a known critical defect rather than waiting for significance.</p></div>
           </div>
-          <p><strong>Common failure modes.</strong> Treating repeated fixed-horizon p-value checks as sequential analysis; selecting thresholds after a graph moves; giving dozens of metrics equal stop authority; stopping on a noisy proxy disconnected from customer harm; losing assignment data during rollback; reading a safety stop as a precise lift estimate; and creating an alert without a named responder or tested rollback.</p>
+          <p><strong>Common failure modes.</strong> Do not choose thresholds after results appear. Do not give every metric equal stop authority or stop on a noisy proxy. Keep assignment data, name a responder, and test the rollback.</p>
         </section>
 
 
@@ -176,10 +176,10 @@
             <p>04 / Foundations</p><h2>Guardrails are constraints, not objectives</h2><div class="rule"></div>
           </header>
           <div class="foundation-grid">
-            <div><h4>Original idea</h4><p>A primary metric answers whether a treatment advances the intended outcome. A guardrail answers whether the path to that outcome creates unacceptable damage. The Roblox case makes the distinction concrete: a mechanism intended to increase social play also produced spam and migration to private servers.</p></div>
-            <div><h4>What still holds</h4><p>Passing guardrails does not prove value: no detected harm is not the same as a useful treatment effect. A guardrail should encode a real boundary tied to customer or system harm, not become a second objective by default.</p></div>
-            <div><h4>Common misuse</h4><p>If every small fluctuation can block shipment, the metric is functioning as a political veto. Conversely, watching an ordinary fixed-horizon p-value continuously and stopping when it crosses a familiar threshold confuses operational concern with statistically valid early inference.</p></div>
-            <div><h4>Modern update</h4><p>Separate interruption from estimation. Use pre-specified thresholds and sequentially valid monitoring when an early statistical decision is needed, preserve assignment data after any intervention, and report a safety stop separately from the estimate of durable benefit.</p></div>
+            <div><h4>Original idea</h4><p>The main metric measures value. A guardrail checks whether the test causes unacceptable harm. Roblox showed why this matters: a social feature increased spam and pushed users into private servers.</p></div>
+            <div><h4>What still holds</h4><p>Passing a guardrail does not prove that a feature is useful. A guardrail should mark a real harm boundary. It should not become a second objective.</p></div>
+            <div><h4>Common misuse</h4><p>A small fluctuation should not block every launch. Teams also misuse fixed-horizon statistics when they watch results continuously and stop at a convenient moment.</p></div>
+            <div><h4>Modern update</h4><p>Separate stopping a harmful test from estimating its long-term value. Set thresholds before launch. Preserve the assignment data and report safety stops separately from lift estimates.</p></div>
           </div>
           <blockquote>Which metric earns the decision, which metric can veto it, and what customer harm authorizes that veto?</blockquote>
         </section>
@@ -189,7 +189,7 @@
             <p>05 / Synthesis</p><h2>Cross-cutting implications</h2><div class="rule"></div>
           </header>
           <div class="pattern-list">
-<div><span>01</span><h3>Control is becoming executable</h3><p>Experiment thresholds and hardware limits are moving from policy prose into runtime systems; PMs must specify behavior, ownership, and recovery rather than merely endorse safety.</p></div><div><span>02</span><h3>Segmentation and interoperability relocate power</h3><p>Segmentation determines who is eligible for a treatment; a standard determines which vendors and components are substitutable. Both are product-strategy decisions disguised as infrastructure.</p></div><div><span>03</span><h3>Observability is not authority</h3><p>Detecting a harmful metric or discovering a device capability does not answer who may act, how quickly, or under what approval.</p></div><div><span>04</span><h3>Vendor evidence explains mechanisms, not generalization</h3><p>Both developments show credible product shapes, but neither provides independent portfolio-level evidence of customer or economic impact.</p></div><div><span>05</span><h3>Decision tables are the durable artifact</h3><p>For experiments, define outcome, veto, and stop owner. For physical agents, define capability, permission, interlock, and recovery owner.</p></div>          </div>
+<div><span>01</span><h3>Control is becoming executable</h3><p>Experiment thresholds and hardware limits are moving into runtime systems. PMs need to define behavior, ownership, and recovery.</p></div><div><span>02</span><h3>Segmentation and interoperability relocate power</h3><p>Segmentation decides who receives a treatment. A standard decides which vendors are replaceable. Both choices shape product strategy.</p></div><div><span>03</span><h3>Observability is not authority</h3><p>Detecting a harmful metric or discovering a device capability does not answer who may act, how quickly, or under what approval.</p></div><div><span>04</span><h3>Vendor evidence explains mechanisms, not generalization</h3><p>Both developments show credible product shapes, but neither provides independent portfolio-level evidence of customer or economic impact.</p></div><div><span>05</span><h3>Decision tables are the durable artifact</h3><p>For experiments, define outcome, veto, and stop owner. For physical agents, define capability, permission, interlock, and recovery owner.</p></div>          </div>
           <div class="questions">
             <p>Questions for the next product review</p>
             <ol><li>Which live experiment could accumulate meaningful harm before its planned readout, and is its stop rule statistically and operationally valid?</li><li>Where does our platform confuse technical capability with current authorization—especially for pricing, payments, data changes, or physical action?</li><li>If a new standard commoditized today’s integration layer, which workflow knowledge, safety evidence, or customer outcome would remain defensible?</li></ol>

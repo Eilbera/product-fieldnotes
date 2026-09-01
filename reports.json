@@ -2,8 +2,8 @@
   {
     "slug": "2026-08-31",
     "date": "August 31, 2026",
-    "title": "Two control surfaces mature: experiment safety and physical-agent interfaces",
-    "dek": "Two narrow but decision-relevant extensions: one brings targeting and early-harm intervention closer to creator experiments; the other proposes an agent-facing abstraction for heterogeneous physical equipment.",
+    "title": "Safer experiments and shared hardware controls",
+    "dek": "Roblox is adding earlier safety checks to live experiments. Anthropic is testing a common interface for lab and manufacturing equipment.",
     "reading_time": "12 min read",
     "topics": [
       "Experimentation",

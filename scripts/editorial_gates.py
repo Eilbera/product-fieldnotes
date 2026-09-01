@@ -7,6 +7,11 @@ import re
 from pathlib import Path
 from typing import Any
 
+try:
+    from scripts.readability import validate_readability
+except ModuleNotFoundError:  # Direct execution from scripts/
+    from readability import validate_readability
+
 
 class GateError(ValueError):
     """Raised when an edition or candidate fails a publication gate."""
@@ -100,6 +105,7 @@ def validate_weekly_report(report: dict[str, Any], recent: dict[str, set[str]]) 
     title = report.get("title")
     if title and _norm(title) in recent.get("framings", set()):
         raise GateError("central framing repeated within the rotation window")
+    validate_readability(report)
 
 
 def assert_no_private_leak(root: Path, profile: dict[str, Any]) -> None:

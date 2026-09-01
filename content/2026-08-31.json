@@ -3,8 +3,8 @@
   "date": "August 31, 2026",
   "edition_type": "weekly_dossier",
   "eyebrow": "Senior Product Management Intelligence",
-  "title": "Two control surfaces mature: experiment safety and physical-agent interfaces",
-  "dek": "Two narrow but decision-relevant extensions: one brings targeting and early-harm intervention closer to creator experiments; the other proposes an agent-facing abstraction for heterogeneous physical equipment.",
+  "title": "Safer experiments and shared hardware controls",
+  "dek": "Roblox is adding earlier safety checks to live experiments. Anthropic is testing a common interface for lab and manufacturing equipment.",
   "reading_time": "12 min read",
   "edition": "Weekly dossier",
   "topics": [
@@ -18,7 +18,7 @@
   "cover_alt": "Roblox experimentation platform artwork showing analytics and configuration controls",
   "cover_caption": "Roblox is bringing targeting, segmented analysis, configuration, and early-harm alerts into one creator workflow. Official image: Roblox.",
   "cover_source": "https://about.roblox.com/newsroom/2026/08/optimize-testing-live-updates-roblox-analytics-experimentation-platform",
-  "editor_note": "This dossier deliberately selects two developments rather than filling a quota. Both pass the novelty, evidence, senior-PM relevance, and applicability gates, but both are vendor-led previews or releases whose operational promise is ahead of independent outcome evidence.",
+  "editor_note": "Only two developments cleared this week's bar. Both come from vendors, so treat the product details as credible and the promised impact as unproven.",
   "developments": [
     {
       "number": "01",
@@ -30,26 +30,26 @@
       "evidence_score": 2,
       "senior_pm_relevance_score": 2,
       "applicability_score": 3,
-      "what": "Roblox announced more granular analytics segments, experiment targeting, conditional configuration, real-time performance alerts, and early warnings for experiments that damage key metrics. Its developer documentation says early-harm monitoring covers the first 24 hours and watches for catastrophic deterioration in playtime, average revenue per user, or payer conversion. Result segmentation and early-harm detection are rolling out or marked as coming soon rather than uniformly mature capabilities. A named Uplift Games case describes a social-currency mechanic that induced friend-request spam and pushed players toward private servers, plus a misclassified fish asset that increased crashes and damaged frame rate.",
-      "new": "The material extension is the combination of eligibility targeting, post-test segment cuts, conditional delivery, and a near-real-time harm tripwire inside the same creator workflow. This changes the operating decision from “did the average treatment win?” to “who was eligible, which populations moved differently, and what damage is serious enough to interrupt the test?”",
-      "not_new": "A/B tests, feature configuration, segmentation, telemetry, and automated alerts are established capabilities, and Roblox already had Experiments, Analytics, Configs, and performance monitoring. The closest analogue is Roblox’s own existing experimentation stack and the broader controlled-experiment category—not a new method of causal inference. This is a meaningful workflow integration, not a new experimentation category.",
-      "why": "The senior decision is not whether to add another dashboard. It is whether the organization has explicitly separated three authorities: the metric that determines benefit, the guardrail that can stop exposure, and the owner who may intervene. Segment targeting also creates policy choices because eligibility can improve relevance while quietly changing who receives an opportunity, price, difficulty level, or risk.",
+      "what": "Roblox is adding audience targeting, segmented results, and early warnings to its experiment tools. The warnings watch the first 24 hours for sharp drops in playtime, revenue, or payer conversion. Some controls are still rolling out, and Roblox shared examples where tests caused spam, crashes, and poor frame rates.",
+      "new": "The tools now connect audience selection, feature delivery, analysis, and early warnings in one workflow. Teams can ask who was exposed and whether harm warrants an early stop.",
+      "not_new": "A/B tests, segmentation, feature flags, and alerts are established tools. Roblox already offered most of them separately. The update joins them; it does not create a new experiment method.",
+      "why": "Teams need three clear roles: one metric measures value, a guardrail stops exposure, and a named owner decides when to intervene. Audience targeting also needs review. Eligibility rules can change who receives an offer, price, or risk.",
       "apply": [
         "Name one primary outcome and no more than three catastrophic guardrails before exposure begins.",
         "Define eligibility independently of the hoped-for result and record why each excluded segment is excluded.",
         "Pre-register a stopping rule, alert recipient, response time, and rollback mechanism.",
-        "Keep assignment and exposure logs after a stop; a safety interruption is operational evidence, not a clean estimate of product lift.",
+        "Keep assignment and exposure logs after a stop. A safety interruption does not provide a clean estimate of product lift.",
         "Treat unplanned segment cuts as follow-up hypotheses unless the analysis plan and statistical power supported them in advance."
       ],
-      "usefulness": "Improves the decision about which metrics may stop a production experiment, which users should be eligible, and who owns intervention; the concrete practice change is a kill-switch table in every high-blast-radius experiment brief.",
+      "usefulness": "This clarifies which metrics can stop a live test and who can make that call. Add a kill-switch table to every high-risk experiment brief.",
       "decision_trigger": {
         "act_when": "A production experiment can materially damage revenue, retention, trust, or service health before the planned fixed-horizon readout.",
         "monitor_when": "The announced controls do not support a critical metric or segment, or the sequential decision logic behind the alert remains unclear.",
         "ignore_when": "Exposure is tiny, the change is offline, harm is readily reversible, and an ordinary pre-committed fixed-horizon readout is sufficient."
       },
       "closest_analogue": "Roblox’s existing experimentation stack and established controlled-experiment platforms with segmentation and alerts.",
-      "evidence_basis": "Roblox’s product announcement, detailed developer documentation, and a named first-party creator case; no independent outcome study.",
-      "caveat": "Medium confidence on availability and workflow direction; low-to-medium confidence on outcome impact. More segmentation can increase false discoveries when teams inspect many cuts after seeing the aggregate result. Roblox does not publish the alerting method, false-alarm rate, adoption, or causal impact, and several elements remain forthcoming or in early access.",
+      "evidence_basis": "Roblox published the announcement, documentation, and creator case. No independent outcome study is available.",
+      "caveat": "The workflow is credible, but its impact is unclear. Extra segment cuts can produce false discoveries. Roblox has not published its alerting method, false-alarm rate, adoption, or causal impact.",
       "source_ids": [1, 2]
     },
     {
@@ -62,26 +62,26 @@
       "evidence_score": 2,
       "senior_pm_relevance_score": 3,
       "applicability_score": 2,
-      "what": "Anthropic opened a research preview of the Model Hardware Standard, a model-agnostic specification intended to let agents discover and operate programmable laboratory and manufacturing devices through standardized drivers. A proposed driver exposes simple read/write primitives, device capabilities, natural-language metadata, and enforced safety limits; control can occur through MCP, a command-line interface, or code files. Anthropic reports named proofs of concept spanning liquid handlers, robotic arms, microscopes, qPCR equipment, and quantum-laser systems, including a Carnegie Mellon workflow that ran about three times faster and a QuEra controller that recovered laser lock 99.3% of the time. Those figures are vendor-reported partner examples, not independent benchmarks or evidence of safe generalization.",
-      "new": "The delta is not standardized device control by itself. It is an agent-oriented layer that pairs discoverable commands with natural-language physical context and declared safety limits, then lets an agent move between online reasoning and deterministic scripts across multiple devices. The preview also defines a candidate product boundary: device vendors own drivers and limits; agent builders own planning and permission behavior; operators retain responsibility for physical oversight.",
-      "not_new": "SiLA’s laboratory-automation lineage dates to the 2009 release of SiLA 1.x; SiLA 2 already defines discoverable features, commands, properties, error handling, authentication, and interoperable client/server device control. MCP, introduced in 2024, already standardized connections between AI applications and software tools or data sources. The closest analogue is therefore a bridge between mature hardware-interoperability standards and agent tool-use protocols—not the invention of device drivers, lab orchestration, or open protocols.",
-      "why": "A standard can move differentiation upward. If drivers and device discovery become interchangeable, advantage shifts toward workflow design, safety cases, proprietary process knowledge, recovery behavior, and validated outcomes. It also changes partnership strategy by allowing hardware makers to become ecosystem contributors rather than one-off integration projects. The harder product problem is authority, not connectivity: a driver may state what a machine can do, but the product must still decide what the agent may do now, under which conditions, with whose approval, and how people regain control after an unexpected physical state.",
+      "what": "Anthropic previewed the Model Hardware Standard, or MHS. It gives agents a common way to discover and control programmable lab or manufacturing equipment. Drivers expose commands and safety limits, and Anthropic has tested the idea with robotic arms, microscopes, liquid handlers, and other equipment.",
+      "new": "MHS adds an agent-friendly layer above device drivers. It combines simple commands with plain-language context and declared limits. Agents can reason about a task, then hand precise steps to deterministic code.",
+      "not_new": "Device standards already exist. SiLA has supported discoverable lab equipment for years, and MCP already connects agents to software tools. MHS tries to join those two ideas for physical equipment.",
+      "why": "A common interface could reduce custom integration work. Product advantage would then depend more on workflow design, safety evidence, recovery, and domain knowledge. Teams must still decide what the agent may do and who can stop it.",
       "apply": [
         "Map the current integration burden by device, protocol, validation work, and specialist time.",
-        "Separate capability metadata from runtime authorization; “the arm can move here” must not imply “this agent may move it now.”",
+        "Separate capability from permission. Knowing that an arm can move does not mean an agent may move it now.",
         "Prototype one reversible, observable workflow with a deterministic fallback before attempting multi-device autonomy.",
         "Require simulation or dry-run mode, bounded commands, interlocks, human stop authority, state reconciliation, and incident replay.",
-        "Test portability by replacing the model, agent harness, and one device independently; a nominally open interface is not portable if behavior collapses after substitution."
+        "Test portability by replacing the model, agent harness, and one device separately. An open interface is useless if substitution breaks the workflow."
       ],
-      "usefulness": "Improves the build-versus-standardize decision for physical-agent products and forces explicit ownership of device capabilities, safety limits, permissions, recovery, and vendor relationships; the immediate artifact is an authority matrix rather than a broad autonomy roadmap.",
+      "usefulness": "This sharpens the choice between custom integrations and a shared standard. Start with an authority matrix, not a broad autonomy roadmap.",
       "decision_trigger": {
         "act_when": "A roadmap depends on several programmable instruments or robots and bespoke integrations dominate delivery time, validation effort, or safety review.",
         "monitor_when": "Physical automation is strategic but required devices are outside the preview, lack programmable interfaces, or need independent safety evidence.",
         "ignore_when": "The product has no physical actuation, uses one stable device, or deterministic orchestration already meets the need at lower risk."
       },
       "closest_analogue": "SiLA 2 device interoperability combined with MCP-style agent tool discovery and invocation.",
-      "evidence_basis": "Anthropic’s vendor-produced research preview and named partner proofs of concept, compared against official SiLA and MCP descriptions.",
-      "caveat": "Medium confidence that the abstraction is strategically meaningful; low-to-medium confidence that it will become broadly adopted. Existing laboratory and industrial standards may be extended rather than displaced, and vendors may resist another driver layer. MHS is not yet open source, excludes equipment without programmable interfaces, and still requires expert oversight while safety evaluations remain preview work.",
+      "evidence_basis": "Anthropic published the preview and partner examples. Official SiLA and MCP documents provide the comparison.",
+      "caveat": "MHS may matter, but broad adoption is far from certain. Existing standards could absorb the same ideas. MHS is not open source yet, and experts must still supervise physical work.",
       "image": "assets/images/2026-08-31-model-hardware-standard.jpg",
       "image_alt": "Anthropic Model Hardware Standard research preview artwork depicting connected laboratory equipment",
       "image_caption": "The proposed standard places an agent-facing layer over heterogeneous programmable equipment. Official research-preview image: Anthropic.",
@@ -90,8 +90,8 @@
   ],
   "technique": {
     "title": "The pre-registered experiment kill switch",
-    "problem": "Teams often monitor a fixed-horizon A/B test continuously and stop when a graph looks alarming or favorable. Repeated peeking can invalidate ordinary fixed-horizon inference; a credible kill switch must be both an operational control and a pre-specified decision rule.",
-    "lineage": "This technique combines established controlled-experiment practice with sequential monitoring. Its present relevance is operational: early-harm alerts are moving into creator experimentation workflows while experimentation platforms document sequential methods for valid early regression detection.",
+    "problem": "Teams often watch an A/B test and stop when a graph looks good or bad. Repeated peeking can invalidate the result. A credible kill switch needs an operating plan and a pre-set decision rule.",
+    "lineage": "The technique combines standard experiment design with sequential monitoring. It matters now because platforms are adding live warnings and early-stop controls.",
     "steps": [
       {
         "title": "Write the decision before the test",
@@ -99,15 +99,15 @@
       },
       {
         "title": "Choose catastrophic guardrails",
-        "body": "Use only harms that justify interruption—such as crash rate, payment failure, severe complaint rate, or material revenue loss. Do not turn every dashboard metric into a veto."
+        "body": "Choose only harms that justify interruption, such as crashes, failed payments, severe complaints, or material revenue loss. Do not make every dashboard metric a veto."
       },
       {
         "title": "Define the tripwire",
-        "body": "Record the harmful direction, practical threshold, minimum exposure, monitoring cadence, and sequentially valid boundary. If the platform supplies only raw fixed-horizon p-values, alerts may trigger investigation but not an automatic statistical conclusion."
+        "body": "Set the harmful direction, threshold, minimum exposure, and monitoring cadence. Use a valid sequential boundary for automatic stops. Otherwise, treat the alert as a reason to investigate."
       },
       {
         "title": "Design and rehearse the response",
-        "body": "Name the alert owner, response-time objective, rollback path, evidence-preservation steps, and communications owner. Inject a test signal or use a sandbox to verify detection, paging, diagnosis, rollback, and audit logging end to end."
+        "body": "Name the alert owner, response target, rollback path, and communication owner. Test the full response in a sandbox before launch."
       },
       {
         "title": "Classify the stop",
@@ -122,20 +122,20 @@
         "body": "Review misses, false alarms, time to intervention, affected exposure, and whether the threshold represented customer harm rather than executive discomfort."
       }
     ],
-    "example": "A team tests a faster checkout flow. Completed purchase is the primary metric; payment-error rate and duplicate-charge incidence are catastrophic guardrails. Before launch, the team sets a minimum sample, a sequentially adjusted payment-error boundary, immediate shutdown for any confirmed duplicate-charge defect, a 15-minute response target, and feature-flag rollback. Completion rises, but payment errors cross the pre-registered boundary. The owner stops exposure, retains assignment logs, rolls back, and labels the result “safety stop—benefit estimate not decision-grade.” The team repairs and reruns rather than shipping because the objective metric briefly looked positive.",
+    "example": "A team tests a faster checkout, using purchases as the main metric and payment errors as a stop condition. Purchases rise, but payment errors cross the pre-set limit. The owner stops the test, saves the logs, rolls back, and fixes the payment path before testing again.",
     "use_when": "Use when exposure is live, harm can accumulate before the normal readout, rollback is available, instrumentation is trustworthy, and intervention authority can be defined before results appear.",
     "avoid_when": "Avoid automatic statistical stopping for tiny samples, rare severe events with weak telemetry, treatments that cannot be withdrawn, or high-stakes domains where expert or regulatory review must supersede a platform alert. Stop immediately for a known critical defect rather than waiting for significance.",
-    "failure_modes": "Treating repeated fixed-horizon p-value checks as sequential analysis; selecting thresholds after a graph moves; giving dozens of metrics equal stop authority; stopping on a noisy proxy disconnected from customer harm; losing assignment data during rollback; reading a safety stop as a precise lift estimate; and creating an alert without a named responder or tested rollback.",
-    "mini_template": "Experiment; primary outcome and horizon; assignment unit and eligibility; catastrophic guardrail; customer harm represented; practical threshold; minimum exposure; sequential method and boundary; alert owner; response-time objective; rollback mechanism; evidence to preserve; communication owner; stop classification; rerun conditions.",
+    "failure_modes": "Do not choose thresholds after results appear. Do not give every metric equal stop authority or stop on a noisy proxy. Keep assignment data, name a responder, and test the rollback.",
+    "mini_template": "Record the outcome, horizon, audience, and guardrails. Add the harm threshold, minimum exposure, decision method, owner, response time, and rollback. State what evidence to preserve and when to rerun.",
     "source_ids": [2, 6]
   },
   "book": null,
   "foundation": {
     "title": "Guardrails are constraints, not objectives",
-    "original": "A primary metric answers whether a treatment advances the intended outcome. A guardrail answers whether the path to that outcome creates unacceptable damage. The Roblox case makes the distinction concrete: a mechanism intended to increase social play also produced spam and migration to private servers.",
-    "holds": "Passing guardrails does not prove value: no detected harm is not the same as a useful treatment effect. A guardrail should encode a real boundary tied to customer or system harm, not become a second objective by default.",
-    "misapplied": "If every small fluctuation can block shipment, the metric is functioning as a political veto. Conversely, watching an ordinary fixed-horizon p-value continuously and stopping when it crosses a familiar threshold confuses operational concern with statistically valid early inference.",
-    "update": "Separate interruption from estimation. Use pre-specified thresholds and sequentially valid monitoring when an early statistical decision is needed, preserve assignment data after any intervention, and report a safety stop separately from the estimate of durable benefit.",
+    "original": "The main metric measures value. A guardrail checks whether the test causes unacceptable harm. Roblox showed why this matters: a social feature increased spam and pushed users into private servers.",
+    "holds": "Passing a guardrail does not prove that a feature is useful. A guardrail should mark a real harm boundary. It should not become a second objective.",
+    "misapplied": "A small fluctuation should not block every launch. Teams also misuse fixed-horizon statistics when they watch results continuously and stop at a convenient moment.",
+    "update": "Separate stopping a harmful test from estimating its long-term value. Set thresholds before launch. Preserve the assignment data and report safety stops separately from lift estimates.",
     "question": "Which metric earns the decision, which metric can veto it, and what customer harm authorizes that veto?",
     "video": null,
     "source_ids": [1, 2, 6]
@@ -143,11 +143,11 @@
   "patterns": [
     {
       "title": "Control is becoming executable",
-      "body": "Experiment thresholds and hardware limits are moving from policy prose into runtime systems; PMs must specify behavior, ownership, and recovery rather than merely endorse safety."
+      "body": "Experiment thresholds and hardware limits are moving into runtime systems. PMs need to define behavior, ownership, and recovery."
     },
     {
       "title": "Segmentation and interoperability relocate power",
-      "body": "Segmentation determines who is eligible for a treatment; a standard determines which vendors and components are substitutable. Both are product-strategy decisions disguised as infrastructure."
+      "body": "Segmentation decides who receives a treatment. A standard decides which vendors are replaceable. Both choices shape product strategy."
     },
     {
       "title": "Observability is not authority",
