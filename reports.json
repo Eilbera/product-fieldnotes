@@ -1,5 +1,19 @@
 [
   {
+    "slug": "2026-09-07",
+    "date": "September 7, 2026",
+    "title": "Bundles, adaptive inference, and bounded commerce agents",
+    "dek": "Salesforce redraws its suite boundaries. Google lets Gemini choose which parts of a video to inspect. Anthropic turns commerce-agent authority into inspectable code.",
+    "reading_time": "18 min read",
+    "topics": [
+      "Pricing and packaging",
+      "Product architecture",
+      "AI evaluation",
+      "Commerce agents",
+      "Customer research"
+    ]
+  },
+  {
     "slug": "2026-08-31",
     "date": "August 31, 2026",
     "title": "Safer experiments and shared hardware controls",

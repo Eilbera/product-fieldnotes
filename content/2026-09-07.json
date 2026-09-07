@@ -1,0 +1,265 @@
+{
+  "slug": "2026-09-07",
+  "date": "September 7, 2026",
+  "edition_type": "weekly_dossier",
+  "eyebrow": "Senior Product Management Intelligence",
+  "title": "Bundles, adaptive inference, and bounded commerce agents",
+  "dek": "Salesforce redraws its suite boundaries. Google lets Gemini choose which parts of a video to inspect. Anthropic turns commerce-agent authority into inspectable code.",
+  "reading_time": "18 min read",
+  "edition": "Weekly dossier",
+  "topics": [
+    "Pricing and packaging",
+    "Product architecture",
+    "AI evaluation",
+    "Commerce agents",
+    "Customer research"
+  ],
+  "cover_image": "assets/images/2026-09-07-salesforce-editions.jpg",
+  "cover_alt": "Salesforce artwork for the Core, Advanced, and Max product editions",
+  "cover_caption": "Salesforce now bundles AI capacity, collaboration, analytics, security, and support in a three-tier edition ladder. Official image: Salesforce.",
+  "cover_source": "https://www.salesforce.com/news/stories/salesforce-simplifies-editions-2026",
+  "editor_note": "Three developments cleared this week's bar. The mechanisms are documented, but the outcome claims still come from vendors. Treat the product changes as real and their broader impact as unproven.",
+  "developments": [
+    {
+      "number": "01",
+      "label": "Pricing and packaging",
+      "confidence": "High",
+      "title": "Salesforce makes packaging part of the suite architecture",
+      "novelty_class": "meaningful_extension",
+      "novelty_score": 2,
+      "evidence_score": 3,
+      "senior_pm_relevance_score": 3,
+      "applicability_score": 3,
+      "what": "Salesforce introduced Core, Advanced, and Max editions for Agentforce Sales, Service, and Industries. Each combines AI, Slack, analytics, security, support, and a pool of Flex Credits. Published US prices are $195, $395, and $550 per user each month.",
+      "new": "The entitlement architecture has changed. Salesforce moved more adjacent products and initial agent capacity inside the main edition ladder. Max keeps the previous $550 starting price while raising included credits from one million to 2.75 million per organization.",
+      "not_new": "Salesforce bundled AI, Slack, Data Cloud, Tableau Next, and one million credits in Agentforce 1 Editions in 2025. It already offered several consumption-payment models. The new release broadens that bundle rather than inventing suite pricing.",
+      "why": "Packaging now states which capabilities belong together. The bundle may shorten procurement, but it can also hide shelfware and future credit costs. Competitors must choose whether to specialize, attach to the suite, or own a workflow the suite handles poorly.",
+      "apply": [
+        "Redraw the competitive map around entitlements rather than product names.",
+        "Model the first contract year separately from steady-state usage and renewal.",
+        "Identify which component controls data, daily work, governance, and renewal leverage.",
+        "Run win-loss interviews about the complete buying decision, including alternatives and procurement constraints.",
+        "Give buyers low, expected, and high usage forecasts with the assumptions exposed."
+      ],
+      "usefulness": "Use this change to revisit a suite-versus-specialist choice, migration economics, or displacement risk from included usage.",
+      "decision_trigger": {
+        "act_when": "A major competitor can include your category in an existing enterprise agreement, or your roadmap assumes customers will assemble several adjacent tools.",
+        "monitor_when": "Your buyers use Salesforce, but adoption depends on implementation quality, credit burn, regional availability, or the next renewal.",
+        "ignore_when": "Your product serves another buyer, owns a specialized regulated workflow, or proves an outcome that customers will fund separately."
+      },
+      "closest_analogue": "The 2025 Agentforce 1 bundle, which joined AI, Slack, Data Cloud, Tableau Next, and consumption credits at the same Max starting price.",
+      "evidence_basis": "Salesforce's current announcement, its 2025 pricing announcement, and its buying-model documentation support the packaging comparison.",
+      "caveat": "Salesforce supplied the evidence. List prices and availability can vary by region and contract. A broad entitlement does not prove implementation, repeat use, or customer value.",
+      "source_ids": [1, 6, 7]
+    },
+    {
+      "number": "02",
+      "label": "Inference economics",
+      "confidence": "Medium",
+      "title": "Gemini makes video inspection adaptive",
+      "novelty_class": "meaningful_extension",
+      "novelty_score": 2,
+      "evidence_score": 2,
+      "senior_pm_relevance_score": 3,
+      "applicability_score": 2,
+      "image": "assets/images/2026-09-07-agentic-video.png",
+      "image_alt": "Google artwork illustrating Gemini inspecting selected segments of a video",
+      "image_caption": "Gemini can search a video, revisit selected intervals, and use frames, audio, or transcripts as needed. Official image: Google.",
+      "what": "Google released agentic video understanding for three Gemini Flash models. The model can search, scan, and revisit chosen intervals across frames, audio, and transcripts. It does not have to process an entire video at one fixed rate.",
+      "new": "The model now decides what to inspect, which modality to use, and when to resample a short interval. Attention allocation has become product behavior instead of a fixed preprocessing choice. Evaluation must test whether the system looked in the right place.",
+      "not_new": "Gemini already described videos, extracted details, answered questions, and cited timestamps. Static processing remains the default. Google's Agentic Vision applied active inspection to still images, while developers could build selective-sampling pipelines themselves.",
+      "why": "Adaptive inspection may make long recordings, inspections, and support libraries affordable. The economics bring a different failure mode: a cheap answer can be wrong because the model skipped one decisive second. Average benchmark quality can conceal that miss.",
+      "apply": [
+        "Segment evaluation by video length, event duration, motion speed, audio dependence, and the consequence of a miss.",
+        "Log sampled windows, frame rates, modalities, tool calls, latency, tokens, and final confidence.",
+        "Compare adaptive and static processing on the same task set and production-like traffic mix.",
+        "Price against successful work rather than input minutes or tokens alone.",
+        "Use denser sampling or human review when the search remains uncertain."
+      ],
+      "usefulness": "Use this release to test whether selective inspection makes an uneconomic long-video workflow viable. Redesign evaluation around evidence retrieval, not final-answer scoring alone.",
+      "decision_trigger": {
+        "act_when": "Video length or sparse events make current inference too expensive, or fixed-rate sampling misses brief but important moments.",
+        "monitor_when": "The task requires regulated accuracy, private-video handling, predictable latency, or independent benchmark evidence that Google has not supplied.",
+        "ignore_when": "Clips are short, static sampling meets the quality floor, or video is incidental to the user outcome."
+      },
+      "closest_analogue": "Google's Agentic Vision for still images, extended to temporal media with active selection across frames, audio, and transcripts.",
+      "evidence_basis": "Google's launch post explains the mechanism and benchmark results. Current Gemini documentation and the earlier Agentic Vision announcement establish the comparison.",
+      "caveat": "Google reports maximum token, cost, and accuracy gains from its own tests. Those results may not transfer to another domain, latency target, or false-negative cost.",
+      "source_ids": [2, 4, 5]
+    },
+    {
+      "number": "03",
+      "label": "Commerce agents",
+      "confidence": "High on design",
+      "title": "Anthropic publishes the operating boundary, not another demo",
+      "novelty_class": "meaningful_extension",
+      "novelty_score": 2,
+      "evidence_score": 3,
+      "senior_pm_relevance_score": 3,
+      "applicability_score": 3,
+      "what": "Anthropic published an Apache-2.0 reference blueprint for shopping and merchant agents. It contains prompts, skills, tool contracts, gates, runtimes, tests, and fictional examples. Merchant changes remain staged until a person approves them.",
+      "new": "Shopping and merchant agents already exist. The useful addition is inspectable code for both roles, with action boundaries built into the workflow. Shared contracts separate agent logic from catalog, cart, order, analytics, and campaign systems.",
+      "not_new": "Amazon Rufus has supported shopping questions and comparisons since 2024. Shopify Sidekick already helps merchants with store operations. Anthropic offers a reusable implementation rather than a new category or industry standard.",
+      "why": "The code exposes a decision that agent roadmaps often blur: who may change state. Search, cart construction, repricing, and payment need separate authority rules. Teams can also inspect which parts are generic and which controls they must own.",
+      "apply": [
+        "Map the workflow before evaluating the reference code.",
+        "Classify every step as a read, recommendation, draft, staged write, committed write, or external consequence.",
+        "Assign a product owner and system owner to each consequential action.",
+        "Keep credentials outside the model and enforce identity, limits, order, and policy in server-side code.",
+        "Test stale inventory, conflicting policies, unavailable products, prompt injection, rejected approvals, and partial writes with fictional data."
+      ],
+      "usefulness": "Use the repository to turn a vague commerce-agent roadmap into a scoped prototype, an authority matrix, and a build-versus-buy decision.",
+      "decision_trigger": {
+        "act_when": "A roadmap includes shopping or merchant automation without separating advice from actions that change prices, inventory, orders, or spend.",
+        "monitor_when": "Commerce agents matter strategically, but production authentication, payment, compliance, or platform connectors remain unresolved.",
+        "ignore_when": "The workflow is simple retrieval, deterministic automation works, or the organization cannot staff approval and incident response."
+      },
+      "closest_analogue": "Amazon Rufus on the buyer side and Shopify Sidekick on the merchant side, combined in a reusable reference implementation.",
+      "evidence_basis": "Anthropic's public repository provides the code, documentation, examples, tests, and license. Amazon and Shopify documents establish the closest product comparisons.",
+      "caveat": "The examples use fictional companies and data. The blueprint leaves business rules, authorization, compliance, live integrations, and production outcomes to the company deploying it.",
+      "source_ids": [3, 8, 9]
+    }
+  ],
+  "technique": {
+    "title": "The agent authority blueprint",
+    "problem": "Agent roadmaps describe what a system can do, then blur what it may do. That ambiguity reaches permissions, approval screens, backlog items, and incident response.",
+    "lineage": "Service blueprints map people, systems, processes, and evidence behind customer touchpoints. This method adds explicit authority gates and recovery paths to that map.",
+    "steps": [
+      {
+        "title": "Fix one journey and outcome",
+        "body": "Choose one complete job. Name the customer outcome, business outcome, and unacceptable harm. Do not map the entire product."
+      },
+      {
+        "title": "Draw the service spine",
+        "body": "List each visible user step. Add the agent's reasoning, tools, source systems, human roles, and resulting state changes beneath it."
+      },
+      {
+        "title": "Classify every action",
+        "body": "Use the lowest authority that completes the job: observe, explain, recommend, draft, stage, execute, or prohibited. Capability does not earn authority. Evidence does."
+      },
+      {
+        "title": "Define each gate",
+        "body": "Record identity, evidence, policy checks, limits, confirmation, audit events, rollback, and owner. Keep deterministic rules in deterministic code."
+      },
+      {
+        "title": "Design refusal and handoff",
+        "body": "Specify what happens when evidence conflicts, a tool fails, approval expires, or policy has no answer. Send the collected evidence with the case."
+      },
+      {
+        "title": "Rehearse bad paths",
+        "body": "Test stale data, malicious instructions, duplicate requests, partial writes, rejected approvals, and unavailable owners. Check both customer experience and backstage recovery."
+      },
+      {
+        "title": "Promote authority with evidence",
+        "body": "Launch one level below the desired state. Track wrong actions, overrides, false refusals, time saved, and recovery. Promote one action at a time."
+      }
+    ],
+    "example": "A merchant asks an agent to improve margin on slow stock. The agent reads sales and policy, drafts a promotion, then stages it after deterministic checks. A merchandising lead approves it, and the backend keeps the prior state for rollback.",
+    "use_when": "Use this when agents touch money, permissions, customer communications, inventory, records, or external systems. It also helps teams settle where a person belongs in the workflow.",
+    "avoid_when": "Skip the full method for pure retrieval, low-risk drafting, or deterministic workflows. In regulated settings, use it alongside legal, security, safety, and domain review.",
+    "failure_modes": "Do not map authority without an owner. Do not call a write reversible when recovery is slow. Avoid one generic confirmation for actions with different consequences.",
+    "mini_template": "Record the journey, outcomes, harm, action, authority level, evidence, policy check, limit, owner, approval expiry, explanation, audit event, rollback, handoff, and promotion evidence.",
+    "source_ids": [3, 10, 11]
+  },
+  "book": null,
+  "foundation": {
+    "title": "Jobs to Be Done starts with a switch",
+    "original": "Jobs to Be Done explains choices through the circumstances and forces around a decision. The job is the progress someone seeks. It includes functional, social, and emotional dimensions.",
+    "holds": "The useful unit is a real decision in context. Products compete with any option a person might hire for progress, including a workaround, delay, or doing nothing.",
+    "misapplied": "Teams turn jobs into polished aspirations and ask customers whether they agree. That removes the decision story. A job is also not a segment label; circumstances can change while demographics stay fixed.",
+    "update": "Interview five recent switchers before changing positioning or packaging. Reconstruct the first thought, push from the old way, alternatives, anxieties, and first evidence of progress. Compare the stories with observed behavior.",
+    "question": "Which circumstance causes a customer to switch, and which part of our product reduces the anxiety of that switch?",
+    "video": null,
+    "source_ids": [12]
+  },
+  "patterns": [
+    {
+      "title": "Entitlements are product architecture",
+      "body": "A bundle decides which products share procurement, data, support, and renewal pressure. Review those boundaries as carefully as technical platform boundaries."
+    },
+    {
+      "title": "Inference policy is a product variable",
+      "body": "Adaptive video inspection changes cost and quality through the path the model takes. Logs and evaluations need to capture that path."
+    },
+    {
+      "title": "Authority should be narrower than capability",
+      "body": "An agent can prepare a useful action before it earns permission to commit it. Product specifications should name that boundary for every action."
+    },
+    {
+      "title": "Working code raises the bar for roadmaps",
+      "body": "Teams can inspect a commerce pattern instead of debating a demo. Custom work now needs a clear advantage in data, workflow, controls, or distribution."
+    },
+    {
+      "title": "Vendor evidence has a narrow job",
+      "body": "Vendor material can establish price, mechanism, and code. It cannot prove adoption, customer economics, or durable outcomes in another setting."
+    }
+  ],
+  "questions": [
+    "If a suite includes our category at low apparent cost, which completed customer job still earns a separate budget?",
+    "Which costly video workflow might become viable with selective inspection, and what expensive miss must its benchmark represent?",
+    "For each agent action that changes state, can we name the authority level, policy gate, owner, audit event, and rollback path?"
+  ],
+  "week_review": null,
+  "sources": [
+    {
+      "id": 1,
+      "title": "Salesforce: New editions bundle Agentforce and data products",
+      "url": "https://www.salesforce.com/news/stories/salesforce-simplifies-editions-2026"
+    },
+    {
+      "id": 2,
+      "title": "Google: Introducing agentic video understanding with Gemini",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-agentic-video-in-gemini"
+    },
+    {
+      "id": 3,
+      "title": "Anthropic: Commerce Agents reference blueprint",
+      "url": "https://github.com/anthropics/commerce-agents"
+    },
+    {
+      "id": 4,
+      "title": "Google: Agentic Vision in Gemini 3 Flash",
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/agentic-vision-gemini-3-flash"
+    },
+    {
+      "id": 5,
+      "title": "Google AI for Developers: Video understanding",
+      "url": "https://ai.google.dev/gemini-api/docs/video-understanding"
+    },
+    {
+      "id": 6,
+      "title": "Salesforce: Agentforce pricing update 2025",
+      "url": "https://www.salesforce.com/news/stories/pricing-update-2025"
+    },
+    {
+      "id": 7,
+      "title": "Salesforce: Flexible buying models",
+      "url": "https://www.salesforce.com/pricing/flexible-buying-models"
+    },
+    {
+      "id": 8,
+      "title": "Amazon: How to use Rufus",
+      "url": "https://www.aboutamazon.com/news/retail/how-to-use-amazon-rufus"
+    },
+    {
+      "id": 9,
+      "title": "Shopify: Magic and Sidekick",
+      "url": "https://www.shopify.com/magic"
+    },
+    {
+      "id": 10,
+      "title": "Nielsen Norman Group: Service Blueprints definition",
+      "url": "https://www.nngroup.com/articles/service-blueprints-definition"
+    },
+    {
+      "id": 11,
+      "title": "OWASP: Top 10 for LLM Applications",
+      "url": "https://owasp.org/www-project-top-10-for-large-language-model-applications"
+    },
+    {
+      "id": 12,
+      "title": "Christensen Institute: Jobs to Be Done Theory",
+      "url": "https://www.christenseninstitute.org/theory/jobs-to-be-done"
+    }
+  ]
+}

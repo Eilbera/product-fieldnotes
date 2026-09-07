@@ -70,7 +70,7 @@ def recent_rotation_values(content_dir: Path, limit: int = 30, exclude_slug: str
             report = json.load(handle)
         mapping = (("technique", "techniques"), ("book", "books"), ("foundation", "foundations"))
         for section, bucket in mapping:
-            title = report.get(section, {}).get("title")
+            title = (report.get(section) or {}).get("title")
             if title:
                 recent[bucket].add(_norm(title))
         if report.get("title"):

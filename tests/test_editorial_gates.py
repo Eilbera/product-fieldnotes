@@ -123,6 +123,20 @@ def test_rotation_values_read_last_thirty_editions(tmp_path: Path):
     assert len(recent["books"]) == 30
 
 
+def test_rotation_values_accept_null_sections(tmp_path: Path):
+    content = tmp_path / "content"
+    content.mkdir()
+    (content / "2026-02-01.json").write_text(json.dumps({
+        "title": "A weekly framing",
+        "technique": {"title": "A technique"},
+        "book": None,
+        "foundation": {"title": "A foundation"}
+    }))
+    recent = recent_rotation_values(content, limit=30)
+    assert recent["books"] == set()
+    assert recent["foundations"] == {"a foundation"}
+
+
 def test_rotation_values_can_exclude_current_edition(tmp_path: Path):
     content = tmp_path / "content"
     content.mkdir()
