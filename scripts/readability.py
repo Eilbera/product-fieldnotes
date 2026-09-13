@@ -26,6 +26,7 @@ SKIP_KEYS = {"sources", "source_ids", "url", "id", "image", "cover_image", "vide
 
 
 def _sentences(text: str) -> list[str]:
+    text = re.sub(r"\[\d+\]", "", text)
     return [part.strip() for part in re.split(r"(?<=[.!?])\s+", text.strip()) if part.strip()]
 
 

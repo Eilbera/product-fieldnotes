@@ -12,12 +12,14 @@ try:
         assert_no_private_leak,
         recent_rotation_values,
         validate_weekly_report,
+        validate_learning_report,
     )
 except ModuleNotFoundError:  # Direct execution: python scripts/build.py
     from editorial_gates import (
         assert_no_private_leak,
         recent_rotation_values,
         validate_weekly_report,
+        validate_learning_report,
     )
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -33,6 +35,8 @@ def load_reports(content_dir: Path | None = None) -> list[dict]:
         with path.open(encoding="utf-8") as handle:
             report = json.load(handle)
         required = {"slug", "date", "title", "dek", "developments", "sources"}
+        if report.get("edition_type") == "learning_edition":
+            required.discard("developments")
         missing = required - report.keys()
         if missing:
             raise ValueError(f"{path.name} missing: {', '.join(sorted(missing))}")
@@ -44,6 +48,8 @@ def load_reports(content_dir: Path | None = None) -> list[dict]:
             used_ids.update(map(int, (report.get(section) or {}).get("source_ids", [])))
         if not used_ids.issubset(source_ids):
             raise ValueError(f"{path.name} cites missing sources: {sorted(used_ids - source_ids)}")
+        if report.get("edition_type") == "learning_edition":
+            validate_learning_report(report)
         if report.get("edition_type") == "weekly_dossier":
             recent = recent_rotation_values(content_dir, limit=30, exclude_slug=report.get("slug"))
             validate_weekly_report(report, recent=recent)

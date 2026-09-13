@@ -1,0 +1,77 @@
+{% macro prose(text) -%}
+{% for part in text.split('[') %}{% if loop.first %}{{ part }}{% elif ']' in part and part.split(']')[0].isdigit() %}<a href="#source-{{ part.split(']')[0] }}">[{{ part.split(']')[0] }}]</a>{{ part.split(']', 1)[1] }}{% else %}[{{ part }}{% endif %}{% endfor %}
+{%- endmacro %}
+{% macro example(item) %}
+<div class="worked-example"><h3>{{ item.label }}</h3>
+{% for key, label in [('situation','Starting situation'),('input','Inputs'),('alternatives','Alternatives'),('decision','Decision'),('artifact','Resulting artifact'),('limitations','Limits')] %}
+<h4>{{ label }}</h4><p>{{ prose(item[key]) }}</p>
+{% endfor %}</div>
+{% endmacro %}
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="{{ report.dek }}">
+<title>{{ report.title }} — Product Fieldnotes</title>
+<link rel="stylesheet" href="{{ base }}assets/css/site.css">
+<script defer src="{{ base }}assets/js/site.js"></script>
+</head>
+<body>
+<div class="reading-progress" aria-hidden="true"><span></span></div>
+<a class="skip-link" href="#report">Skip to report</a>
+<header class="site-header"><div class="shell header-inner">
+<a class="brand" href="{{ base }}index.html"><span class="brand-mark">PF</span><span>Product Fieldnotes</span></a>
+<nav aria-label="Primary navigation"><a href="{{ base }}index.html">Latest</a><a href="{{ base }}archive.html">Archive</a></nav>
+<button class="theme-toggle" type="button" aria-label="Toggle color theme">◐</button>
+</div></header>
+<main id="report">
+<section class="shell"><div class="cover-copy">
+<p class="eyebrow">PM learning edition · General professional learning</p>
+<h1>{{ report.title }}</h1><p class="dek">{{ report.dek }}</p>
+<div class="edition-meta"><span>{{ report.date }}</span><span>{{ report.reading_time }}</span></div>
+<div class="topic-row">{% for topic in report.topics %}<span>{{ topic }}</span>{% endfor %}</div>
+</div></section>
+<div class="report-layout shell">
+<aside class="toc" aria-label="On this page"><p>In this edition</p>
+<a href="#practice">Practice lesson</a>{% if report.book %}<a href="#book">Book assessment</a>{% endif %}
+{% if report.foundation %}<a href="#foundation">Foundation through a decision</a>{% endif %}
+{% if report.developments %}<a href="#frontier">Frontier radar</a>{% endif %}<a href="#sources">Sources</a></aside>
+<article class="article-body">
+<aside class="editor-note"><span>Editorial basis</span><p>{{ report.editor_note }}</p><p>{{ report.coverage_note }}</p></aside>
+<section id="practice" class="report-section">
+<header class="section-heading"><p>Practice lesson</p><h2>{{ report.practice.title }}</h2><div class="rule"></div></header>
+<p class="lead">{{ report.practice.learning_objective }}</p>
+<p><strong>Evidence type:</strong> {{ report.practice.evidence_type.replace('_', ' ') }}</p>
+{% for key, label in [('problem','The problem'),('old_approach','What the team tried first')] %}<h3>{{ label }}</h3><p>{{ prose(report.practice[key]) }}</p>{% endfor %}
+<h3>How the method works</h3>
+{% for step in report.practice.method %}<h4>{{ step.title }}</h4><p>{{ prose(step.body) }}</p>{% endfor %}
+<h3>What the evidence supports</h3><p>{{ prose(report.practice.evidence) }}</p>
+<h3>What it does not establish</h3><p>{{ prose(report.practice.limitations) }}</p>
+{{ example(report.practice.worked_example) }}
+</section>
+{% if report.book %}<section id="book" class="report-section book-section">
+<header class="section-heading"><p>Book assessment</p><h2>{{ report.book.title }}</h2><div class="rule"></div></header>
+<p class="byline">{{ report.book.author }} · Published {{ report.book.publication_date }}</p>
+<div class="caveat"><strong>Material accessed</strong><p>{{ prose(report.book.access_basis) }}</p></div>
+<h3>The thesis</h3><p>{{ prose(report.book.thesis) }}</p>
+{% for idea in report.book.ideas %}<h3>{{ idea.title }}</h3><p>{{ prose(idea.body) }}</p>{% endfor %}
+<h3>Critical assessment</h3><p>{{ prose(report.book.critique) }}</p>
+<h3>Who should read it</h3><p>{{ report.book.audience }}</p>
+<div class="verdict"><span>{{ report.book.verdict }}</span><p>{{ report.book.verdict_reason }}</p></div>
+</section>{% endif %}
+{% if report.foundation %}<section id="foundation" class="report-section">
+<header class="section-heading"><p>Foundation through a decision</p><h2>{{ report.foundation.title }}</h2><div class="rule"></div></header>
+<h3>The original idea</h3><p>{{ prose(report.foundation.original) }}</p>
+<h3>Where it goes wrong</h3><p>{{ prose(report.foundation.misuse) }}</p>
+{{ example(report.foundation.worked_example) }}
+</section>{% endif %}
+{% if report.developments %}<section id="frontier" class="report-section"><h2>Frontier radar</h2>
+{% for item in report.developments %}<h3>{{ item.title }}</h3>
+{% for key, label in [('new','What changed'),('not_new','Prior art'),('pm_consequence','Effect on PM work'),('evidence','Evidence'),('limitations','Limits')] %}<h4>{{ label }}</h4><p>{{ prose(item[key]) }}</p>{% endfor %}
+{% endfor %}</section>{% endif %}
+<section id="sources" class="report-section sources-section"><h2>Sources</h2>
+<ol>{% for source in report.sources %}<li id="source-{{ source.id }}"><a href="{{ source.url }}" target="_blank" rel="noopener">{{ source.title }}</a></li>{% endfor %}</ol>
+</section>
+</article></div></main>
+<footer id="about"><div class="shell"><h2>Product Fieldnotes</h2><p>Practices, books, and foundations for product judgment. Frontier signals only when they teach something useful.</p><a href="{{ base }}archive.html">Browse the archive →</a></div></footer>
+</body></html>

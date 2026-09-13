@@ -1,0 +1,161 @@
+{
+  "edition_type": "learning_edition",
+  "schema_version": 2,
+  "slug": "2026-09-12-learning",
+  "date": "September 12, 2026",
+  "title": "When the test is the problem",
+  "dek": "A Convo discovery case, a recent book about business impact, and a worked decision about customer delight and cost.",
+  "reading_time": "12 min read",
+  "topics": [
+    "Discovery",
+    "Leadership",
+    "Strategy",
+    "Product economics"
+  ],
+  "editor_note": "This pilot teaches general PM judgment without assuming a particular employer or product. Sourced accounts, editorial interpretation, and invented examples are labeled separately.",
+  "coverage_note": "Practice, books, and foundations appear together. No frontier signal was selected; this is not a claim that nothing new happened. Pricing, growth, and AI practice remain future coverage needs.",
+  "practice": {
+    "title": "Separate a broken test from a broken solution",
+    "learning_objective": "Learn to distinguish failure caused by your research setup from failure caused by the proposed product. The distinction changes what you redesign next.",
+    "evidence_type": "practitioner_self_report",
+    "problem": "Convo wanted Deaf users to bring a sign language interpreter into a Zoom meeting.[1] Its remote prototype test required participants to operate Zoom while already attending a research session in Zoom.[1] Screen sharing and this confusing setup obstructed the behavior the team wanted to observe.[1]",
+    "old_approach": "The team first suspected its button icons and labels, then changed them without resolving the difficulty.[1] It had tested later steps with interpreters before testing the initial step with Deaf users, who were harder to recruit.[1] The account describes a sequencing problem as well as a research setup problem.[1]",
+    "method": [
+      {
+        "title": "1. Write the dependency before redesigning the screen",
+        "body": "Convo needed users to choose the correct button and provide their meeting link before connecting to an interpreter.[1] That behavior was a prerequisite, not a cosmetic preference. A team can perfect later screens and still fail if customers cannot enter the flow."
+      },
+      {
+        "title": "2. Ask what the test adds to the real task",
+        "body": "Editorial interpretation: list everything participants must do only because they are in your study. Separate research permissions, screen sharing, and prototype instructions from normal product steps. A participant struggling with those extra tasks has not necessarily rejected your solution."
+      },
+      {
+        "title": "3. Change the setup while keeping the product question recognizable",
+        "body": "Amanda Wernicke recruited Deaf users at Gallaudet University after arranging permission.[1] She asked how they had joined their most recent Zoom meeting, then showed a matching email or calendar invitation alongside the prototype.[1] Participants attempted to get an interpreter for that meeting without simultaneously attending the research session inside Zoom.[1]"
+      },
+      {
+        "title": "4. Record behavior and the help you supplied",
+        "body": "The team combined Maze interaction summaries with observational notes about events outside the prototype.[1] Wernicke reported difficulty giving consistent instructions and avoiding excessive help.[1] Editorial application: record unprompted completion separately from completion after hints, rather than treating both as equally strong evidence."
+      },
+      {
+        "title": "5. Let a clearer failure change the solution",
+        "body": "The in-person test still failed Convo's criterion that 90% of users complete the required initial behavior.[1] The team returned to solution design rather than declaring the research successful because recruitment worked.[1] Removing noise did not rescue the original idea; it made the product problem easier to see."
+      },
+      {
+        "title": "6. Compare alternatives instead of collecting approval",
+        "body": "Teresa Torres recommends testing risky assumptions across several solutions and defining success before seeing results.[2] She also cautions against choosing from a single assumption test.[2] Editorial application: use this case to improve your next comparison, not to treat one small study as a launch certificate."
+      }
+    ],
+    "evidence": "Product Talk's June 12, 2024 account reports 20 Deaf participants tested over five hours at Gallaudet.[1] It documents a recruitment method and a reported design decision, not a new 2026 technique.[1] The learning is how a real team repaired its research, not a claim of methodological novelty.",
+    "limitations": "The practitioners had taken Product Talk courses, and the publisher sells discovery training.[1] The account does not supply raw observations, random assignment details, or measured production impact.[1] Treat the claimed avoided frustration as a counterfactual judgment, not an observed reduction in customer harm.",
+    "worked_example": {
+      "kind": "hypothetical",
+      "label": "Hypothetical worked example: an invitation flow",
+      "situation": "An invented scheduling-product team wants invited contractors to accept a shift without calling support. Remote participants appear unable to switch from their email invitation to the prototype. The PM must decide whether to redesign onboarding or repair the study first.",
+      "input": "Invented inputs: a realistic invitation, a clickable acceptance flow, and notes showing failures before participants reach the first product screen. Some participants ask which browser window the researcher means. There are no production results or customer records behind this example.",
+      "alternatives": "A: rename the acceptance button immediately. B: repeat the same task on participants' own phones, observed without screen sharing. C: build automatic shift acceptance, removing the confusing step but also removing the contractor's explicit choice.",
+      "decision": "Choose B first because the current observation cannot distinguish window confusion from product confusion. Keep the invitation and acceptance task unchanged, obtain consent, and avoid hints about the button. If participants reach the screen but still cannot accept, compare a direct acceptance flow with a guided version.",
+      "artifact": "Illustrative decision record: question—can an invited contractor accept without assistance? Record—task entry, unprompted acceptance, requested help, and any prototype failure separately. Next decision—repair the setup if failures precede task entry; redesign the flow if failures persist after entry.",
+      "limitations": "This is a proposed study and decision rule, not a completed experiment. It cannot establish adoption, demand, or fewer support calls. Check any promising design with a broader participant mix and real use before claiming those outcomes."
+    },
+    "source_ids": [
+      1,
+      2
+    ]
+  },
+  "book": {
+    "title": "Impact-first Product Teams",
+    "author": "Matt LeMay",
+    "publication_date": "February 11, 2025 (Apple Books ebook listing)",
+    "access_basis": "Assessment of the author's description, publisher copy, public interview notes, and a third-party transcript of his interview; not the full book. The ebook date above comes from Apple Books and is not asserted as every format's release date.[5] Interview passages below were read in the ChatPRD transcript, not checked against audio.[7]",
+    "thesis": "LeMay argues that following product best practices cannot substitute for doing work that matters to the particular business funding a team.[4][5] The useful challenge is to explain why the team deserves investment, rather than proving that its process resembles a famous technology company. This is an assessment of that argument, not a chapter-by-chapter review.",
+    "ideas": [
+      {
+        "title": "Keep the business connection short enough to explain",
+        "body": "In the interview, LeMay recommends team goals no more than one step from company goals, crediting Christina Wodtke's Radical Focus.[7] He describes connecting a team's multi-product adoption goal to the business value associated with multi-product customers.[7] Editorial caution: an observed value difference does not prove that cross-selling causes that difference."
+      },
+      {
+        "title": "Use the goal during decisions, not only during planning",
+        "body": "LeMay recounts a growth team that scored its goals without knowing how its work added up to company growth.[7] Its leader replaced that discussion with the gap between current users and the company target.[7] The practical lesson is to bring the unresolved business gap into reviews before discussing completed projects."
+      },
+      {
+        "title": "Treat constraints as part of the job",
+        "body": "LeMay argues that regulation, a business-to-business model, and financial targets can guide product choices rather than excuse poor practice.[7] He does not prescribe revenue goals for every situation; he also describes growth, profitability, and funding needs.[7] Editorial application: identify the actual constraint before borrowing another company's goal structure."
+      },
+      {
+        "title": "Make the investment case concrete",
+        "body": "Editorial exercise, not a book excerpt: compare a new dashboard with fixing failed account setup. Explain how each could affect paid accounts, what evidence supports that path, and what it costs. If the dashboard wins only because it is easier to present, the investment argument is incomplete."
+      },
+      {
+        "title": "A commercial argument is not a career guarantee",
+        "body": "The interview's promotion frames its question as a way to predict layoff survival.[6] In the transcript, LeMay explicitly declines to guarantee that managers will react favorably to this approach.[7] Read the argument as a way to improve judgment, not protection from layoffs or irrational leadership."
+      }
+    ],
+    "critique": "The argument is useful for exposing activity mistaken for value, but a short chain to revenue can undervalue research, reliability, and long-term investment. That is a risk of applying the framing too literally, not a claim that the unseen book ignores these subjects. The inspected material cannot establish the quality of every case or the book's incremental depth beyond the interview.",
+    "audience": "Best fit: senior PMs and product leaders who struggle to explain the business contribution of a busy team. Less urgent for a team with a clear investment case whose main problem is a specific technical or research skill. This is a recent 2025 title, not a new release this week.",
+    "verdict": "Selective read; sample before a team purchase",
+    "verdict_reason": "Start with the public interview, then inspect a book sample for cases resembling your organization's constraints. The argument earns attention because it challenges process compliance without requiring a reorganization. A full-book recommendation remains provisional until the actual text is accessed.",
+    "source_ids": [
+      4,
+      5,
+      6,
+      7
+    ]
+  },
+  "foundation": {
+    "title": "Customer delight still needs an investment decision",
+    "original": "Gibson Biddle's DHM model asks how a product delights customers in hard-to-copy, margin-enhancing ways.[3] His Netflix account compares an expensive improvement to new-release DVD delivery with a cancellation reminder that favored trust over immediate conversion.[3] He calls the numbers directional; these are teaching cases, not audited causal estimates.[3]",
+    "misuse": "Editorial interpretation: a requested feature is not automatically a sound investment, and a near-term loss is not automatically a bad decision. DHM is a set of questions, not a scoring formula that settles every trade-off. A claimed long-term advantage needs a mechanism and a budget, not the word 'strategic.'",
+    "worked_example": {
+      "kind": "hypothetical",
+      "label": "Hypothetical worked example: should priority support be included?",
+      "situation": "An invented subscription software company is considering priority human support for every paid customer. The attraction is faster help during urgent work. The decision is whether to include it, sell it separately, or keep standard support while testing demand.",
+      "input": "Invented annual model: better support retains 100 additional customers, each contributing $240 after ordinary variable costs. Extra support coverage costs $3,000 monthly, or $36,000 annually. Assume retention benefits accrue within this year; exclude speculative referrals and any unpriced brand benefit.",
+      "alternatives": "Universal inclusion offers broad access but commits the full coverage cost. A paid priority tier might recover the cost, but willingness to pay is untested. A limited, clearly disclosed pilot can test service demand without promising every customer permanent priority access.",
+      "decision": "Choose a capped pilot, not universal inclusion: 100 retained customers contribute $24,000, leaving a $12,000 annual shortfall against added coverage. Break-even requires 150 retained customers at the stated contribution. At 200 retained customers, the model instead yields $12,000 before other fixed costs.",
+      "artifact": "Illustrative investment note: customer benefit—shorter waits during urgent tasks; durable advantage—unproven, since competitors can offer priority queues. Economics—$24,000 benefit minus $36,000 cost at the base assumption. Decision—test demand and actual service cost before adding a permanent entitlement.",
+      "limitations": "These are teaching assumptions, not measured retention effects or a forecast. A pilot must also check whether priority access worsens standard support and whether customers value resolution rather than queue speed. If leadership accepts a loss to build trust, record that budget choice separately from the break-even claim."
+    },
+    "source_ids": [
+      3
+    ]
+  },
+  "developments": [],
+  "sources": [
+    {
+      "id": 1,
+      "title": "Melissa Suzuno / Product Talk — Convo's assumption-testing case (June 12, 2024)",
+      "url": "https://www.producttalk.org/testing-assumptions-convo"
+    },
+    {
+      "id": 2,
+      "title": "Teresa Torres / Product Talk — Assumption Testing (October 18, 2023)",
+      "url": "https://www.producttalk.org/assumption-testing"
+    },
+    {
+      "id": 3,
+      "title": "Gibson Biddle — How to Balance Customer Delight and Profits (December 7, 2020)",
+      "url": "https://gibsonbiddle.substack.com/p/how-to-delight-customers-in-hard"
+    },
+    {
+      "id": 4,
+      "title": "Matt LeMay — Author's book descriptions",
+      "url": "https://mattlemay.com/books"
+    },
+    {
+      "id": 5,
+      "title": "Apple Books — Impact-first Product Teams publisher description and ebook metadata",
+      "url": "https://books.apple.com/us/book/impact-first-product-teams/id6741950446"
+    },
+    {
+      "id": 6,
+      "title": "Lenny Rachitsky — Public interview notes for Matt LeMay (August 14, 2025)",
+      "url": "https://www.lennysnewsletter.com/p/the-one-question-that-saves-product-careers-matt-lemay"
+    },
+    {
+      "id": 7,
+      "title": "ChatPRD — Transcript copy of Matt LeMay's interview; passages at 36:36, 41:51–54:55",
+      "url": "https://github.com/ChatPRD/lennys-podcast-transcripts/blob/main/episodes/matt-lemay/transcript.md"
+    }
+  ]
+}

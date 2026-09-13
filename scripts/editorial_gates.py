@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import re
+from datetime import date
 from pathlib import Path
 from typing import Any
 
@@ -63,12 +64,12 @@ def recent_rotation_values(content_dir: Path, limit: int = 30, exclude_slug: str
     }
     paths = [
         path for path in sorted(content_dir.glob("*.json"), reverse=True)
-        if path.stem != exclude_slug
+        if exclude_slug is None or path.stem < exclude_slug
     ][:limit]
     for path in paths:
         with path.open(encoding="utf-8") as handle:
             report = json.load(handle)
-        mapping = (("technique", "techniques"), ("book", "books"), ("foundation", "foundations"))
+        mapping = (("technique", "techniques"), ("practice", "techniques"), ("book", "books"), ("foundation", "foundations"))
         for section, bucket in mapping:
             title = (report.get(section) or {}).get("title")
             if title:
@@ -105,6 +106,98 @@ def validate_weekly_report(report: dict[str, Any], recent: dict[str, set[str]]) 
     title = report.get("title")
     if title and _norm(title) in recent.get("framings", set()):
         raise GateError("central framing repeated within the rotation window")
+    validate_readability(report)
+
+
+def validate_learning_report(report: dict[str, Any]) -> None:
+    """Validate the learning contract without imposing a news or book quota."""
+    slug = report.get("slug", "")
+    if not isinstance(slug, str) or not re.fullmatch(r"\d{4}-\d{2}-\d{2}(?:-[a-z0-9]+)*", slug):
+        raise GateError("learning slug must be a date with an optional lowercase suffix")
+    try:
+        date.fromisoformat(slug[:10])
+    except ValueError as exc:
+        raise GateError("learning slug must start with a valid date") from exc
+    if report.get("schema_version") != 2:
+        raise GateError("learning edition schema_version must be 2")
+    for key in ("title", "dek", "date", "reading_time", "editor_note", "coverage_note"):
+        _require_text(report.get(key), key, 4)
+    topics = report.get("topics")
+    if not isinstance(topics, list) or not topics or any(not isinstance(topic, str) or not topic.strip() for topic in topics):
+        raise GateError("topics must be a nonempty list of nonempty strings")
+    fields = {
+        "practice": ("title", "learning_objective", "problem", "old_approach", "evidence", "limitations"),
+        "book": ("title", "author", "publication_date", "access_basis", "thesis", "critique", "audience", "verdict", "verdict_reason"),
+        "foundation": ("title", "original", "misuse"),
+    }
+    sources = report.get("sources", [])
+    ids = [s.get("id") for s in sources]
+    if ids != list(range(1, len(ids) + 1)):
+        raise GateError("source IDs must be unique, ordered, and contiguous")
+    for source in sources:
+        _require_text(source.get("title"), "source title", 3)
+        if not re.match(r"https?://[^/\s]+", source.get("url", "")):
+            raise GateError("source URL must use HTTP or HTTPS")
+    cited = set()
+    for section, required in fields.items():
+        item = report.get(section)
+        if not item and section != "practice":
+            continue
+        if not isinstance(item, dict):
+            raise GateError(f"{section} is required")
+        for key in required:
+            _require_text(item.get(key), f"{section}.{key}", 3 if key in {"title", "author", "verdict"} else 10)
+        references = item.get("source_ids")
+        if not isinstance(references, list) or not references or not set(references).issubset(ids):
+            raise GateError(f"{section}.source_ids must reference inspected sources")
+        # Only rendered text can supply inline citations, never source_ids or metadata.
+        text = [item[key] for key in required]
+        if section == "practice":
+            if item.get("evidence_type") not in {"documented_adoption", "practitioner_self_report", "original_research", "research_proposal", "editorial_synthesis"}:
+                raise GateError("practice.evidence_type must declare the evidence category")
+        if section in {"practice", "book"}:
+            key = "method" if section == "practice" else "ideas"
+            blocks = item.get(key)
+            if not isinstance(blocks, list) or not blocks:
+                raise GateError(f"{section}.{key} must contain explained ideas")
+            for block in blocks:
+                if not isinstance(block, dict):
+                    raise GateError(f"{section}.{key} must contain title/body objects")
+                _require_text(block.get("title"), f"{section}.{key}.title", 3)
+                _require_text(block.get("body"), f"{section}.{key}.body")
+                text.extend((block["title"], block["body"]))
+        if section in {"practice", "foundation"}:
+            example = item.get("worked_example")
+            if not isinstance(example, dict):
+                raise GateError(f"{section}.worked_example is required")
+            for key in ("label", "situation", "input", "alternatives", "decision", "artifact", "limitations"):
+                _require_text(example.get(key), f"{section}.worked_example.{key}")
+                text.append(example[key])
+            kind = example.get("kind")
+            if kind not in {"hypothetical", "documented"}:
+                raise GateError("worked_example.kind must be hypothetical or documented")
+            if kind not in example["label"].casefold():
+                raise GateError(f"{kind} worked example requires a visible {kind} label")
+            if kind == "documented" and not re.search(r"\[\d+\]", example["artifact"]):
+                raise GateError("documented artifact requires a citation")
+        inline = set(map(int, re.findall(r"\[(\d+)\]", "\n".join(text))))
+        if inline != set(references):
+            raise GateError(f"{section} inline citation IDs must match source_ids")
+        cited.update(inline)
+    frontier = report.get("developments", [])
+    if not isinstance(frontier, list):
+        raise GateError("frontier developments must be a list")
+    for item in frontier:
+        text = []
+        for key in ("title", "new", "not_new", "pm_consequence", "evidence", "limitations"):
+            _require_text(item.get(key), f"frontier.{key}")
+            text.append(item[key])
+        inline = set(map(int, re.findall(r"\[(\d+)\]", "\n".join(text))))
+        if not inline or inline != set(item.get("source_ids", [])) or not inline.issubset(ids):
+            raise GateError("frontier citation IDs must match source_ids")
+        cited.update(inline)
+    if cited != set(ids):
+        raise GateError("every source must have an inline citation")
     validate_readability(report)
 
 

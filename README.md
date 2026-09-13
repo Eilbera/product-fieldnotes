@@ -16,4 +16,17 @@ Add one JSON file per edition under `content/YYYY-MM-DD.json`. Keep images under
 
 ## Deployment
 
-GitHub Pages serves the `main` branch from the repository root. The daily Hermes publishing cron updates the content, runs the build, verifies the output, commits, and pushes.
+GitHub Pages serves the `main` branch from the repository root. Build and verify locally, then commit and push authorized public changes. Scheduler configuration is managed separately.
+
+## Learning editions
+
+Use `edition_type: learning_edition` with `schema_version: 2` for new learning reports. Practice, books, and foundations have separate tracks. Frontier developments are optional, with no vendor-news quota. See [EDITORIAL.md](EDITORIAL.md) for fields, selection rules, evidence labels, and publication checks.
+
+The complete pilot is `content/2026-09-12-learning.json`, rendered at `reports/2026-09-12-learning.html`. Earlier editions keep their existing schema and URLs.
+
+```bash
+.venv/bin/python -m pytest tests/ -q
+.venv/bin/python scripts/build.py
+```
+
+Research queues, source captures, citation ledgers, and reader context remain under the Git-ignored `private/` directory. Never force-add that directory.

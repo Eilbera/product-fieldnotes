@@ -1,4 +1,4 @@
-<!doctype html>
+{% if report.edition_type == "learning_edition" %}{% include "learning_report.html" %}{% else %}<!doctype html>
 <html lang="en" data-theme="light">
 <head>
   <meta charset="utf-8">
@@ -245,4 +245,4 @@
     </div>
   </footer>
 </body>
-</html>
+</html>{% endif %}

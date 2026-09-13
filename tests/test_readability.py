@@ -48,6 +48,10 @@ def test_readability_accepts_short_direct_sentences():
     validate_readability(base_report("Roblox added early warnings for harmful experiments. Teams can stop exposure before the planned readout."))
 
 
+def test_readability_understands_inline_citations_after_punctuation():
+    validate_readability(base_report(' '.join([' '.join(['word'] * 20) + '.[1][2]' for _ in range(3)])))
+
+
 def test_readability_rejects_sentence_over_thirty_two_words():
     long_sentence = " ".join(["word"] * 33) + "."
     with pytest.raises(ReadabilityError, match="33 words"):
