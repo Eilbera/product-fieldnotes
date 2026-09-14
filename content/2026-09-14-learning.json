@@ -1,0 +1,100 @@
+{
+  "edition_type": "learning_edition",
+  "schema_version": 2,
+  "slug": "2026-09-14-learning",
+  "date": "September 14, 2026",
+  "title": "Before you rank the roadmap, check what entered it",
+  "dek": "An Intercom planning practice, a worked capacity decision, and a RICE sensitivity test that changes what to investigate.",
+  "reading_time": "9 min read",
+  "topics": [
+    "Prioritization",
+    "Roadmap planning",
+    "Leadership"
+  ],
+  "editor_note": "This edition teaches how to inspect roadmap inputs before comparing projects. The historical practitioner accounts support the practice, not a claim of novelty or proven business impact. The proposed worksheet and both worked decisions are editorial teaching examples.",
+  "coverage_note": "The September 12 edition assessed Impact-first Product Teams; the next substantive book assessment remains on the fortnightly cadence. Deeper book access is still pending, so this edition does not add a description-only review. No frontier item was selected, and this collection was not a comprehensive news scan.",
+  "practice": {
+    "title": "Inspect the work that request counts leave out",
+    "learning_objective": "Learn to distinguish a missing roadmap input from a low-priority project. Build a decision record that separates commitments, uncertain proposals, and evidence that could reopen the plan.",
+    "evidence_type": "practitioner_self_report",
+    "problem": "Paul Adams describes teams that overinvested in new products while neglecting improvements to existing products.[1] His Intercom account presents five roadmap inputs as a way to maintain balance.[1] Editorial interpretation: a polished ranking cannot recover an important problem that never entered the list.",
+    "old_approach": "Adams describes earlier teams with unbalanced investment, rather than a controlled before-and-after trial at Intercom.[1] His account warns against shipping something and immediately moving to the next attractive idea.[1] The alternative was deliberate planning for iteration alongside new work.[1]",
+    "method": [
+      {
+        "title": "Understand the documented input categories",
+        "body": "Intercom's categories were new ideas, recently shipped products, common customer problems, quality improvements, and features needed as the business scales.[1] Adams explicitly describes new ideas as judgment rather than customer research.[1] Editorial interpretation: a legitimate source of ideas is not automatically evidence of demand."
+      },
+      {
+        "title": "Read the problem behind the request",
+        "body": "Customer Success tagged conversations by problem type and responsible team; PMs reviewed them weekly and sometimes contacted customers directly.[1] Researchers periodically analyzed and coded conversations to identify common problems.[1] Editorial application: separate the requested feature, underlying task, and supporting observation before merging similar tickets."
+      },
+      {
+        "title": "Check who can enter the evidence",
+        "body": "The remaining worksheet steps are editorial synthesis, not an exact Intercom procedure. Deduplicate reports by account, then compare support evidence with product behavior, research, and lost sales. This reveals whether apparent frequency reflects distinct affected customers or repeated conversations, without erasing the severity of a rare failure."
+      },
+      {
+        "title": "Find unfinished commitments",
+        "body": "Intercom set success criteria before launches, measured performance afterward, and sought qualitative feedback where needed.[1] Its quality assessment considered severity and the number of affected customers.[1] Editorial application: check whether a new request reflects an earlier feature failing its intended task before treating it as additional scope."
+      },
+      {
+        "title": "Inspect omissions before allocating capacity",
+        "body": "Assign each problem a primary input category, allowing overlap where useful. If the proposed plan contains no quality work, determine whether quality is healthy or simply unmeasured. Treat binding obligations separately, and avoid equal category quotas that ignore actual needs."
+      },
+      {
+        "title": "Name the uncertainty that could change the allocation",
+        "body": "Record committed capacity separately from unresolved proposals, with an owner for each investigation. Ask which competing explanation would lead to a different product commitment. An investigation earns its place when its possible findings change the decision, rather than merely producing more documentation."
+      },
+      {
+        "title": "Use the audit where it resolves a real planning problem",
+        "body": "Use this worksheet when requests dominate planning, launch follow-up is weak, or teams disagree about why work entered the roadmap. Do not use it to delay incident response or renegotiate a binding obligation. It cannot settle strategy when leadership has not chosen which customers and outcomes the product should serve."
+      }
+    ],
+    "evidence": "The inspected page displays June 17, 2015; this is historical practice, not a current adoption trend.[1] It documents collection routines and allocation concerns, but supplies no controlled comparison of roadmap outcomes.[1] The proposed audit combines those routines with editorial recommendations for making assumptions visible.",
+    "limitations": "The evidence is a practitioner self-report from a company blog, which also promotes hiring and further reading.[1] It cannot establish that a balanced input process caused better retention, growth, or revenue. Ticket frequency, category completeness, and tidy worksheets remain weak substitutes for understanding the underlying problem.",
+    "worked_example": {
+      "kind": "hypothetical",
+      "label": "Hypothetical worked decision: exports versus unfinished reporting",
+      "situation": "An invented reporting-product team has four person-months of discretionary capacity for its next planning window. Sales wants bulk export, support reports failures in recently launched scheduled reports, and researchers identify repeated configuration work. A request-count ranking puts export first, but mixes sales conversations with operational failures.",
+      "input": "Invented estimates: bulk export needs three person-months, scheduled-report repair needs two, and saved views needs one. Assume engineering reproduced the reporting defect, scoped its repair, and confirmed that it violates an agreed service criterion. Export's distinct buyer count and underlying task remain unknown; saved views has repeated task observations but no measured usage benefit.",
+      "alternatives": "Option A funds export and saved views, using all capacity while leaving the service failure unresolved. Option B funds repair and saved views, leaving one person-month of reserve for investigation or unexpected work. Option C funds only repair, which is preferable if saved-view evidence is insufficient or repair effort is unstable.",
+      "decision": "Choose B under the stated assumptions: two person-months for repair plus one for saved views leaves one in reserve. Investigate whether export requests concern one-time migration, recurring regulatory extracts, or routine offline analysis before promising delivery. Ask buyers to reconstruct their last export task, because each explanation implies different frequency, product scope, and support costs.",
+      "artifact": "Decision record: observed inputs are reproduced failures, repeated export requests, and recurring configuration work; unknowns include export reach and actual saved-view benefit. Commit to repair and scoped saved views, with no export delivery date; the PM owns buyer interviews before the next planning review. Reopen allocation for a verified time-bound obligation, broader recurring export need, or materially higher repair effort, with engineering updating the scope.",
+      "limitations": "All observations and numbers are invented, and no customer outcome is claimed. The decision assumes the service criterion deserves protection and that available skills support the chosen work. Person-month totals do not establish calendar feasibility when projects depend on the same specialist."
+    },
+    "source_ids": [
+      1
+    ]
+  },
+  "book": null,
+  "foundation": {
+    "title": "Use RICE to find the estimate worth investigating",
+    "original": "Intercom's RICE model multiplies reach, impact, and confidence, then divides by effort.[2] Reach uses a defined time window, while effort includes product, design, and engineering work.[2] Its explanation explicitly permits departures from rank order for dependencies and necessary sales capabilities.[2]",
+    "misuse": "The source uses chosen impact scores and categorical confidence percentages, rather than measured financial returns or calibrated success probabilities.[2] Editorial interpretation: use these estimates to expose assumptions, not to turn a precise-looking score into authorization. Add sensitivity checks where uncertainty could reverse the ranking, while keeping mandatory work outside the discretionary comparison.",
+    "worked_example": {
+      "kind": "hypothetical",
+      "label": "Hypothetical worked decision: check the integration dependency",
+      "situation": "Two invented projects target the same activation goal over the same quarter. A adds setup guidance, while B adds an import shortcut. The team must choose a delivery commitment or investigate an unresolved dependency first.",
+      "input": "A reaches 1,000 distinct accounts, with impact 1, confidence 0.8, and effort of two person-months: its calculated score is 400. B reaches 600 accounts, with impact 2, confidence 0.5, and effort of one person-month: its score is 600. These inputs are hypothetical, and impact denotes scoring units rather than percentage-point uplift.",
+      "alternatives": "Commit to B using its higher base score, choose A to avoid the unresolved integration, or investigate B's dependency first. If B requires two person-months, its score falls to 300. Holding every other input constant, the scores tie when B's effort reaches 1.5 person-months.",
+      "decision": "Choose the dependency check if it is short and can establish whether B crosses that effort threshold. Engineering should inspect the integration requirement and include all affected roles in the revised estimate. This resolves a decision-sensitive uncertainty rather than asking the team to improve every estimate equally.",
+      "artifact": "Priority-sheet note: base ranking B 600 versus A 400; sensitivity case B 300 at two person-months; crossover at 1.5 person-months. Present decision: hold the ranking-based commitment until engineering checks the dependency, then recalculate using the supported effort estimate. Remaining unknowns: reach and impact may also change; review obligations separately before accepting the new order.",
+      "limitations": "This is sensitivity analysis, not a statistical confidence interval or a completed engineering investigation. The effort range is invented, and poorly understood strategic bets may need bounded discovery rather than rejection through low scores. Team question: which single estimate could reverse our top two priorities, and what evidence would narrow it?"
+    },
+    "source_ids": [
+      2
+    ]
+  },
+  "developments": [],
+  "sources": [
+    {
+      "id": 1,
+      "title": "Intercom: Where do product roadmaps come from?",
+      "url": "https://www.intercom.com/blog/where-do-product-roadmaps-come-from"
+    },
+    {
+      "id": 2,
+      "title": "Intercom: RICE prioritization",
+      "url": "https://www.intercom.com/blog/rice-simple-prioritization-for-product-managers"
+    }
+  ]
+}

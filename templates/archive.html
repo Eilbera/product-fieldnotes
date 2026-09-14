@@ -20,7 +20,7 @@
     <div class="archive-list">
       {% for item in reports %}
       <a class="archive-entry" href="reports/{{ item.slug }}.html">
-        <time datetime="{{ item.slug }}">{{ item.date }}</time>
+        <time datetime="{{ item.slug[:10] }}">{{ item.date }}</time>
         <div><h2>{{ item.title }}</h2><p>{{ item.dek }}</p></div>
         <span>{{ item.reading_time }} →</span>
       </a>
