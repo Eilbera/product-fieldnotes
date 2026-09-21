@@ -1,0 +1,161 @@
+{
+  "edition_type": "learning_edition",
+  "schema_version": 2,
+  "slug": "2026-09-21-learning",
+  "date": "September 21, 2026",
+  "title": "Referral economics, funding assumptions, and pricing judgment",
+  "dek": "How to evaluate a referral reward, turn uncertain economics into funding conditions, and assess four pricing ideas from Scaling Innovation.",
+  "reading_time": "12 min read",
+  "topics": [
+    "Growth",
+    "Product economics",
+    "Strategy",
+    "Pricing"
+  ],
+  "editor_note": "This edition asks how product leaders can distinguish attractive activity from evidence that justifies spending. Historical practitioner evidence supports the referral lesson; the proposed investigation and worked decisions are editorial synthesis. All invented inputs and outcomes are labeled hypothetical.",
+  "coverage_note": "The book track resumes after September 12 with an interview-based assessment, alongside a worked foundation. No frontier signal was selected; this edition develops accumulated research rather than claiming a new practice or comprehensive news scan. AI evaluation practice remains queued for a later edition.",
+  "practice": {
+    "title": "Decide whether a referral reward earns its cost",
+    "learning_objective": "Distinguish referral attribution, customer quality, and incremental contribution before increasing acquisition spending. Build an event-and-decision map that connects each measurement to an unresolved spending question.",
+    "evidence_type": "practitioner_self_report",
+    "problem": "A referral dashboard can show more invitations and valuable customers while leaving the spending decision unresolved. The missing comparison is what would happen under the current program, including customers who would arrive anyway. A larger reward needs evidence about the change it causes.",
+    "old_approach": "Jason Bosinoff describes Airbnb's earlier referral program as neglected and explains how the team planned its replacement.[1] Before coding the product, the team built mechanisms to track success metrics.[1] Its shared event taxonomy followed invitations through signup to bookings or hosting across web, Android, and iOS.[1]",
+    "method": [
+      {
+        "title": "Separate three evidence questions",
+        "body": "Attribution asks which invitation receives credit for a customer. Customer-value analysis asks what that acquired cohort contributes over time. Incrementality asks how outcomes differ because the program changed."
+      },
+      {
+        "title": "Use cohort quality without overclaiming causality",
+        "body": "Schmitt, Skiera, and Van den Bulte found higher retention and contribution margins among referred customers at one German bank.[2] The margin difference eroded over time, while their analysis separated observed contribution from longer-horizon value predictions.[2] Editorial interpretation: attractive cohort economics cannot, by themselves, justify a larger incentive."
+      },
+      {
+        "title": "Define the change before choosing the metric",
+        "body": "The remaining steps are editorial recommendations that extend familiar funnel analysis into a spending decision. Write down the current experience and proposed intervention; larger rewards, better discoverability, and easier acceptance answer different questions. Keep changes separate when the decision requires knowing which change produced the result."
+      },
+      {
+        "title": "Choose the contribution horizon",
+        "body": "Record whether the decision concerns immediate cash, contribution over several months, or a longer customer-value forecast. Select that horizon before reviewing outcomes. Mixing observed costs with optimistic future value can make an expensive intervention appear affordable."
+      },
+      {
+        "title": "Trace the customer journey",
+        "body": "Map eligibility, exposure, invitation, acceptance, qualified activation, reward issuance, and subsequent contribution. Record inviter, recipient, platform, and timestamps under appropriate privacy controls. Deduplicate recipients and specify how multiple invitations receive credit."
+      },
+      {
+        "title": "Distinguish missing events from abandoned tasks",
+        "body": "Trace sampled journeys across devices before interpreting an apparent funnel drop. A lost identifier calls for an instrumentation repair; an abandoned task may require a product change. More traffic cannot distinguish those explanations if the same event remains missing."
+      },
+      {
+        "title": "Compare program policies",
+        "body": "Assign eligible units to current and changed policies before exposure, retaining units that never send invitations. Otherwise, a change in who chooses to participate can masquerade as a program effect. Where feasible, compare total qualified acquisition and contribution within assigned populations, including organic arrivals rather than only referral credits."
+      },
+      {
+        "title": "Check whether recipients cross groups",
+        "body": "Recipients can receive invitations from both groups, so simple inviter assignment may not answer the intended rollout question. Ask an analyst to evaluate isolated markets, network clusters, or another design when overlap is material. Cluster assignment can still leave cross-group exposure or too few independent units; label an infeasible comparison observational and keep spending reversible."
+      },
+      {
+        "title": "Reconcile contribution with program costs",
+        "body": "Subtract the increase in reward and operating costs from the contribution added relative to the current policy. Include rewards paid for customers who would have joined anyway. Finance should reconcile realized costs, while operations checks cancellations, service contacts, and reward abuse before treating activation as economically mature."
+      },
+      {
+        "title": "Use the method where it resolves uncertainty",
+        "body": "Use this method when a team proposes larger rewards based on invitations, credited customers, or attractive cohort retention. It is less useful for diagnosing a known broken invitation link; repair the defect first. Very sparse acquisition may require qualitative diagnosis and a bounded rollout rather than an underpowered experiment."
+      }
+    ],
+    "evidence": "Airbnb's 2014 account supplies a concrete instrumentation workflow, not an independently evaluated estimate of another company's return.[1] The 2011 bank study compares acquisition groups rather than randomly assigning prospects to referral acquisition.[2] These sources teach different parts of the decision; neither establishes a current adoption trend or universal referral economics.",
+    "limitations": "Airbnb's fresh extraction was partial; preserved excerpts support the taxonomy details, and no customer raw data were obtained. The bank authors discuss matching and social enrichment as possible explanations rather than mechanisms directly established by their analysis.[2] The policy comparison proposed here is editorial synthesis, not a procedure shown to work in either source.",
+    "worked_example": {
+      "kind": "hypothetical",
+      "label": "Hypothetical worked decision: the larger reward loses money",
+      "situation": "An invented team compares a larger referral reward with its current program over the same horizon and equally sized eligible populations. Assume valid assignment and no material cross-group exposure. Count all qualified new customers within each population, regardless of referral credit.",
+      "input": "Invented inputs: the current program acquires 350 qualified customers, compared with 400 under the larger reward. Each customer contributes $80 after service costs but before program costs. Reward and operating costs total $6,000 for the current program and $18,000 for the larger reward.",
+      "alternatives": "The alternatives are expansion, retaining the current reward, or extending a bounded investigation. Current net contribution is 350 × $80 − $6,000 = $22,000; the larger reward produces 400 × $80 − $18,000 = $14,000. The extra $12,000 requires 150 additional customers at $80 contribution each to break even, rather than the observed 50.",
+      "decision": "Retain the current reward and withhold expansion under these assumptions: 50 additional customers accompany an $8,000 reduction in net contribution. Ask the analyst to inspect assignment and sampling uncertainty, while finance checks omitted costs and plausible later contribution. If assignment fails, conclude uncertainty rather than a negative treatment effect; if valid, extend observation only when delayed value could change the decision.",
+      "artifact": "Decision record: observed within the example, 50 more customers and $8,000 less net contribution; unknown, sampling uncertainty, later retention, overlap, and omitted costs. Present decision, keep the current reward; the PM owns expansion, with analyst and finance checks before reconsideration. Reopen for credible positive incremental contribution over the agreed horizon and within agreed risk limits, with spending and time limits set before further testing.",
+      "limitations": "All inputs and observations are invented, and these point estimates do not establish statistical significance. Break-even arithmetic assumes unchanged customer quality and the stated cost totals; it is not a demand forecast. The decision concerns one reward increase, not whether all referral spending is unprofitable."
+    },
+    "source_ids": [
+      1,
+      2
+    ]
+  },
+  "book": {
+    "title": "Scaling Innovation",
+    "author": "Madhavan Ramanujam and Eddie Hartman",
+    "publication_date": "July 2025 hardcover, as listed by Wiley-VCH",
+    "access_basis": "This assessment uses the publisher description, a saved index, and selected passages from a third-party interview transcript mirror.[4][5] No substantive chapters or full book were read, and the transcript was not checked against audio. Wiley-VCH lists July 2025 for its hardcover edition; this is a recent-book assessment, not a new release this week.[4]",
+    "thesis": "The publisher positions the book around profitable growth after product-market fit.[4] Ramanujam argues that an enduring business needs attention to both market share and wallet share.[5] He distinguishes equal attention from equal effort at every stage, so the argument does not require every experiment to monetize immediately.[5]",
+    "ideas": [
+      {
+        "title": "Test whether customers understand the bill",
+        "body": "Ramanujam recommends asking customers to explain the pricing strategy back to the team.[5] Editorial application: give a buyer a realistic usage scenario, then ask them to calculate the bill and explain what changes it. This tests comprehension, not willingness to pay; a buyer can understand the charge and still reject its cost or fairness."
+      },
+      {
+        "title": "Connect expansion to the initial offer",
+        "body": "Ramanujam warns that an attractive initial offer can leave little room for later expansion.[5] Editorial application: record the need served by the entry package and the additional value that justifies a larger purchase. The entry product must still complete its promised job; a renewal increase without added value is a different commercial proposition."
+      },
+      {
+        "title": "Exchange concessions for measurable commitments",
+        "body": "Ramanujam proposes requesting a recurring customer-led value audit when granting a concession.[5] Editorial application: for a hypothetical workflow product, agree who supplies task duration, review effort, and rework measurements before accepting that commitment. An audit needs data access and a responsible buyer; if neither is available, a simpler fixed-price pilot may be more honest."
+      },
+      {
+        "title": "Agree on value inputs before the pilot ends",
+        "body": "Ramanujam recommends developing the ROI model with the customer from the beginning of the proof of concept.[5] His interview separates business gains, tangible cost savings, and the use of freed capacity.[5] Editorial application: record either spending avoided or useful work enabled under explicit assumptions, without counting the same saved hours twice."
+      }
+    ],
+    "critique": "The interview promotes the book and reflects the author's advisory perspective, rather than an independent outcome evaluation.[5] Buyer agreement can make a model easier to negotiate without making its assumptions accurate. Unread chapters may supply qualifications and supporting cases, but their depth and evidence remain unassessed.",
+    "audience": "PMs responsible for packaging, commercial pilots, or collaboration with sales will find the inspected ideas relevant. Leaders seeking validated causal evidence should treat this assessment as a guide to questions, not proof of results.",
+    "verdict": "Selective read",
+    "verdict_reason": "The strongest reason to read selectively is the connection between product design and commercial measurement. Use the pricing-comprehension and joint-value questions to inspect a live proposal before adopting broader negotiating rules. This verdict concerns the inspected argument, not the quality of the full book.",
+    "source_ids": [
+      4,
+      5
+    ]
+  },
+  "foundation": {
+    "title": "Discovery-driven planning through a funding decision",
+    "original": "McGrath's explanation starts with a definition of success and a reverse income statement.[3] It then connects delivery requirements to assumptions and checkpoints that test those assumptions.[3] This refresher uses preserved excerpts from her later explanation, not full access to the original article; fresh retrieval failed.",
+    "misuse": "The enduring idea is to make the next commitment depend on explicit assumptions. A common misuse turns the required customer count into a sales forecast, although the calculation only establishes a hurdle. Editorial update: use cohorts when onboarding, churn, or usage changes costs, and separate financial return from strategic purposes leadership explicitly chooses to fund.",
+    "worked_example": {
+      "kind": "hypothetical",
+      "label": "Hypothetical worked decision: fund measurement before expansion",
+      "situation": "An invented subscription team requires $120,000 annual operating profit after $240,000 of fixed costs. Assume its prototype completes the task, but support effort has never been measured. Leadership must decide whether to expand, reject the proposal, or investigate delivery costs first.",
+      "input": "Assume stable accounts paying $100 monthly, with $40 monthly variable cost per account. Required accounts equal ($240,000 + $120,000) ÷ (($100 − $40) × 12) = 500. At $70 monthly variable cost, the requirement becomes 1,000 accounts; this simplified calculation omits acquisition spending, churn, taxes, and cash timing.",
+      "alternatives": "Expansion assumes the contribution margin is credible, while rejection discards the proposal before resolving the uncertain support cost. A limited investigation can test whether the base margin survives actual use before committing to expansion. If price acceptance is less credible than support cost, investigate that assumption first instead.",
+      "decision": "Choose the support-cost investigation under the stated assumptions, since task completion does not resolve delivery economics. The PM and operations lead record support time, task type, and account context; finance separates onboarding effort from continuing delivery costs. These observations test the uncertain margin rather than repeating a demonstration that the product works.",
+      "artifact": "Funding record: requirement, 500 stable accounts under base costs or 1,000 under higher costs; known only within the example, prototype task completion. Unknowns include support intensity, price acceptance, reachable demand, and retention; present decision, withhold expansion and scope a bounded measurement proposal. Reopen when supported costs and commercial evidence justify a revised plan or warrant redesign; the sponsor must set a spending cap and deadline first.",
+      "limitations": "This is a hypothetical decision worksheet, not an authorized budget, demand forecast, or proof of viability. Use ordinary budgeting when operations are stable; this method helps when expensive commitments remain avoidable and assumptions can still change the plan. Team question: which untested assumption must become evidence before the next irreversible commitment?"
+    },
+    "source_ids": [
+      3
+    ]
+  },
+  "developments": [],
+  "sources": [
+    {
+      "id": 1,
+      "title": "Airbnb: Hacking Word of Mouth",
+      "url": "https://medium.com/airbnb-engineering/hacking-word-of-mouth-making-referrals-work-for-airbnb-46468e7790a6"
+    },
+    {
+      "id": 2,
+      "title": "Schmitt, Skiera, and Van den Bulte: Referral Programs and Customer Value",
+      "url": "https://faculty.wharton.upenn.edu/wp-content/uploads/2012/04/Schmitt-Skiera-vandenBulte-2011-Referral-Programs-Customer-Value.pdf"
+    },
+    {
+      "id": 3,
+      "title": "Rita McGrath: Discovering perfectly predictable mistakes before you make them",
+      "url": "https://ritamcgrath.com/sparks/2021/08/discovering-perfectly-predictable-mistakes-before-you-make-them"
+    },
+    {
+      "id": 4,
+      "title": "Wiley-VCH: Scaling Innovation",
+      "url": "https://www.wiley-vch.de/en/areas-interest/finance-economics-law/scaling-innovation-978-1-119-63306-8"
+    },
+    {
+      "id": 5,
+      "title": "Madhavan Ramanujam interview: third-party transcript mirror",
+      "url": "https://github.com/ChatPRD/lennys-podcast-transcripts/blob/main/episodes/madhavan-ramanujam/transcript.md"
+    }
+  ]
+}
