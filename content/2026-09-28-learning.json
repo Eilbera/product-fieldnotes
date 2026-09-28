@@ -1,0 +1,155 @@
+{
+  "edition_type": "learning_edition",
+  "schema_version": 2,
+  "slug": "2026-09-28-learning",
+  "date": "September 28, 2026",
+  "title": "AI productivity claims and the decisions they can support",
+  "dek": "Audit the work behind an AI pilot before changing delivery commitments. Then distinguish disagreement about predictions from conflict over objectives.",
+  "reading_time": "10 min read",
+  "topics": [
+    "AI-assisted work",
+    "Capacity planning",
+    "Experimentation",
+    "Leadership"
+  ],
+  "editor_note": "This edition develops research collected through September 28, 2026, in UTC. The practice draws on original research and researcher-reported limitations; the proposed PM worksheet is editorial synthesis. Both worked decisions are hypothetical, and neither lesson is presented as a new invention.",
+  "coverage_note": "Book coverage resumes around October 5 after the September 21 assessment of Scaling Innovation. No frontier signal was selected, and this edition does not claim a comprehensive current-news scan. Packaging research and deeper book access remain queued.",
+  "practice": {
+    "title": "Audit the work behind an AI productivity claim",
+    "learning_objective": "Identify which people and tasks an AI trial measures before using its results for capacity planning. Produce a decision record that separates continued tool access from a larger delivery commitment.",
+    "evidence_type": "original_research",
+    "problem": "A product leader receives a pilot dashboard showing faster development with AI. Engineering wants to preserve access, while leadership wants to translate the apparent gain into additional delivery commitments. Those decisions require different evidence.",
+    "old_approach": "METR's original experiment randomized tasks from experienced open-source developers into AI-allowed and AI-disallowed conditions.[2] The study covered 16 developers and 246 tasks in projects they knew well.[2] Its reported completion time increased by 19% when AI was allowed, despite participants estimating a benefit afterward.[2]",
+    "method": [
+      {
+        "title": "Start with the follow-up design",
+        "body": "METR began a follow-up experiment in August 2025 with a larger developer pool and newer tools.[1] Developers again specified tasks before random assignment and reported time spent completing them.[1] That retained a comparison within submitted work but did not guarantee coverage of the work developers omitted."
+      },
+      {
+        "title": "Notice who and what went missing",
+        "body": "METR reports increased reluctance to participate because developers did not want to work without AI.[1] It also reports that 30% to 50% of surveyed developers withheld some tasks for that reason.[1] These are separate selection problems: who joins and which work participants submit."
+      },
+      {
+        "title": "Check what happened after assignment",
+        "body": "Some developers were less likely to finish tasks assigned to the AI-disallowed condition.[1] Others struggled to report task time while agents ran alongside unrelated work.[1] METR also reduced hourly compensation and identifies that change as another possible influence on participation.[1]"
+      },
+      {
+        "title": "Understand what randomization does not fix",
+        "body": "The mechanism matters beyond AI. Random assignment can support a comparison inside a submitted workload while leaving its relationship to the target workload unresolved. Dropping unfinished work then changes the comparison again, after assignment."
+      },
+      {
+        "title": "Apply the research to a PM decision",
+        "body": "The following scope audit is editorial synthesis using established selection-bias reasoning. It is not a protocol validated by METR or an estimate of current AI productivity. Each record addresses a different uncertainty before the team changes a delivery promise."
+      },
+      {
+        "title": "Define the planning claim",
+        "body": "Write the proposed decision in operational terms: preserve tool access, forecast accepted work, or change an external delivery commitment. Specify the people, work categories, and period that decision covers. This prevents a convenient pilot population from silently becoming the entire organization's capacity estimate."
+      },
+      {
+        "title": "Inventory the intended workload",
+        "body": "List eligible work before asking for volunteers. Include maintenance, integration, review, and release work where these belong to the intended claim. The inventory exposes missing categories; it does not make every category equally important."
+      },
+      {
+        "title": "Record enrollment and submission separately",
+        "body": "Track who was invited, who participated, and which eligible tasks entered the comparison. Record exclusion reasons without collecting unnecessary personal information. This distinguishes a missing participant population from missing tasks among willing participants."
+      },
+      {
+        "title": "Investigate the specific coverage gap",
+        "body": "A higher participation rate alone cannot resolve task withholding. A larger submitted sample cannot resolve missing participant groups. Investigate the specific gap before increasing sample size."
+      },
+      {
+        "title": "Retain every assignment through the endpoint",
+        "body": "Keep completion status, elapsed observation time, and reasons for noncompletion for every assigned task. Do not silently delete unfinished tasks or assign them an invented completion time. Differential noncompletion requires analysis rather than a cleaner dashboard."
+      },
+      {
+        "title": "Choose an analysis that includes unfinished work",
+        "body": "An analyst can assess completion probability, time-to-completion, and sensitivity to missing measurements. Those analyses answer different questions and need adequate observation windows. A complete-case average alone cannot settle which explanation fits."
+      },
+      {
+        "title": "Separate human effort from delivery time",
+        "body": "Record active human effort, calendar time to acceptance, review effort, and acceptance quality as distinct measures. Choose the measure that matches the planning decision. Concurrent agents can consume machine time while people complete other work, so overlapping durations must not be added indiscriminately."
+      },
+      {
+        "title": "Check the delivery bottleneck",
+        "body": "For a release commitment, faster implementation matters only if it changes delivery through the relevant bottleneck. If review remains constrained, inspect review capacity before increasing the commitment. That is a planning hypothesis to test, not an outcome established by the cited research."
+      },
+      {
+        "title": "State the supported claim",
+        "body": "State which participants and task categories the evidence covers. Then name the proposed extrapolation and the evidence it lacks. This creates an explicit decision boundary instead of leaving caveats in an appendix nobody uses."
+      },
+      {
+        "title": "Keep extrapolation explicit",
+        "body": "If the evidence supports only a task category, keep the claim at that level. Do not multiply its apparent gain across unrelated roadmap work. A weighted forecast needs credible effects and workload weights for the categories it includes."
+      },
+      {
+        "title": "Consider other study designs",
+        "body": "METR proposes shorter intensive experiments, fixed-task studies, observational evidence, and developer-level assignment among possible alternatives.[1] It notes that developer-level assignment can reduce some task-selection problems while worsening participant selection and reducing statistical power.[1] A changed assignment unit therefore requires another coverage audit."
+      },
+      {
+        "title": "Use the method for capacity decisions",
+        "body": "Use this method when a voluntary pilot is being translated into roadmap capacity, staffing assumptions, or delivery promises. A fixed-task evaluation may suffice when the question concerns performance on that specific task. Neither design automatically establishes the effect on an organization's full workload."
+      },
+      {
+        "title": "Avoid claiming a conservative lower bound",
+        "body": "The most tempting failure is treating an incomplete estimate as a conservative lower bound. That requires assumptions about the missing work, its quality, and why it is missing. Participant enthusiasm alone does not verify those assumptions."
+      },
+      {
+        "title": "Know the evidence boundary",
+        "body": "The METR follow-up and Amazon letter were retrieved on September 28. The original paper was inspected from a preserved July 2025 version, without a fresh version comparison. No raw-data reanalysis, full appendix review, or independent replication was performed."
+      }
+    ],
+    "evidence": "The researchers describe the follow-up data as an unreliable signal of the current productivity effect.[1] They believe omitted developers and tasks may have larger benefits, but acknowledge that self-reported gains can be unreliable.[1] Their interpretation is not a measurement of those missing gains.",
+    "limitations": "The original paper warns against generalizing its result to every setting or future model.[2] The follow-up is dated February 24, 2026; it is methodological evidence, not a September productivity estimate.[1] Both sources come from METR, and the PM worksheet is an editorial application rather than documented PM adoption.",
+    "worked_example": {
+      "kind": "hypothetical",
+      "label": "Hypothetical worked decision: faster finished tasks, unresolved capacity",
+      "situation": "All inputs and observations in this example are invented. A team inventories 100 eligible tasks before an optional pilot, but volunteers submit only 40 routine implementation tasks. Integration work remains outside the comparison, and the PM must decide whether to increase a release commitment.",
+      "input": "Assume random assignment gives each condition 20 tasks: 18 finish with AI, compared with 12 without AI. Finished tasks average three hours of human effort with AI and four without it. The finished-task mean is 25% lower, completion is 90% versus 60%, and submitted work covers 40% of eligible tasks.",
+      "alternatives": "AI may genuinely help finish routine tasks, while different unfinished tasks could also distort the finished-task averages. Unmeasured integration work creates a separate uncertainty about the release workload. The alternatives are a larger commitment, removing AI access, or preserving access without increasing the commitment.",
+      "decision": "Preserve access and retain the existing release commitment under these assumptions. Follow every assignment through a longer, predefined observation window and check acceptance quality. Investigate why integration work was withheld; adding more routine tasks alone will not resolve that coverage gap.",
+      "artifact": "Decision record: the PM and engineering lead own the capacity assumption; observed results cover submitted routine tasks only. Unknowns include omitted work, unfinished tasks, acceptance quality, and release throughput; the current commitment stays unchanged. Reopen after the predefined review window when accepted-work evidence covers the release mix and addresses differing noncompletion between conditions.",
+      "limitations": "These calculations describe an invented dashboard, not statistical significance or a valid team-wide productivity effect. Missing coverage does not prove that AI lacks value, and unfinished tasks must not receive invented completion times. Leaders may still make a riskier commitment, but should label it a judgment rather than a measured capacity gain."
+    },
+    "source_ids": [
+      1,
+      2
+    ]
+  },
+  "book": null,
+  "foundation": {
+    "title": "Distinguish predictive disagreement from conflicting objectives",
+    "original": "In his 2016 shareholder letter, Jeff Bezos recommends \"disagree and commit\" and says the obligation applies to the boss too.[3] He describes backing an Amazon Studios project despite disagreeing with the team's assessment.[3] The same letter separately recommends early escalation when teams have incompatible objectives or fundamentally different views.[3]",
+    "misuse": "An uncertain prediction under a shared objective differs from a dispute over which objective should govern. Demanding commitment cannot resolve a trade-off that neither team has authority to authorize. Conversely, escalating every disagreement burdens leaders with decisions they have already delegated.",
+    "worked_example": {
+      "kind": "hypothetical",
+      "label": "Hypothetical worked decision: activation versus service reliability",
+      "situation": "An invented growth lead wants to remove an onboarding review to improve activation. The operations lead must protect a service-reliability target and expects more unsuitable accounts. Each leader is being held accountable for a different outcome.",
+      "input": "Assume neither lead can authorize a trade-off between activation and service reliability. The growth lead predicts fewer abandoned signups, while operations predicts more unsuitable accounts. Those forecasts remain untested, but the authority gap is already visible within this invented example.",
+      "alternatives": "The team could run another workshop, ask operations to disagree and commit, or escalate the unresolved trade-off. Choose escalation if neither lead can authorize the reliability risk. More persuasion cannot grant authority that neither participant has.",
+      "decision": "The sponsor must decide the permissible reliability boundary and name the person who owns the combined outcome. Only then can the team debate whether removing the review is likely to stay within that boundary. If the disagreement becomes predictive, a bounded test may resolve it.",
+      "artifact": "Decision record: keep the onboarding review while the common sponsor sets the reliability boundary and names an accountable owner. Record both forecasts and inspect which accounts the review rejects, including the downstream work those accounts create. Reopen the product change after the sponsor approves limits and the team establishes a feasible observation plan.",
+      "limitations": "The letter is an executive account, not an independent evaluation of management outcomes; this routing rule is editorial interpretation. Legal duties, safety objections, and irreversible harm need their own governance rather than a generic commitment rule. Team question: are we arguing about what will happen, or about which outcome somebody is authorized to protect?"
+    },
+    "source_ids": [
+      3
+    ]
+  },
+  "developments": [],
+  "sources": [
+    {
+      "id": 1,
+      "title": "METR: Changing our developer productivity experiment design",
+      "url": "https://metr.org/blog/2026-02-24-uplift-update"
+    },
+    {
+      "id": 2,
+      "title": "METR: Early-2025 developer productivity randomized trial",
+      "url": "https://arxiv.org/pdf/2507.09089"
+    },
+    {
+      "id": 3,
+      "title": "Jeff Bezos: 2016 letter to shareholders",
+      "url": "https://www.aboutamazon.com/news/company-news/2016-letter-to-shareholders"
+    }
+  ]
+}
