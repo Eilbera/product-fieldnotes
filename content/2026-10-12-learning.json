@@ -1,0 +1,185 @@
+{
+  "edition_type": "learning_edition",
+  "schema_version": 2,
+  "slug": "2026-10-12-learning",
+  "date": "October 12, 2026",
+  "title": "Packaging decisions, missing offers, and the limits of a playbook",
+  "dek": "Test whether plan rules block willing buyers. Examine why desired offers remain unavailable, and assess a recent PM playbook before adopting its rules.",
+  "reading_time": "12 min read",
+  "topics": [
+    "Pricing and packaging",
+    "Strategy",
+    "Discovery",
+    "PM coaching"
+  ],
+  "editor_note": "Research reviewed October 12, 2026, in UTC. The packaging case is historical practitioner self-report; the proposed method is editorial synthesis supported by pricing research. Worked decisions are hypothetical, not measured customer outcomes.",
+  "coverage_note": "Practice, books, and foundations all appear this week; no frontier item was selected. Book coverage resumes after September 21, later than the intended fortnightly cadence and missed October 5 target. This is targeted professional learning, not a comprehensive current-news scan.",
+  "practice": {
+    "title": "Test the packaging boundary before cutting the price",
+    "learning_objective": "A premium plan can exclude a willing buyer before that buyer ever evaluates its price. Changing price will not necessarily fix an account-size restriction or an inaccessible feature bundle. This lesson teaches how to separate those explanations and produce a defensible packaging decision.",
+    "evidence_type": "practitioner_self_report",
+    "problem": "A commercial team sees weak premium adoption and proposes a discount. Some interested buyers cannot purchase the plan because its eligibility rules exclude them. The PM must identify the obstacle before changing the bill.",
+    "old_approach": "Rob Litterst's operator interview describes Superhuman's transition from lightly differentiated tiers toward more distinct bundles.[1] The earlier tiers relied mainly on user minimums, while the later design removed user limits and changed features and positioning.[1] This is a historical practitioner self-report, not a new pricing invention or an independently evaluated intervention.",
+    "method": [
+      {
+        "title": "What the team investigated",
+        "body": "The team first aligned internally, then interviewed customers and prospects before conducting quantitative pricing research.[1] Those interviews examined persona-based packaging boundaries and the tradeoff between simplicity and capturing value.[1] A small working group made decisions while updating executive sponsors.[1]"
+      },
+      {
+        "title": "Read the reported result in sequence",
+        "body": "The account reports that a third of new self-serve users selected Business after the minimum was removed.[1] It then describes a reverse trial introduced to build on that uptake.[1] The reported share does not isolate the restriction's effect from changed features, positioning, or customer mix."
+      },
+      {
+        "title": "Do not confuse survey realism with payment",
+        "body": "Schmidt and Bijmolt distinguish direct versus indirect pricing methods from hypothetical versus financially consequential research.[2] A realistic choice between bundles can still be hypothetical if respondents face no payment obligation.[2] Better presentation alone does not turn preference into a purchase forecast."
+      },
+      {
+        "title": "Use pricing research without importing a universal correction",
+        "body": "Their meta-analysis reports average hypothetical willingness to pay about 21% above real willingness to pay.[2] Its included effects come from consumer contexts, which limits transfer to business procurement.[2] Do not mechanically reduce an enterprise survey estimate by that average."
+      },
+      {
+        "title": "Locate the obstacle before choosing a test",
+        "body": "The following method is editorial synthesis, not a protocol tested by Superhuman. Its established components are customer interviews, offer research, paid validation, and entitlement mapping. Its purpose is to match each investigation to a distinct uncertainty."
+      },
+      {
+        "title": "Inspect eligibility before optimizing price",
+        "body": "Write the offer as a buyer would encounter it: allowed account type, included capabilities, total bill, and contract terms. Then document where the interested buyer becomes ineligible. This separates inability to buy from unwillingness to pay."
+      },
+      {
+        "title": "Include people who could not buy",
+        "body": "Include rejected prospects alongside current customers. Ask about a recent task, its workaround, and who could authorize the purchase. Enthusiasm for a feature is weak evidence when nobody can identify its use or approve spending."
+      },
+      {
+        "title": "Make competing offers interpretable",
+        "body": "Compare concrete alternatives rather than asking whether a premium plan sounds appealing. Keep the capability and bill constant when investigating eligibility alone. If the bundle also changes, record that the test concerns a combined offer."
+      },
+      {
+        "title": "Check that buyers understand the offer",
+        "body": "Ask buyers to explain what they would receive and owe before interpreting their preference. Misunderstood terms create a different problem from a disliked price. Correcting comprehension is useful research, but assisted comprehension may not predict unaided checkout behavior."
+      },
+      {
+        "title": "Test a fulfillable commercial offer",
+        "body": "Offer a bounded paid pilot only after the team can honor its promise. Record eligible exposures, completed purchases, refunds, actual capability use, and support work. Those records distinguish initial demand from a service that customers can use economically."
+      },
+      {
+        "title": "Keep refusals in the record",
+        "body": "Keep refusals and their reasons in the record. A carefully recruited pilot can establish that some buyers will pay under specific conditions. It cannot, by itself, establish market-wide conversion or a causal revenue lift."
+      },
+      {
+        "title": "Separate migration from new demand",
+        "body": "Superhuman's team mapped legacy plans into new plans and deliberately retired the old structure.[1] Customers received up to three months to switch, with an annual-billing option preserving their price for a year.[1] These are reported implementation choices, not universal migration rules."
+      },
+      {
+        "title": "Map the promises already made",
+        "body": "Build your entitlement map independently of the new-customer demand test. Include negotiated exceptions, contractual commitments, and a destination plan for each affected account. This resolves whether existing promises survive the change, not whether new buyers want it."
+      },
+      {
+        "title": "When the buyer declines",
+        "body": "If buyers understand the offer but decline, investigate the rejected tradeoff. The integration might be insufficiently useful, the bundle excessive, or the buying process burdensome. Price becomes one explanation to test, rather than the automatic explanation."
+      },
+      {
+        "title": "When purchase does not become useful adoption",
+        "body": "If buyers pay but never use the integration, the offer may have sold an expectation it does not fulfill. Inspect implementation obstacles before interpreting purchases as durable demand. If use is strong but support costs are excessive, narrower service terms may outperform unrestricted eligibility."
+      },
+      {
+        "title": "When to use this method",
+        "body": "Use this method when plan rules obscure the source of weak upgrades. Do not redesign packaging to solve a known checkout defect. Do not treat selected pilot buyers as representative of all prospects or initial purchases as retention evidence."
+      }
+    ],
+    "evidence": "The operator account describes customer interviews, quantitative research, and migration planning.[1] It places the reverse trial after the reported Business-tier uptake, so that trial cannot explain the initial observation.[1] This supports teaching the sequence, not attributing a causal revenue effect to removing the restriction.",
+    "limitations": "The case demonstrates a described research sequence and a concrete migration task. It does not provide a controlled comparison, raw customer data, or a migration retention analysis. The quantitative study's questionnaire and sampling details are not disclosed in the inspected account.",
+    "worked_example": {
+      "kind": "hypothetical",
+      "label": "Hypothetical worked decision: the blocked solo consultant",
+      "situation": "A workflow product reserves its reporting integration for premium accounts with multiple users. Solo consultants request that integration but cannot purchase the plan. The commercial team proposes a general premium discount to improve adoption.",
+      "input": "Assume support records confirm the eligibility block. The integration already works, but solo-account support costs and paid demand remain unknown. There is no evidence yet that existing premium buyers reject the price.",
+      "alternatives": "The alternatives are a general discount, removing the account-size restriction, a separate integration add-on, or retaining the restriction. A discount changes the bill without resolving the stated exclusion. An add-on changes both packaging and the buying decision.",
+      "decision": "Choose a bounded eligibility pilot at the unchanged premium price. Keep existing customers on their current terms while mapping possible migrations separately. This narrows the first decision without pretending the pilot identifies an optimal price.",
+      "artifact": "Decision record: the PM tests solo eligibility at the existing price while leaving current contracts unchanged. Commercial staff log offers, purchases, refusals, and refunds; support logs actual use and service work. Expand only after paid use meets operating-cost limits agreed before recruitment; reconsider the bundle if buyers reject its understood promise.",
+      "limitations": "All inputs are invented, and no experiment has run. Finance and support must specify acceptable service costs before recruitment; this example cannot supply a universal threshold. Selected pilot buyers cannot establish market-wide conversion, optimal pricing, or retention."
+    },
+    "source_ids": [
+      1,
+      2
+    ]
+  },
+  "book": {
+    "title": "The Product Management Playbook",
+    "author": "Julia Barham",
+    "publication_date": "July 2026 (publisher metadata; exact day unverified)",
+    "access_basis": "This assessment uses Chapter 5 prose preserved September 27, October 11 publisher metadata, and the October 12 publisher overview.[4][5] The full book, other chapters, and image contents were not assessed. Publisher metadata lists a 304-page paperback and a separate ebook ISBN; format-specific release dates remain unverified.[4]",
+    "thesis": "The publisher presents a practical guide spanning the product life cycle and the simultaneous management of features at different maturities.[4] The accessed chapter turns solution discovery into facilitation steps, concept tests, and a Problem-Solution Fit Map.[5] My reading is that its strongest use is coaching consistent practice rather than teaching an experienced leader a new theory.",
+    "ideas": [
+      {
+        "title": "Scale discovery to the decision",
+        "body": "Barham allows teams to fast-track clear defects and confusing navigation labels rather than investigate every minor adjustment.[5] She recommends exploring alternatives when the solution is uncertain and the consequences of error are high.[5] For coaching, distinguish an understood repair from an uncertain intervention before selecting research."
+      },
+      {
+        "title": "Preserve an interpretable comparison",
+        "body": "The chapter recommends distinct concepts, randomized presentation order, and stable concepts during a test.[5] It warns against combining too many hypotheses in one comparison.[5] These choices help interpret feedback, but concept preference still cannot establish real adoption."
+      },
+      {
+        "title": "Retain the reasoning behind requirements",
+        "body": "The Problem-Solution Fit Map connects customer needs, features, experience guidelines, and business requirements.[5] Barham asks teams to include evidence or rationale and distinguish launch requirements from later additions.[5] My recommended adaptation is to label observed needs and assumptions separately, so a completed template does not imply settled evidence."
+      },
+      {
+        "title": "Treat specialist partners as peers",
+        "body": "The chapter explicitly describes designers as co-equal partners rather than people who work for the PM.[5] This strengthens the coaching value for teams where accountability has become unilateral control. A useful review asks which partner supplied each claim and which constraints require another owner's approval."
+      }
+    ],
+    "critique": "The sample says quick wins typically need no testing because effort is low and impact is high.[5] That rule needs qualification: a cheap permission change can still disclose confidential information. Judge scrutiny by the consequence of error, reversibility, and existing evidence rather than implementation effort alone.",
+    "audience": "Senior PMs coaching colleagues or improving a shared playbook are the clearest audience. The accessed sample offers facilitation guidance and established methods rather than evidence of a new practice.",
+    "verdict": "Selective read",
+    "verdict_reason": "Use the sample to assess the coaching value, then qualify its decision rules before adopting templates across teams. This verdict does not assess unseen chapters, case quality, or AI guidance. Publisher descriptions cannot establish effectiveness.",
+    "source_ids": [
+      4,
+      5
+    ]
+  },
+  "foundation": {
+    "title": "Investigate why a desired offer remains unavailable",
+    "original": "In an August 2007 interview, Richard Rumelt describes \"value denials\" as desired, feasible products or services that suppliers do not offer.[3] He recommends examining unmet needs that emerge after earlier innovations solve another problem.[3] This is established strategy thinking, not a newly discovered market signal.",
+    "misuse": "A desired service may remain absent because delivery, liability, or economics defeat the apparent opportunity. Treating absence as proof of a viable market skips those constraints. Rumelt’s historical examples are not current market descriptions, and the interview does not establish a success rate.",
+    "worked_example": {
+      "kind": "hypothetical",
+      "label": "Hypothetical worked decision: recovery after a failed import",
+      "situation": "Everything in this example is invented. A software provider sees repeated requests to reverse imports that damage customer workflows. Engineering can restore its own database but cannot undo changes already sent to connected services.",
+      "input": "Recovery requests recur, but engineering can restore only the provider’s own database. Buyer acceptance of that boundary and reliable delivery costs remain unknown. The constraint investigation below is editorial application, not a worksheet validated by Rumelt.",
+      "alternatives": "The alternatives are a guaranteed recovery package, a restricted recovery service, or better import prevention. Demand alone is insufficient to support the guarantee because the provider cannot control the entire outcome. Choose investigation of a restricted service before promising recovery.",
+      "decision": "First classify incidents by whether restoration stays inside the provider's system. This establishes whether a technically controllable service boundary exists. Then ask affected buyers whether that boundary still solves the costly problem.",
+      "artifact": "Decision record: investigate bounded recovery without advertising a guarantee. The PM and support lead define exclusions; engineering verifies restoration inside the system. Reopen launch only after buyers accept the bounded promise and a pilot demonstrates repeatable delivery within agreed costs.",
+      "limitations": "If exclusions remove the benefit buyers need, test import prevention instead of promising broader recovery. External partners might extend the service, but responsibility and coordination would need testing. Team question: what prevented this offer before, and what has changed enough to make our response credible?"
+    },
+    "source_ids": [
+      3
+    ]
+  },
+  "developments": [],
+  "sources": [
+    {
+      "id": 1,
+      "title": "Inside Superhuman’s pricing evolution",
+      "url": "https://newsletter.pricingsaas.com/p/inside-superhumans-pricing-evolution"
+    },
+    {
+      "id": 2,
+      "title": "Accurately measuring willingness to pay for consumer goods",
+      "url": "https://link.springer.com/article/10.1007/s11747-019-00666-6"
+    },
+    {
+      "id": 3,
+      "title": "Richard Rumelt: strategy’s strategist",
+      "url": "https://www.anderson.ucla.edu/documents/areas/adm/media/rumelt_mckinsey_quarterly.pdf"
+    },
+    {
+      "id": 4,
+      "title": "The Product Management Playbook: publisher page",
+      "url": "https://rosenfeldmedia.com/books/product-management-playbook"
+    },
+    {
+      "id": 5,
+      "title": "The Product Management Playbook: Chapter 5 sample",
+      "url": "https://rosenfeldmedia.com/sample-chapter-the-product-management-playbook"
+    }
+  ]
+}
