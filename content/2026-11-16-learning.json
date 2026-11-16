@@ -1,0 +1,207 @@
+{
+  "edition_type": "learning_edition",
+  "schema_version": 2,
+  "slug": "2026-11-16-learning",
+  "date": "November 16, 2026",
+  "title": "When to stop starting: delivery flow, strategy review, and AI fallbacks",
+  "dek": "Diagnose blocked delivery before adding commitments. Learn when implementation evidence challenges strategy, and assess a recent AI leadership book through its operating examples.",
+  "reading_time": "12 min read",
+  "topics": [
+    "Delivery flow",
+    "Product operations",
+    "Strategy",
+    "AI product leadership"
+  ],
+  "editor_note": "Research reviewed November 16, 2026, in UTC. The delivery case and strategy foundation are historical; the book assessment uses a recent publication. Methods are editorial applications of inspected evidence, and worked decisions are explicitly hypothetical.",
+  "coverage_note": "Practice, books, and foundations all appear; no frontier development was selected. Public book coverage resumes after October 12, beyond the intended fortnightly cadence. This edition does not fill earlier publication gaps or claim a comprehensive current-news scan.",
+  "practice": {
+    "title": "Control admission before demanding faster delivery",
+    "learning_objective": "Learn to distinguish insufficient coding capacity from a constraint that prevents completed work reaching customers. Produce an admission decision that names the blocked step, its owner, and the evidence needed to resume starts.",
+    "evidence_type": "original_research",
+    "problem": "A roadmap can contain many active projects while customers receive little usable work. Starting another feature feels responsive, especially when a commercial deadline approaches. The unresolved question is whether development capacity or a downstream dependency limits completion.",
+    "old_approach": "Middleton and Joyce studied a nine-person BBC Worldwide software team using observations, interviews, board walkthroughs, and operational data.[1] Mapping its workflow exposed more unfinished work and bottlenecks than the team had recognized.[1] The peer-reviewed case describes work beginning in 2008 and research observations during 2009.[1]",
+    "method": [
+      {
+        "title": "Set limits from the constraint",
+        "body": "The team derived initial work-in-progress limits from testing and business-analysis constraints rather than developer headcount.[1] It revised those limits as constraints moved and experience accumulated.[1] Work entered the next stage when capacity became available.[1]"
+      },
+      {
+        "title": "Make room to resolve blocked work",
+        "body": "Daily meetings examined blocked items and clusters of work, then changed allocations to relieve constraints.[1] All work had to appear on the boards, including support and technical improvements.[1] The method therefore combined admission rules, visible dependencies, and authority to change work assignments.[1]"
+      },
+      {
+        "title": "Give the board an admission rule",
+        "body": "This is more specific than asking everyone to keep a board updated. An admission rule changes which commitments enter the system. A board without that rule can simply document growing congestion."
+      },
+      {
+        "title": "Use the case as a diagnostic method",
+        "body": "The following protocol is editorial synthesis grounded in the case. It is not a newly validated method or a prescription to copy the team's limits."
+      },
+      {
+        "title": "Define the unit of completion",
+        "body": "Choose a customer-usable capability, not an arbitrary coding task. This prevents task splitting from masquerading as increased delivery."
+      },
+      {
+        "title": "Map waiting as well as activity",
+        "body": "Include requests awaiting admission, blocked work, testing, acceptance, and release. Record the entry date and the specific condition needed to leave each state."
+      },
+      {
+        "title": "Test the apparent bottleneck",
+        "body": "Ask whether the oldest items need reviewer capacity, clearer criteria, defect repair, or renewed customer interest. These explanations imply different interventions despite producing the same visible queue."
+      },
+      {
+        "title": "Change admission at the constrained boundary",
+        "body": "Pause ordinary starts when they would add to the same blocked flow. Give a named owner authority to approve exceptions and identify what each exception displaces."
+      },
+      {
+        "title": "Review completion and earlier waiting together",
+        "body": "Track accepted capabilities, defects, blocked age, and requests waiting before admission. Keep item definitions stable so the comparison answers the original question."
+      },
+      {
+        "title": "Allow useful work without feeding the constraint",
+        "body": "A decline in development activity can be acceptable during this investigation. The decision concerns completing useful work, not keeping every specialist continuously occupied. Truly independent work need not stop merely because another stream is blocked."
+      },
+      {
+        "title": "Understand what the clock measures",
+        "body": "The operational clock began at \"decomposed engineering ready\" and ended at \"release ready\" after user acceptance testing.[1] Earlier waiting from proposed ideas was not recorded.[1] Customer batching of acceptance testing remained a source of delay.[1]"
+      },
+      {
+        "title": "Keep earlier waiting visible",
+        "body": "That boundary matters for a PM evaluating an improvement claim. A shorter measured delivery interval does not establish faster service from the original customer request. Keep the earlier queue visible when changing admission rules."
+      },
+      {
+        "title": "Consider competing explanations",
+        "body": "Add capacity when the constrained activity genuinely requires more skilled effort and the work remains worth completing. Cancel obsolete items when the queue reflects abandoned demand. Clarify authority when nobody can approve acceptance despite sufficient technical capacity."
+      },
+      {
+        "title": "Test whether acceptance still matters",
+        "body": "Ask customers to complete the intended task and explain rejection against agreed criteria. If they avoid review because the feature solves the wrong problem, extra appointments will not repair demand. This distinguishes missing reviewer capacity from work that should be cancelled or reshaped."
+      },
+      {
+        "title": "When to use this method",
+        "body": "Use this method when many items have started but few usable capabilities finish. Avoid a blanket freeze across independent teams or urgent obligations. Also avoid treating a short observation period as evidence of a permanently stable bottleneck."
+      }
+    ],
+    "evidence": "The authors report an average lead-time improvement of 37% over the study period.[1] The observed change accompanied smaller features, engineering improvements, automated testing, and growing team experience.[1] It cannot isolate the contribution of work-in-progress limits.",
+    "limitations": "The study selected a mature team, and coauthor David Joyce worked at BBC Worldwide.[1] Those facts limit independence and transferability. The case supports examining a concrete workflow, not promising a universal delivery gain.",
+    "worked_example": {
+      "kind": "hypothetical",
+      "label": "Hypothetical worked decision: acceptance is unavailable",
+      "situation": "All inputs below are invented. A workflow team has coded several requested features, but customer acceptance remains incomplete. Sales requests another feature start for a prospect demonstration.",
+      "input": "Assume the waiting features still matter, customer authorization is required, and no urgent safety obligation overrides ordinary work. Reviewer availability, acceptance criteria, defects, and customer demand remain unresolved explanations. The visible queue alone cannot distinguish them.",
+      "alternatives": "The PM can start the prospect feature, add coding capacity, or resolve acceptance for existing work. More coding does not directly provide customer authorization. Investigate the acceptance constraint before increasing commitments to this flow.",
+      "decision": "Choose a temporary pause on ordinary starts feeding this same acceptance queue. The PM assigns an acceptance owner and arranges a review for each waiting capability. Engineering prepares test data and resolves reproducible defects before those reviews.",
+      "artifact": "Admission record: ordinary starts feeding the acceptance queue are paused; the PM owns customer reviews and engineering owns reproducible checks. Review accepted capabilities, blocked age, defects, and waiting before admission; resume when acceptance can absorb additional work. Authorized urgent obligations can displace work explicitly; cancel or reshape features if reviews reject their usefulness.",
+      "limitations": "This example produces a decision and an operating record, not a predicted percentage improvement. No intervention ran. Actual capacity limits require local observations and explicit service commitments."
+    },
+    "source_ids": [
+      1
+    ]
+  },
+  "book": {
+    "title": "Strategic AI Product Leadership",
+    "author": "Derya Isler",
+    "publication_date": "March 30, 2026 (publisher listing)",
+    "access_basis": "InformIT lists the first edition from Addison-Wesley Professional, published March 30, 2026.[3] This assessment uses publisher metadata, the introduction, and selected Chapter 1 passages from the publisher-hosted sample.[3][4] The full book, later chapters, and diagram images were not assessed.",
+    "thesis": "Isler argues that AI product leadership must start with customer and business problems rather than a desire to deploy AI.[4] She places data, experience design, infrastructure, and organizational coordination within that leadership responsibility.[4] The introduction excludes low-level implementation and mathematical foundations.[4]",
+    "ideas": [
+      {
+        "title": "Connect model improvement to a customer difficulty",
+        "body": "The opening anecdote describes an unnamed retailer whose technically successful recommendation system attracted little customer interest.[4] Isler attributes the failure to neglecting whether customers struggled to find products.[4] The account is retrospective testimony, not a controlled comparison of discovery methods."
+      },
+      {
+        "title": "Application: identify the task that should improve",
+        "body": "The practical lesson is to specify the task that better recommendations should improve. Ask which observed difficulty would disappear if the system worked well. A technical improvement without that connection remains a weak product investment argument."
+      },
+      {
+        "title": "Examine data suitability at the launch boundary",
+        "body": "Isler reports weak Reels recommendations in new regions after training concentrated on United States and Western European content.[4] She attributes improvement to incorporating data from other markets.[4] The inspected passage supplies no effect size or isolated comparison."
+      },
+      {
+        "title": "Application: test the intended launch population",
+        "body": "Use the account to challenge whether evaluation evidence covers the customers in the launch plan. An aggregate score cannot answer an unexamined region's readiness. More data is one possible remedy, not a substitute for diagnosing the mismatch."
+      },
+      {
+        "title": "Decide what users receive when the model fails",
+        "body": "Isler describes fallback recommendations moving through similar-user content, trending content, and editorial selections when personalization fails.[4] This is the sample's clearest operating example. It makes degraded service an explicit product choice."
+      },
+      {
+        "title": "Hypothetical application: a learning platform fallback",
+        "body": "Our hypothetical application is a learning platform with approved course sequences. If personalization fails, test continuing the approved sequence rather than showing globally popular lessons. Popularity does not establish that a lesson respects prerequisites."
+      },
+      {
+        "title": "Resulting artifact: a fallback contract",
+        "body": "The resulting artifact is a fallback contract: triggering failure, eligible content, responsible owner, and a measure of successful continuation. Validate eligibility separately from whether the screen renders. No fallback test ran, and this example does not reproduce the author's implementation."
+      },
+      {
+        "title": "Assess the claimed data advantage",
+        "body": "The sample argues that growing usage improves recommendations and creates advantages that become nearly impossible for entrants to overcome.[4] The inspected passages do not establish that claim across product categories. Treat it as the author's strategic argument, not a general law."
+      },
+      {
+        "title": "Application: specify the advantage and alternatives",
+        "body": "Before making that argument internally, specify what exclusive data usage creates and which consequential decision it improves. Then identify alternative ways a competitor could deliver the same customer benefit. Those questions turn a broad claim into an investigable strategy."
+      },
+      {
+        "title": "Limits of the platform examples",
+        "body": "The inspected examples also lean heavily on large recommendation platforms.[4] Readers managing smaller products or purchased models should not assume the same staffing, infrastructure, or data advantages. The sample provides practitioner accounts, not independent evidence of a management method's effect."
+      },
+      {
+        "title": "A question for further evidence",
+        "body": "Which fallback choices preserve task success for particular users and failures? The inspected account supplies a mechanism, not comparative outcomes. Seek incident records or evaluated deployments before generalizing the recommendation sequence."
+      },
+      {
+        "title": "Access and commercial context",
+        "body": "This verdict does not assess unseen chapters. The author also operates an AI leadership consultancy and teaches AI product management.[4] That commercial context is relevant when evaluating the sample's broad claims about the necessity of AI leadership."
+      }
+    ],
+    "critique": "The sample contrasts AI with traditional software described as predictable and developed through a linear process.[4] That comparison is too broad to carry an investment decision. It risks making ordinary product uncertainty sound unique to AI.",
+    "audience": "Experienced PMs taking responsibility for AI products are the clearest audience for this sample. It supplies questions about operational dependencies beyond model performance. It does not establish the quality of advanced evaluation or portfolio methods in unseen chapters.",
+    "verdict": "Selective read, provisional and sample-based",
+    "verdict_reason": "Read the sample for dependency mapping and fallback decisions. Seek substantive access to measurement and investment chapters before choosing it for advanced decision tools. This is a sample assessment, not a full-book review.",
+    "source_ids": [
+      3,
+      4
+    ]
+  },
+  "foundation": {
+    "title": "Let delivery evidence challenge the right strategic choice",
+    "original": "Roman Pichler distinguishes product vision, strategy, roadmap, and backlog in Strategize.[2] Strategy addresses needs, target market, distinguishing features, and business goals; the roadmap describes product goals that implement those choices.[2] His model also allows implementation insights to change the roadmap and strategy.[2]",
+    "misuse": "A common misuse is to treat strategy as settled while repeatedly moving delivery dates. The opposite mistake is reopening strategy whenever an estimate changes. Distinguish a scheduling problem from evidence against the offer's underlying business logic.",
+    "worked_example": {
+      "kind": "hypothetical",
+      "label": "Hypothetical worked decision: self-service requires custom work",
+      "situation": "All inputs are invented. A workflow product targets small firms with a self-service reconciliation offer. Engineering finds that unsupported customer formats require recurring individual mappings.",
+      "input": "The strategic claim at risk is that small firms can obtain the benefit without custom implementation. We do not know whether standardized imports preserve that benefit at acceptable service costs. This example applies Pichler's strategy-review idea; only the sample's preface and introduction were assessed.[2]",
+      "alternatives": "The alternatives are delaying broad automation, narrowing supported formats, or selling a managed service. Moving the delivery date does not resolve recurring service work. A managed service changes the offer and its operating model.",
+      "decision": "Choose a bounded test of standardized imports before committing the wider roadmap. Engineering checks repeatability, while research observes whether customers can produce the files and complete reconciliation. Finance assesses support costs to test whether the narrower offer remains economical.",
+      "artifact": "Strategy-review record: investigate standardized imports and defer broad automation; the unresolved question is whether customers can use them with acceptable support. Narrow formats if customers still complete the promised task economically; reconsider the segment or service model if custom work remains unavoidable. Change the decision when representative task completion and measured service costs satisfy operating limits agreed before testing.",
+      "limitations": "No customer test ran, and the example supplies no universal cost threshold. A known defect with a bounded repair would not warrant this review; the threat to the intended service model does. Team question: which delivery observation would change our justification for the roadmap, rather than just its dates?"
+    },
+    "source_ids": [
+      2
+    ]
+  },
+  "developments": [],
+  "sources": [
+    {
+      "id": 1,
+      "title": "Lean software management: BBC Worldwide case study",
+      "url": "https://pureadmin.qub.ac.uk/ws/portalfiles/portal/724967/Lean%20Software%20Management%20BBC%20Worldwide%20Case%20Study%20Feb%202011.pdf"
+    },
+    {
+      "id": 2,
+      "title": "Strategize: second-edition sample",
+      "url": "https://romanpichler.com/downloads/tools/Strategize-2nd-ed-excerpt.pdf"
+    },
+    {
+      "id": 3,
+      "title": "Strategic AI Product Leadership: publisher listing",
+      "url": "https://www.informit.com/store/strategic-ai-product-leadership-build-products.-drive-9780135491140"
+    },
+    {
+      "id": 4,
+      "title": "Strategic AI Product Leadership: publisher-hosted sample",
+      "url": "https://ptgmedia.pearsoncmg.com/images/9780135491140/samplepages/9780135491140_Sample.pdf"
+    }
+  ]
+}
